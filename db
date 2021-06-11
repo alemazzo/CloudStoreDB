@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-11T08:32:05.904Z" agent="5.0 (X11)" etag="aR5qYSe_0z2TNYWj_JAs" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-11T08:56:00.494Z" agent="5.0 (X11)" etag="YrhSKlqiQRQzBdnRzzv9" version="14.7.7" type="github">
   <diagram id="8hu1OYsl2B5Nk4FdEPue" name="Page-1">
     <mxGraphModel dx="2146" dy="1844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -165,21 +165,6 @@
         <mxCell id="BUAE27cLnDc9j6du3AyN-36" value="Preferisce" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="175" y="320" width="80" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BUAE27cLnDc9j6du3AyN-40" value="Abbondamento" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="617.5" y="-210" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="BUAE27cLnDc9j6du3AyN-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="BUAE27cLnDc9j6du3AyN-41" target="BUAE27cLnDc9j6du3AyN-42" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="BUAE27cLnDc9j6du3AyN-41" value="Privato" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="560" y="-100" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="BUAE27cLnDc9j6du3AyN-42" value="Azienda" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="680" y="-100" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="BUAE27cLnDc9j6du3AyN-43" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.77;dx=28.94;direction=north;notch=0;" parent="1" vertex="1">
-          <mxGeometry x="650" y="-170" width="40" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="BUAE27cLnDc9j6du3AyN-56" value="(1, 1)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="BUAE27cLnDc9j6du3AyN-45" target="BUAE27cLnDc9j6du3AyN-55" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -338,7 +323,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="NiKR7fWy2TO_Pi9payae-26" value="Visualizzazione" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="255" y="620" width="100" height="40" as="geometry" />
+          <mxGeometry x="270" y="620" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="NiKR7fWy2TO_Pi9payae-29" value="(1, 1)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;" edge="1" parent="1" source="NiKR7fWy2TO_Pi9payae-28" target="NiKR7fWy2TO_Pi9payae-26">
           <mxGeometry relative="1" as="geometry" />
