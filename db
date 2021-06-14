@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-14T13:15:28.269Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="tDEUBBrvxpDvQDbspoyx" version="14.7.7" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2021-06-14T13:26:52.263Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="QMeHej2HcrZC3FyN4h_z" version="14.7.7" type="github" pages="11">
   <diagram id="8hu1OYsl2B5Nk4FdEPue" name="ER">
     <mxGraphModel dx="1516" dy="1457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -949,7 +949,7 @@
         <mxCell id="paTXLz1XFqO_1bIFHry1-32" value="data creazione" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="MW8t2zaK6TABfONugJJv-1" vertex="1">
           <mxGeometry x="120" y="180" width="90" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="AmYO8zcaBsE41D15C37b-0" value="url" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="MW8t2zaK6TABfONugJJv-1">
+        <mxCell id="AmYO8zcaBsE41D15C37b-0" value="link" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="MW8t2zaK6TABfONugJJv-1">
           <mxGeometry x="365" y="580" width="30" height="20" as="geometry" />
         </mxCell>
         <mxCell id="AmYO8zcaBsE41D15C37b-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=oval;endFill=0;entryX=-0.019;entryY=0.595;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="MW8t2zaK6TABfONugJJv-1" source="paTXLz1XFqO_1bIFHry1-16" target="AmYO8zcaBsE41D15C37b-0">
@@ -1283,7 +1283,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Tf-87icauGJNETFemQjS" name="Abbonamento">
-    <mxGraphModel dx="1398" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="964" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="AUxsLSq6zO9ZEKCjEjj4-0" />
         <mxCell id="AUxsLSq6zO9ZEKCjEjj4-1" parent="AUxsLSq6zO9ZEKCjEjj4-0" />
