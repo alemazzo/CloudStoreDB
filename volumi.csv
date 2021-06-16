@@ -1,0 +1,36 @@
+Codice;Operazione;Frequenza
+1;Registrare un nuovo utente;5 volte al giorno
+2;Creare una nuova directory;5000 volte al giorno
+3;Aggiungere un nuovo file;10000 volte al giorno
+4;Rinominare un file;
+5;Aggiungere una nuova versione di un file;
+6;Scaricare una versione di un file;
+7;Aggiungere un file ai preferiti;
+8;Condividere un file con un utente;
+10;Cancellare un file;
+11;Visualizzare un file;
+12;Aprire una segnalazione;
+13;Accettare una segnalazione;
+14;Chiudere una segnalazione;
+15;Fare un intervento da parte di un utente;
+16;Fare un intervento da parte di un operatore;
+17;Registrare un nuovo operatore;
+18;Visualizzare gli interventi più recenti;
+19;Visualizzare l’operatore che ha chiuso più interventi;
+20;Visualizzare il tipo di file più presente;
+21;Visualizzare la media di file preferiti per utente;
+22;Visualizzare la media di cartella per utente;
+23;Visualizzare il file più condiviso;
+24;Visualizzare il file più visualizzato;
+25;Visualizzare tutti I file scaricati di un utente;
+26;Visualizzare per ogni file il numero di versioni;
+27;Visualizzare per ogni utente il numero di file;
+28;Visualizzare per ogni utente il numero di directory;
+29;Visualizzare per ogni utente il numero di file preferiti;
+30;Visualizzare l’utente che ha aperto più segnalazioni;
+31;Visualizzare il file più scaricato;
+32;Visualizzare gli operatori che non stanno lavorando ad un intervento;
+33;Visualizzare per operatore quanti segnalazioni stanno risolvendo;
+34;Visualizzare per ogni operatore il numero di segnalazioni risolte;
+35;Visualizzare per anno / mese il numero di segnalazioni;
+9;Cancellare una versione di un file;

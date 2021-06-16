@@ -1,0 +1,9 @@
+Concetto;Costrutto;Accesso;Tipo
+Utente;E;1;L
+Utente Scarica;R;200;L
+Download;E;200;L
+Versione Scaricata;R;200;L
+Versione;E;200;L
+Versionato;R;200;L
+File;E;200;L
+Totale;(1201L)* 10 = 12010 al giorno;;
