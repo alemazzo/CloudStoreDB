@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-16T17:46:29.828Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="Ri1CQeAeKrtFk80xnaij" version="14.7.10" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2021-06-16T19:31:14.909Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="Vs24NiYEbcMZCe-SUxYx" version="14.7.10" type="github" pages="10">
   <diagram id="8hu1OYsl2B5Nk4FdEPue" name="ER">
-    <mxGraphModel dx="1549" dy="1486" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1814" dy="1617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1195,7 +1195,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="x9Kofppkp9sWu2ThvKLi" name="Interventi">
-    <mxGraphModel dx="964" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="388" dy="208" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="RmB3jNXmYnbBXyCd_oPN-0" />
         <mxCell id="RmB3jNXmYnbBXyCd_oPN-1" parent="RmB3jNXmYnbBXyCd_oPN-0" />
@@ -1203,6 +1203,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_YQlTG-NR7-0RrBh5eBX-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=-0.033;entryY=0.517;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=8;endArrow=oval;endFill=0;" parent="RmB3jNXmYnbBXyCd_oPN-1" source="6INrb7ljUwT-f3C-am4B-0" target="_YQlTG-NR7-0RrBh5eBX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LvHP8vPFR-3h1Y6amUUI-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.453;entryY=1.031;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=oval;endFill=0;" edge="1" parent="RmB3jNXmYnbBXyCd_oPN-1" source="6INrb7ljUwT-f3C-am4B-0" target="LvHP8vPFR-3h1Y6amUUI-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="6INrb7ljUwT-f3C-am4B-0" value="Intervento" style="whiteSpace=wrap;html=1;align=center;fillColor=#ffcc99;strokeColor=#36393d;" parent="RmB3jNXmYnbBXyCd_oPN-1" vertex="1">
@@ -1277,11 +1280,14 @@
         <mxCell id="_YQlTG-NR7-0RrBh5eBX-14" value="Utente_Interviene" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#cdeb8b;strokeColor=#36393d;" parent="RmB3jNXmYnbBXyCd_oPN-1" vertex="1">
           <mxGeometry x="412.5" y="230" width="125" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="LvHP8vPFR-3h1Y6amUUI-1" value="DataIntervento" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=8;" vertex="1" parent="RmB3jNXmYnbBXyCd_oPN-1">
+          <mxGeometry x="170" y="200" width="70" height="20" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="RZ5br9xlVx01tnDw5d4U" name="Interventi-Reificato">
-    <mxGraphModel dx="964" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="466" dy="250" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="DLePBt0Fw-7xltVhm5yh-0" />
         <mxCell id="DLePBt0Fw-7xltVhm5yh-1" parent="DLePBt0Fw-7xltVhm5yh-0" />
@@ -1354,11 +1360,19 @@
         <mxCell id="YZSy2ZC63vazYDJoitvn-0" value="solo uno tra operatore e utente potrà essere presente" style="shape=note;size=20;whiteSpace=wrap;html=1;" parent="DLePBt0Fw-7xltVhm5yh-1" vertex="1">
           <mxGeometry x="240" y="300" width="100" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="02brOJXWt_X8BDRF4EZL-0" value="Operatore_Interviene" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="DLePBt0Fw-7xltVhm5yh-1">
+        <mxCell id="02brOJXWt_X8BDRF4EZL-0" value="Operatore_Interviene" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#cdeb8b;strokeColor=#36393d;" parent="DLePBt0Fw-7xltVhm5yh-1" vertex="1">
           <mxGeometry x="20" y="210" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="2Ib52iEqMei3eTLwuVIz-0" value="Utente_Interviene" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="DLePBt0Fw-7xltVhm5yh-1">
+        <mxCell id="2Ib52iEqMei3eTLwuVIz-0" value="Utente_Interviene" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fillColor=#cdeb8b;strokeColor=#36393d;" parent="DLePBt0Fw-7xltVhm5yh-1" vertex="1">
           <mxGeometry x="427.5" y="210" width="125" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lx_Gu_P2vjdbYCsj4NeI-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.453;entryY=1.031;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=oval;endFill=0;" edge="1" parent="DLePBt0Fw-7xltVhm5yh-1" target="lx_Gu_P2vjdbYCsj4NeI-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="230" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lx_Gu_P2vjdbYCsj4NeI-1" value="DataIntervento" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=8;" vertex="1" parent="DLePBt0Fw-7xltVhm5yh-1">
+          <mxGeometry x="170" y="200" width="70" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
