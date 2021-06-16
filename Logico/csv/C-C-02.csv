@@ -1,0 +1,7 @@
+Concetto;Costrutto;Accesso;Tipo
+Directory;E;1;S
+Subdirectory;R ;1;S
+Possiede Directory;R;1;S
+Directory;E;1;L
+Directory;E;1;S
+Totale;(4S + 1L)* 5000 = 45000 al giorno;;

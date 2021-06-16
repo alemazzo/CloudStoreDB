@@ -1,0 +1,48 @@
+Directory(Id, Nome, DataCreazione, Padre*, Proprietario)
+FK: Padre REFERENCES Directory
+FK: Proprietario REFERENCES Utenti
+Unique(Padre, Nome)
+
+File(Id, Directory, Nome, Estensione, Proprietario, UltimaVersione)
+FK: Directory REFERENCES Directory
+FK: Proprietario REFERENCES Utenti
+FK: UltimaVersione REFERENCES Versioni
+UNIQUE(Directory, Nome, Estensione)
+
+Utenti(Email, Nome, Cognome, DataRegistrazione, Password, DataNascita, NumeroDirectory)
+
+Preferenze(File, Utente, Data)
+FK: File REFERENCES File
+FK: Utente REFERENCES Utenti
+
+Versioni(Id, File, Numero, Data, Dimensione, Link)
+FK: File REFERENCES File
+UNIQUE(File, Numero)
+
+Downloads(Id, Versione, Utente, Data)
+FK: Versione REFERENCES Versioni
+FK: Utente REFERENCES Utenti
+
+Visualizzazioni(Id, Versione, Utente, Data)
+FK: Versione REFERENCES Versioni
+FK: Utente REFERENCES Utenti
+
+Segnalazioni(Id, Utente, Descrizione, Operatore*, DataAccettazione*, DataChiusura*)
+FK: Utente REFERENCES Utenti
+FK: Operatore REFERENCES Operatori
+
+Operatori(Codice, Nome, Password, DataNascita)
+
+Interventi(Segnalazione, Numero, Utente*, Operatore*, Messaggio, Data)
+FK: Segnalazione REFERENCES Segnalazioni
+FK: Utente REFERENCES Utenti
+FK: Operatore REFERENCES Operatori
+CHECK (
+    	(Operatore is null or Utente is null) 
+    	and not 
+    	(Operatore is null and Utente is null)
+   	  )
+   	  
+Condivisioni(File, Utente, Lettura*, Scrittura*, Data)
+FK: File REFERENCES File
+FK: Utente REFERENCES Utenti
