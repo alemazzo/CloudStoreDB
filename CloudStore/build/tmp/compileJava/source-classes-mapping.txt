@@ -1,2 +1,0 @@
-cloudstore/Launcher.java
- cloudstore.Launcher

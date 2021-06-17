@@ -1,0 +1,26 @@
+Concetto;Costrutto;Volume
+Utente;E;10000
+Directory;E;200000
+File;E;1000000
+Versione;E;3000000
+Download;E;2000000
+Visualizzazione;E;10000000
+Segnalazione;E;1000
+Operatore;E;200
+Intervento;E;5000
+Condivide;R;750000
+Preferisce;R;50000
+Risiede;R;190000
+Contiene;R;1000000
+Versionato;R;3000000
+Versione Scaricata;R;2000000
+Utente Scarica;R;2000000
+Versione Visualizzata;R;10000000
+Utente Visualizza;R;10000000
+Possiede;R;200000
+Apertura;R;1000
+Accetta;R;1000
+Chiude;R;1000
+Utente Interviene;R;2500
+Operatore Interviene;R;2500
+Interviene;R;5000

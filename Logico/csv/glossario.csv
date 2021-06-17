@@ -1,0 +1,10 @@
+Termine;Descrizione;Sinonimi
+Utente;La persona iscritta sulla piattaforma che può caricare/scaricare/modificare i suoi file;Account, Cliente
+File;Il file che viene caricato sulla piattaforma dall’utente;Documento
+Directory;Una collezione di file e altre cartelle, ogni utente ne ha una principale e ne può creare altre ricorsivamente;Cartella, Folder
+Versione;Una singola istanza del file in un determinato istante di tempo. Ogni versione di un file è specifica di una determinata data di caricamento;Istanza di file
+Download;L’operazione di salvataggio in locale da parte di un utente;Scaricamento
+Operatore;Un operatore dell’azienda CloudStore il cui compiti è risolvere i problemi riscontrati dagli utenti della piattaforma;Assistente
+Condivisione;Fornire accesso ad un determinato file ad un utente che non ne è il proprietario, specificando quali permessi ha tra lettura e scrittura;Sharing
+Segnalazione;Richiesta di aiuto per la risoluzione di una problematica da parte di un cliente. Un operatore provvederà ad accettare la segnalazione e dopo averla risolta la chiuderà;Richiesta di aiuto
+Intervento;Ogni segnalazione prevede una serie di interventi che consistono in uno scambio di messaggi tra cliente e operatore;Messaggio
