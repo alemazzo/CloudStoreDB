@@ -10,34 +10,35 @@ import java.util.Set;
 
 public class EntityMapper<T extends QueryObjectResult> {
 
-    private final Class<T> type;
+  private final Class<T> type;
 
-    public EntityMapper(Class<T> type) {
-        this.type = type;
+  public EntityMapper(Class<T> type) {
+    this.type = type;
+  }
+
+  public T fromResult(ResultSet result) throws SQLException {
+    T elem = null;
+    try {
+      elem = this.type.getDeclaredConstructor().newInstance();
+    } catch (Exception e) {
+      e.printStackTrace();
     }
-
-    public T fromResult(ResultSet result) throws SQLException {
-        T elem = null;
-        try {
-            elem = (T) this.type.getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        final T finalElem = elem;
-        Arrays.stream(elem.getClass().getFields()).forEach(x -> {
-            try {
+    final T finalElem = elem;
+    Arrays.stream(elem.getClass().getFields())
+        .forEach(
+            x -> {
+              try {
                 x.set(finalElem, result.getObject(x.getName()));
-            } catch (Exception e) {
+              } catch (Exception e) {
                 e.printStackTrace();
-            }
-        });
-        return elem;
-    }
+              }
+            });
+    return elem;
+  }
 
-    public Set<T> fromResultSet(ResultSet results) throws SQLException {
-        final Set<T> res = new HashSet<>();
-        while (results.next()) res.add(this.fromResult(results));
-        return res;
-    }
-
+  public Set<T> fromResultSet(ResultSet results) throws SQLException {
+    final Set<T> res = new HashSet<>();
+    while (results.next()) res.add(this.fromResult(results));
+    return res;
+  }
 }

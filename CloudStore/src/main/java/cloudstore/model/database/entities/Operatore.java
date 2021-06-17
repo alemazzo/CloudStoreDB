@@ -2,11 +2,17 @@ package cloudstore.model.database.entities;
 
 import cloudstore.model.database.query.QueryObjectResult;
 
-public class Operatore extends QueryObjectResult {
+import java.util.Date;
 
-    public String codice;
-    public String nome;
-    public String password;
-    public String dataNascita;
+public class Operatore extends Entity {
 
+  public Integer codice;
+  public String nome;
+  public String password;
+  public Date dataNascita;
+
+  @Override
+  public String getInsertQuery() {
+    return "INSERT INTO Operatori (Codice, Nome, Password, DataNascita) VALUES (?, ?, ?, ?)";
+  }
 }

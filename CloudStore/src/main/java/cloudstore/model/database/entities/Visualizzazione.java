@@ -2,11 +2,17 @@ package cloudstore.model.database.entities;
 
 import cloudstore.model.database.query.QueryObjectResult;
 
-public class Visualizzazione extends QueryObjectResult {
+import java.util.Date;
 
-    public String id;
-    public String versione;
-    public String utente;
-    public String dataVisualizzazione;
+public class Visualizzazione extends Entity{
 
+  public Integer id;
+  public Integer versione;
+  public String utente;
+  public Date dataVisualizzazione;
+
+  @Override
+  public String getInsertQuery() {
+    return "INSERT INTO Visualizzazioni (Versione, Utente, DataVisualizzazione) VALUES (?, ?, ?)";
+  }
 }

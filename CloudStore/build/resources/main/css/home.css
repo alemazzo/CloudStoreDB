@@ -1,0 +1,9 @@
+#home-root {
+
+    -fx-min-width: 600;
+    -fx-pref-width: 600;
+
+    -fx-min-height: 500;
+    -fx-pref-height: 500;
+
+}

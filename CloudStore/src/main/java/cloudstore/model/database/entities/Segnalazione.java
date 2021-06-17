@@ -2,13 +2,34 @@ package cloudstore.model.database.entities;
 
 import cloudstore.model.database.query.QueryObjectResult;
 
-public class Segnalazione extends QueryObjectResult {
+import java.util.Date;
 
-    public String id;
-    public String utente;
-    public String descrizione;
-    public String operatore;
-    public String dataAccettazione;
-    public String dataChiusura;
+public class Segnalazione extends Entity{
 
+  public Integer id;
+  public String utente;
+  public String descrizione;
+  public Integer operatore;
+  public Date dataAccettazione;
+  public Date dataChiusura;
+
+  @Override
+  public String toString() {
+    return "Segnalazione{"
+        + "id='"
+        + id
+        + '\''
+        + ", utente='"
+        + utente
+        + '\''
+        + ", descrizione='"
+        + descrizione
+        + '\''
+        + '}';
+  }
+
+  @Override
+  public String getInsertQuery() {
+    return "INSERT INTO Segnalazioni (Utente, Descrizione, Operatore, DataAccettazione, DataChiusura) VALUES (?, ?, ?, ?, ?)";
+  }
 }

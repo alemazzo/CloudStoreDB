@@ -1,18 +1,11 @@
 package cloudstore;
 
-import cloudstore.model.ApplicationInstance;
-import cloudstore.model.Model;
-
-/**
- * The launcher of the application.
- */
+/** The launcher of the application. */
 public final class Launcher {
 
-    private Launcher() {
+  private Launcher() {}
 
-    }
-    public static void main(final String[] args) {
-        CloudStore.main(args);
-    }
-
+  public static void main(final String[] args) {
+    CloudStore.main(args);
+  }
 }
