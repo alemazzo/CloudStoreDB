@@ -10,11 +10,11 @@ database = 'CloudStore'
 """
 COSTANTS
 """
-NUMERO_UTENTI = 10_000  # 10_000
-NUMERO_OPERATORI = 200
-NUMERO_DIRECTORY_RANDOM = 200_000  # 200_000
-NUMERO_FILE_RANDOM = 1_000_000
-NUMERO_PREFERENZE = 50_000
+NUMERO_UTENTI = 10  # 10_000
+NUMERO_OPERATORI = 20
+NUMERO_DIRECTORY_RANDOM = 20  # 200_000
+NUMERO_FILE_RANDOM = 30
+NUMERO_PREFERENZE = 50
 
 SUCCESS = 0
 
@@ -109,7 +109,7 @@ def generate_users():
     INSERT INTO Utenti(Email, Nome, Cognome, DataRegistrazione, Password, DataNascita, NumeroDirectory) VALUES (%s, %s, %s, %s, %s, %s, %s)
     """
     query_cartella = """
-    INSERT INTO Directory(Nome, DataCreazione, Proprietario) VALUES (%s, %s, %s)
+    INSERT INTO Directories(Nome, DataCreazione, Proprietario) VALUES (%s, %s, %s)
     """
     SUCCESS = 0
 
@@ -214,13 +214,13 @@ def generate_directory():
     print("-----------------------")
     print("Inizio creazione DIRECTORY")
     query = """
-        INSERT INTO Directory(Nome, DataCreazione, Padre, Proprietario) VALUES (%s, %s, %s, %s)
+        INSERT INTO Directories(Nome, DataCreazione, Padre, Proprietario) VALUES (%s, %s, %s, %s)
     """
     SUCCESS = 0
 
     with database.cursor() as cursor:
         cursor.execute(
-            "SELECT Id, Proprietario FROM Directory WHERE Padre is NULL")
+            "SELECT Id, Proprietario FROM Directories WHERE Padre is NULL")
         result = cursor.fetchall()
         for _id, proprietario in result:
             DIRECTORY_IDS.append((_id, proprietario))
@@ -270,13 +270,13 @@ def generate_files():
     with database.cursor() as cursor:
 
         cursor.execute(
-            "SELECT Id, Proprietario FROM Directory")
+            "SELECT Id, Proprietario FROM Directories")
         result = cursor.fetchall()
         for _id, proprietario in result:
             DIRECTORY_IDS.append((_id, proprietario))
 
     query = """
-    INSERT INTO File(Directory, Nome, Estensione, Proprietario) VALUES (%s, %s, %s, %s)
+    INSERT INTO Files(Directory, Nome, Estensione, Proprietario) VALUES (%s, %s, %s, %s)
     """
     SUCCESS = 0
 
@@ -325,13 +325,13 @@ def generate_preferenze():
     FILE_IDS = []
     with database.cursor() as cursor:
         cursor.execute(
-            "SELECT Id, Proprietario FROM File")
+            "SELECT Id, Proprietario FROM Files")
         result = cursor.fetchall()
         for _id, proprietario in result:
             FILE_IDS.append((_id, proprietario))
 
     query = """
-    INSERT INTO Preferenze(File, utente, Data) VALUES (%s, %s, %s)
+    INSERT INTO Preferenze(File, Utente, DataPreferenza) VALUES (%s, %s, %s)
     """
     SUCCESS = 0
 

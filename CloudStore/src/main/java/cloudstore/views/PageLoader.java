@@ -1,4 +1,4 @@
-package cloudstore.views.pages;
+package cloudstore.views;
 
 import java.io.IOException;
 
@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import cloudstore.controllers.Controller;
 import cloudstore.model.Model;
-import cloudstore.views.JavaFXView;
 
 /**
  * The loader of the pages. It manages the loading of the first page and the

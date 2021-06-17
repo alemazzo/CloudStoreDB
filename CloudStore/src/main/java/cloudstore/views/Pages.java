@@ -1,4 +1,4 @@
-package cloudstore.views.pages;
+package cloudstore.views;
 
 import java.util.function.Supplier;
 
@@ -11,10 +11,9 @@ import cloudstore.controllers.Controller;
 public enum Pages {
 
     /**
-     * Loading screen.
+     * Home screen.
      */
-    // LOADING("loading", LoadingControllerImpl::new);
-            ;
+    HOME("home", BasicController::new);
 
     private final String name;
     private final Supplier<Controller> controllerGenerator;

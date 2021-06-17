@@ -1,0 +1,69 @@
+cloudstore/controllers/Controller.java
+ cloudstore.controllers.Controller
+cloudstore/model/database/query/Query.java
+ cloudstore.model.database.query.Query
+cloudstore/views/View.java
+ cloudstore.views.View
+cloudstore/controllers/BasicController.java
+ cloudstore.controllers.BasicController
+cloudstore/views/JavaFXView.java
+ cloudstore.views.JavaFXView
+cloudstore/model/database/Connector.java
+ cloudstore.model.database.Connector
+cloudstore/model/database/query/QueryBuilder.java
+ cloudstore.model.database.query.QueryBuilder
+cloudstore/CloudStore.java
+ cloudstore.CloudStore
+cloudstore/views/AbstractJavaFXView.java
+ cloudstore.views.AbstractJavaFXView
+cloudstore/Launcher.java
+ cloudstore.Launcher
+cloudstore/views/BasicView.java
+ cloudstore.views.BasicView
+cloudstore/commons/Pair.java
+ cloudstore.commons.Pair
+cloudstore/views/PageLoader.java
+ cloudstore.views.PageLoader
+ cloudstore.views.PageLoader$LazyHolder
+cloudstore/model/ApplicationInstance.java
+ cloudstore.model.ApplicationInstance
+cloudstore/model/Model.java
+ cloudstore.model.Model
+cloudstore/views/Pages.java
+ cloudstore.views.Pages
+cloudstore/model/database/entities/Visualizzazione.java
+ cloudstore.model.database.entities.Visualizzazione
+cloudstore/model/database/controllers/EntityController.java
+ cloudstore.model.database.controllers.EntityController
+cloudstore/model/database/entities/Download.java
+ cloudstore.model.database.entities.Download
+cloudstore/model/database/entities/Directory.java
+ cloudstore.model.database.entities.Directory
+cloudstore/model/database/entities/Intervento.java
+ cloudstore.model.database.entities.Intervento
+cloudstore/model/database/mapper/EntityMapper.java
+ cloudstore.model.database.mapper.EntityMapper
+cloudstore/model/database/entities/Condivisione.java
+ cloudstore.model.database.entities.Condivisione
+cloudstore/model/database/entities/Operatore.java
+ cloudstore.model.database.entities.Operatore
+cloudstore/model/database/entities/Segnalazione.java
+ cloudstore.model.database.entities.Segnalazione
+cloudstore/model/database/entities/File.java
+ cloudstore.model.database.entities.File
+cloudstore/model/database/entities/Utente.java
+ cloudstore.model.database.entities.Utente
+cloudstore/model/database/entities/Preferenza.java
+ cloudstore.model.database.entities.Preferenza
+cloudstore/model/database/entities/Versione.java
+ cloudstore.model.database.entities.Versione
+cloudstore/model/database/controllers/QueryController.java
+ cloudstore.model.database.controllers.QueryController
+cloudstore/model/database/query/QueryObjectResult.java
+ cloudstore.model.database.query.QueryObjectResult
+cloudstore/model/database/controllers/OperationController.java
+ cloudstore.model.database.controllers.OperationController
+cloudstore/views/home/HomeView.java
+ cloudstore.views.home.HomeView
+ cloudstore.views.home.HomeView$Oggetto
+ cloudstore.views.home.HomeView$QueryXXResult

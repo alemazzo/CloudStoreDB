@@ -18,6 +18,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 val javaFXModules = listOf(
@@ -46,6 +47,9 @@ dependencies {
         }
     }
 
+    implementation("com.google.guava:guava:30.1-jre")
+    implementation("com.google.code.gson:gson:2.8.6")
+    implementation("mysql:mysql-connector-java:8.0.15")
     // JUnit API and testing engine
     testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
