@@ -42,9 +42,9 @@
                         </Label>
                      </children>
                   </HBox>
-                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                  <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="1">
                     <tabs>
-                      <Tab fx:id="directoriesTab" onSelectionChanged="#tabChange" text="Directories">
+                      <Tab text="Directories">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -84,7 +84,7 @@
                               </AnchorPane>
                         </content>
                       </Tab>
-                      <Tab fx:id="filesTab" onSelectionChanged="#tabChange" text="Files">
+                      <Tab text="Files">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -130,7 +130,7 @@
                               </AnchorPane>
                         </content>
                       </Tab>
-                        <Tab fx:id="versioniTab" onSelectionChanged="#tabChange" text="Versioni">
+                        <Tab text="Versioni">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -172,7 +172,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab fx:id="visualizzazioniTab" onSelectionChanged="#tabChange" text="Visualizzazioni">
+                        <Tab text="Visualizzazioni">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -212,7 +212,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab fx:id="downloadsTab" onSelectionChanged="#tabChange" text="Downloads">
+                        <Tab text="Downloads">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -252,7 +252,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab fx:id="preferitiTab" onSelectionChanged="#tabChange" text="Preferiti">
+                        <Tab text="Preferiti">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -292,7 +292,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab fx:id="condividiTab" onSelectionChanged="#tabChange" text="Condividi">
+                        <Tab text="Condividi">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -334,7 +334,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab fx:id="segnalazioniTab" onSelectionChanged="#tabChange" text="Segnalazioni">
+                        <Tab text="Segnalazioni">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>

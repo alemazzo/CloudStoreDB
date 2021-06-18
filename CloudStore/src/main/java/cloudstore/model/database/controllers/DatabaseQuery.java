@@ -27,14 +27,11 @@ public class DatabaseQuery<T extends QueryObjectResult> {
     final ResultSet results = this.statement.executeQuery();
     final Set<T> list = this.mapper.fromResultSet(results);
     statement.close();
-    statement.getConnection().close();
     return list;
   }
 
   public T getSingleValue() throws SQLException {
     final T elem = this.getResults().stream().findFirst().get();
-    this.statement.close();
-    this.statement.getConnection().close();
     return elem;
   }
 }

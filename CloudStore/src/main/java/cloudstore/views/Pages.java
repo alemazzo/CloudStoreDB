@@ -1,10 +1,9 @@
 package cloudstore.views;
 
-import cloudstore.controllers.AnalisiController;
+import cloudstore.controllers.analisi.AnalisiController;
 import cloudstore.controllers.BasicController;
 import cloudstore.controllers.Controller;
 import cloudstore.controllers.utente.UtenteController;
-import cloudstore.model.database.entities.Utente;
 
 import java.util.function.Supplier;
 

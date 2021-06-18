@@ -38,9 +38,9 @@ public class Query {
         + " FROM "
         + from
         + ((where != "") ? " WHERE " + where : "")
-        + ((orderBy != "") ? " ORDER BY " + orderBy : "")
         + ((groupBy != "") ? " GROUP BY " + groupBy : "")
         + ((having != "") ? " HAVING " + having : "")
+        + ((orderBy != "") ? " ORDER BY " + orderBy : "")
         + ((limit != "") ? " LIMIT " + limit : "");
   }
 }

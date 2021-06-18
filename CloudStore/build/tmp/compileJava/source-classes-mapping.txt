@@ -1,77 +1,83 @@
-cloudstore/model/database/Connector.java
- cloudstore.model.database.Connector
-cloudstore/model/database/entities/Intervento.java
- cloudstore.model.database.entities.Intervento
-cloudstore/model/database/controllers/DatabaseEntity.java
- cloudstore.model.database.controllers.DatabaseEntity
+cloudstore/controllers/Controller.java
+ cloudstore.controllers.Controller
+cloudstore/model/database/controllers/DatabaseOperation.java
+ cloudstore.model.database.controllers.DatabaseOperation
+cloudstore/views/home/HomeView.java
+ cloudstore.views.home.HomeView
+cloudstore/model/database/entities/Download.java
+ cloudstore.model.database.entities.Download
+cloudstore/views/View.java
+ cloudstore.views.View
 cloudstore/model/database/entities/Directory.java
  cloudstore.model.database.entities.Directory
-cloudstore/model/database/entities/Preferenza.java
- cloudstore.model.database.entities.Preferenza
+cloudstore/views/JavaFXView.java
+ cloudstore.views.JavaFXView
 cloudstore/model/database/entities/Entity.java
  cloudstore.model.database.entities.Entity
 cloudstore/model/database/mapper/EntityMapper.java
  cloudstore.model.database.mapper.EntityMapper
 cloudstore/model/database/query/QueryBuilder.java
  cloudstore.model.database.query.QueryBuilder
-cloudstore/model/database/entities/Condivisione.java
- cloudstore.model.database.entities.Condivisione
-cloudstore/views/AbstractJavaFXView.java
- cloudstore.views.AbstractJavaFXView
+cloudstore/CloudStore.java
+ cloudstore.CloudStore
+cloudstore/model/database/entities/Segnalazione.java
+ cloudstore.model.database.entities.Segnalazione
+cloudstore/model/database/controllers/DatabaseEntity.java
+ cloudstore.model.database.controllers.DatabaseEntity
 cloudstore/model/database/query/QueryObjectResult.java
  cloudstore.model.database.query.QueryObjectResult
-cloudstore/commons/Pair.java
- cloudstore.commons.Pair
-cloudstore/model/database/entities/Utente.java
- cloudstore.model.database.entities.Utente
-cloudstore/model/database/controllers/DatabaseQuery.java
- cloudstore.model.database.controllers.DatabaseQuery
 cloudstore/model/database/entities/File.java
  cloudstore.model.database.entities.File
-cloudstore/model/database/entities/Versione.java
- cloudstore.model.database.entities.Versione
+cloudstore/model/database/Connector.java
+ cloudstore.model.database.Connector
+cloudstore/model/ApplicationInstance.java
+ cloudstore.model.ApplicationInstance
+cloudstore/model/Model.java
+ cloudstore.model.Model
+cloudstore/model/database/entities/Visualizzazione.java
+ cloudstore.model.database.entities.Visualizzazione
 cloudstore/model/database/entities/Operatore.java
  cloudstore.model.database.entities.Operatore
 cloudstore/model/database/query/Query.java
  cloudstore.model.database.query.Query
-cloudstore/model/database/entities/Download.java
- cloudstore.model.database.entities.Download
-cloudstore/model/database/entities/Visualizzazione.java
- cloudstore.model.database.entities.Visualizzazione
-cloudstore/model/database/controllers/DatabaseOperation.java
- cloudstore.model.database.controllers.DatabaseOperation
-cloudstore/model/Model.java
- cloudstore.model.Model
-cloudstore/views/Pages.java
- cloudstore.views.Pages
-cloudstore/controllers/Controller.java
- cloudstore.controllers.Controller
-cloudstore/controllers/AnalisiController.java
- cloudstore.controllers.AnalisiController
+cloudstore/views/utente/UtenteView.java
+ cloudstore.views.utente.UtenteView
+cloudstore/controllers/EntitiesController.java
+ cloudstore.controllers.EntitiesController
 cloudstore/views/PageLoader.java
  cloudstore.views.PageLoader
  cloudstore.views.PageLoader$LazyHolder
-cloudstore/controllers/utente/UtenteController.java
- cloudstore.controllers.utente.UtenteController
-cloudstore/controllers/EntitiesController.java
- cloudstore.controllers.EntitiesController
-cloudstore/views/View.java
- cloudstore.views.View
-cloudstore/Launcher.java
- cloudstore.Launcher
-cloudstore/views/JavaFXView.java
- cloudstore.views.JavaFXView
+cloudstore/commons/Pair.java
+ cloudstore.commons.Pair
+cloudstore/model/database/entities/Intervento.java
+ cloudstore.model.database.entities.Intervento
 cloudstore/views/BasicView.java
  cloudstore.views.BasicView
+cloudstore/model/database/entities/Condivisione.java
+ cloudstore.model.database.entities.Condivisione
 cloudstore/controllers/BasicController.java
  cloudstore.controllers.BasicController
-cloudstore/model/ApplicationInstance.java
- cloudstore.model.ApplicationInstance
-cloudstore/model/database/entities/Segnalazione.java
- cloudstore.model.database.entities.Segnalazione
-cloudstore/CloudStore.java
- cloudstore.CloudStore
-cloudstore/views/home/HomeView.java
- cloudstore.views.home.HomeView
-cloudstore/views/utente/UtenteView.java
- cloudstore.views.utente.UtenteView
+cloudstore/controllers/utente/UtenteController.java
+ cloudstore.controllers.utente.UtenteController
+cloudstore/model/database/entities/Utente.java
+ cloudstore.model.database.entities.Utente
+cloudstore/model/database/entities/Preferenza.java
+ cloudstore.model.database.entities.Preferenza
+cloudstore/Launcher.java
+ cloudstore.Launcher
+cloudstore/views/AbstractJavaFXView.java
+ cloudstore.views.AbstractJavaFXView
+cloudstore/model/database/entities/Versione.java
+ cloudstore.model.database.entities.Versione
+cloudstore/model/database/controllers/DatabaseQuery.java
+ cloudstore.model.database.controllers.DatabaseQuery
+cloudstore/controllers/analisi/Operation.java
+ cloudstore.controllers.analisi.Operation
+cloudstore/views/Pages.java
+ cloudstore.views.Pages
+cloudstore/controllers/analisi/AnalisiController.java
+ cloudstore.controllers.analisi.AnalisiController
+ cloudstore.controllers.analisi.AnalisiController$Query17Result
+ cloudstore.controllers.analisi.AnalisiController$Query18Result
+cloudstore/views/analisi/AnalisiView.java
+ cloudstore.views.analisi.AnalisiView

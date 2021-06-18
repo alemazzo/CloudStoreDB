@@ -136,7 +136,7 @@ public class UtenteView extends AbstractJavaFXView {
     } catch (SQLException throwables) {
       throwables.printStackTrace();
     }
-    
+
   }
 
   @FXML
