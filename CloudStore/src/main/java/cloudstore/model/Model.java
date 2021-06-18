@@ -1,12 +1,25 @@
 package cloudstore.model;
 
-import java.sql.Connection;
+import cloudstore.model.database.controllers.DatabaseEntity;
+import cloudstore.model.database.entities.*;
 
-/**
- * The Model access. It save the actual state of the application, including the logged users, the
- * actual match and the actual replay.
- */
 public interface Model {
 
+  DatabaseEntity<Utente> getUtentiConnection();
 
+  DatabaseEntity<Directory> getDirectoriesConnection();
+
+  DatabaseEntity<File> getFilesConnection();
+
+  DatabaseEntity<Versione> getVersioniConnection();
+
+  DatabaseEntity<Visualizzazione> getVisualizzazioniConnection();
+
+  DatabaseEntity<Download> getDownloadsConnection();
+
+  DatabaseEntity<Preferenza> getPreferenzeConnection();
+
+  DatabaseEntity<Condivisione> getCondivisioniConnection();
+
+  DatabaseEntity<Segnalazione> getSegnalazioniConnection();
 }

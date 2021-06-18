@@ -15,6 +15,6 @@ public class Versione extends Entity{
 
   @Override
   public String getInsertQuery() {
-    return "INSERT INTO Versioni (File, Numero, Dimensione, Link) VALUES (?, ?, ?, ?)";
+    return "INSERT INTO Versioni (File, Dimensione, Link) VALUES (?, ?, ?)";
   }
 }

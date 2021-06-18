@@ -3,7 +3,6 @@ package cloudstore.views;
 import cloudstore.controllers.Controller;
 import cloudstore.model.Model;
 import javafx.animation.FadeTransition;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -69,12 +68,13 @@ public final class PageLoader {
       stage.getScene().setRoot(root);
     }
     stage.setResizable(false);
-    /*
+
     this.loadStyle(stage);
 
     stage.setMinHeight(((AnchorPane) stage.getScene().getRoot()).getMinHeight());
     stage.setMinWidth(((AnchorPane) stage.getScene().getRoot()).getMinWidth());
 
+    /*
     if (root != null) {
 
       root.scaleXProperty()

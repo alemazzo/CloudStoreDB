@@ -1,7 +1,10 @@
 package cloudstore.views;
 
+import cloudstore.controllers.AnalisiController;
 import cloudstore.controllers.BasicController;
 import cloudstore.controllers.Controller;
+import cloudstore.controllers.utente.UtenteController;
+import cloudstore.model.database.entities.Utente;
 
 import java.util.function.Supplier;
 
@@ -9,7 +12,9 @@ import java.util.function.Supplier;
 public enum Pages {
 
   /** Home screen. */
-  HOME("home", BasicController::new);
+  HOME("home", BasicController::new),
+  ANALISI("analisi", AnalisiController::new),
+  UTENTI("utenti", UtenteController::new);
 
   private final String name;
   private final Supplier<Controller> controllerGenerator;

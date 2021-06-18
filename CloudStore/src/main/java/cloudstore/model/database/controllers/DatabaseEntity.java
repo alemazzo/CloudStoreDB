@@ -10,14 +10,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
-public class EntityController<T extends Entity> {
+public class DatabaseEntity<T extends Entity> {
 
   private T object;
   private final Connector connector = new Connector();
   private final EntityMapper<T> mapper;
   private final String tableName;
 
-  public EntityController(final Class<T> type, final String tableName) {
+  public DatabaseEntity(final Class<T> type, final String tableName) {
     try {
       this.object = type.getDeclaredConstructor().newInstance();
     } catch (Exception e) {
@@ -39,6 +39,7 @@ public class EntityController<T extends Entity> {
     final Connection connection = this.getConnector().connect();
     final String query = "select * from " + this.tableName;
     final PreparedStatement statement = connection.prepareStatement(query);
+    System.out.println(statement);
     final ResultSet results = statement.executeQuery();
     final Set<T> list = this.mapper.fromResultSet(results);
     statement.close();
@@ -46,8 +47,7 @@ public class EntityController<T extends Entity> {
     return list;
   }
 
-  public OperationController insert(Object... args) throws SQLException {
-    System.out.println("QUERY = " + this.object.getInsertQuery() + " parameters = " + args);
-    return new OperationController(this.object.getInsertQuery(), args);
+  public DatabaseOperation insert(Object... args) throws SQLException {
+    return new DatabaseOperation(this.object.getInsertQuery(), args);
   }
 }

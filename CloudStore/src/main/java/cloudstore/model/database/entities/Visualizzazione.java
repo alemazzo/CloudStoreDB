@@ -13,6 +13,6 @@ public class Visualizzazione extends Entity{
 
   @Override
   public String getInsertQuery() {
-    return "INSERT INTO Visualizzazioni (Versione, Utente, DataVisualizzazione) VALUES (?, ?, ?)";
+    return "INSERT INTO Visualizzazioni (Versione, Utente) VALUES (?, ?)";
   }
 }

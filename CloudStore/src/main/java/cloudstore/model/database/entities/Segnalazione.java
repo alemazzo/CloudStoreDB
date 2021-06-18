@@ -30,6 +30,6 @@ public class Segnalazione extends Entity{
 
   @Override
   public String getInsertQuery() {
-    return "INSERT INTO Segnalazioni (Utente, Descrizione, Operatore, DataAccettazione, DataChiusura) VALUES (?, ?, ?, ?, ?)";
+    return "INSERT INTO Segnalazioni (Utente, Descrizione) VALUES (?, ?)";
   }
 }

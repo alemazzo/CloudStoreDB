@@ -1,17 +1,25 @@
 package cloudstore.views.home;
 
-import cloudstore.model.database.controllers.OperationController;
-import cloudstore.model.database.query.QueryObjectResult;
 import cloudstore.views.AbstractJavaFXView;
-
-import java.sql.SQLException;
-import java.util.Date;
+import cloudstore.views.PageLoader;
+import cloudstore.views.Pages;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
 public class HomeView extends AbstractJavaFXView {
 
   @Override
-  public void init() {
+  public void init() {}
 
+  @FXML
+  public void goToDatabaseUtenti(final ActionEvent event) {
+    PageLoader.getInstance()
+        .switchPage(this.getStage(), Pages.UTENTI, this.getController().getModel());
   }
 
+  @FXML
+  public void goToAnalisiCloudStore(final ActionEvent event) {
+    PageLoader.getInstance()
+            .switchPage(this.getStage(), Pages.ANALISI, this.getController().getModel());
+  }
 }

@@ -9,12 +9,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
-public class QueryController<T extends QueryObjectResult> {
+public class DatabaseQuery<T extends QueryObjectResult> {
 
   private final EntityMapper<T> mapper;
   private final PreparedStatement statement;
 
-  public QueryController(final Class<T> type, final String query, final Object ... args) throws SQLException {
+  public DatabaseQuery(final Class<T> type, final String query, final Object ... args) throws SQLException {
     this.mapper = new EntityMapper<>(type);
     this.statement = new Connector().connect().prepareStatement(query);
     int index = 1;

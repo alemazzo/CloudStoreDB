@@ -2,19 +2,20 @@ package cloudstore.model.database.controllers;
 
 import cloudstore.model.database.Connector;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-public class OperationController {
+public class DatabaseOperation {
 
-  private final Connector connector = new Connector();
+  private final Connection connection = new Connector().connect();
   private final PreparedStatement statement;
 
-  public OperationController(String prepared, Object... args) throws SQLException {
+  public DatabaseOperation(final String prepared, final Object... args) throws SQLException {
     this.statement =
-        this.connector.connect().prepareStatement(prepared, Statement.RETURN_GENERATED_KEYS);
+        this.connection.prepareStatement(prepared, Statement.RETURN_GENERATED_KEYS);
+    this.buildStatement(args);
+  }
+
+  private void buildStatement(final Object ... args) throws SQLException {
     int index = 1;
     for (Object arg : args) {
       this.statement.setObject(index++, arg);
@@ -28,7 +29,6 @@ public class OperationController {
     final ResultSet set = this.statement.getGeneratedKeys();
     T key = null;
     if (set.next()) {
-      System.out.println("SET = " + set);
       key = (T) set.getObject(1);
     }
     this.statement.close();
