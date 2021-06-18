@@ -93,4 +93,23 @@ public class UtenteController extends EntitiesController {
             "UPDATE Segnalazioni SET DataChiusura = NOW() WHERE Id = ?", segnalazioneId)
         .execute();
   }
+
+  public void createInterventoUtente(
+      final Integer segnalazioneId, final String email, final String messaggio) throws SQLException {
+      new DatabaseOperation(
+            "INSERT INTO Interventi (Segnalazione, Utente, Messaggio) VALUES (?, ?, ?)",
+            segnalazioneId,
+            email,
+            messaggio)
+        .execute();
+  }
+  public void createInterventoOperatore(
+          final Integer segnalazioneId, final Integer operatoreId, final String messaggio) throws SQLException {
+    new DatabaseOperation(
+            "INSERT INTO Interventi (Segnalazione, Operatore, Messaggio) VALUES (?, ?, ?)",
+            segnalazioneId,
+            operatoreId,
+            messaggio)
+            .execute();
+  }
 }

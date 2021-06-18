@@ -46,4 +46,8 @@ public class EntitiesController extends BasicController {
   public Set<Operatore> getOperatori() throws SQLException {
     return this.getModel().getOperatoriConnection().getAll();
   }
+
+  public Set<Intervento> getInterventi() throws SQLException {
+    return this.getModel().getInterventiConnection().getAll();
+  }
 }

@@ -23,6 +23,8 @@ public final class ApplicationInstance implements Model {
       new DatabaseEntity<>(Segnalazione.class, "Segnalazioni");
   private final DatabaseEntity<Operatore> operatori =
       new DatabaseEntity<>(Operatore.class, "Operatori");
+  private final DatabaseEntity<Intervento> interventi =
+      new DatabaseEntity<>(Intervento.class, "Interventi");
 
   @Override
   public DatabaseEntity<Utente> getUtentiConnection() {
@@ -72,5 +74,10 @@ public final class ApplicationInstance implements Model {
   @Override
   public DatabaseEntity<Operatore> getOperatoriConnection() {
     return this.operatori;
+  }
+
+  @Override
+  public DatabaseEntity<Intervento> getInterventiConnection() {
+    return this.interventi;
   }
 }

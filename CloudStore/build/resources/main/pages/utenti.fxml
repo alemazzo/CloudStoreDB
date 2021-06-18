@@ -476,6 +476,59 @@
                               </AnchorPane>
                            </content>
                         </Tab>
+                        <Tab text="Interventi">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" percentHeight="70.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                                             <children>
+                                                <Label text="I tuoi interventi" />
+                                                <ListView fx:id="interventiListView" prefHeight="552.0" prefWidth="416.0" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label layoutX="279.0" layoutY="24.0" text="Aggiungi Intervento" />
+                                                <ChoiceBox fx:id="interventiUtenteChoiceBox" layoutX="29.0" layoutY="98.0" prefWidth="150.0" />
+                                                <Button layoutX="354.0" layoutY="261.0" mnemonicParsing="false" onAction="#creaInterventoOperatore" text="Aggiungi intervento operatore" />
+                                                <Label layoutX="82.0" layoutY="72.0" text="Utente" />
+                                                <TextArea fx:id="interventoMessaggioTextArea" layoutX="222.0" layoutY="147.0" prefHeight="89.0" prefWidth="406.0" />
+                                                <Label layoutX="387.0" layoutY="125.0" text="Descrizione" />
+                                                <ChoiceBox fx:id="interventiOperatoreChoiceBox" layoutX="29.0" layoutY="167.0" prefWidth="150.0" />
+                                                <Label layoutX="71.0" layoutY="143.0" text="Operatore" />
+                                                <Button layoutX="72.0" layoutY="261.0" mnemonicParsing="false" onAction="#creaInterventoUtente" text="Aggiungi intervento utente" />
+                                                <ChoiceBox fx:id="interventiSegnalazioneChoiceBox" layoutX="222.0" layoutY="85.0" prefHeight="26.0" prefWidth="403.0" />
+                                                <Label layoutX="380.0" layoutY="64.0" text="Segnalazione" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <ChoiceBox fx:id="segnalazioneOperatoreChoiceBox1" layoutX="32.0" layoutY="61.0" prefWidth="150.0" />
+                                                <Label layoutX="74.0" layoutY="35.0" text="Operatore" />
+                                                <Button layoutX="212.0" layoutY="61.0" mnemonicParsing="false" onAction="#accettaSegnalazione" text="Accetta" />
+                                                <Button layoutX="315.0" layoutY="61.0" mnemonicParsing="false" onAction="#chiudiSegnalazione" text="Chiudi" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
                     </tabs>
                   </TabPane>
                </children>

@@ -24,4 +24,6 @@ public interface Model {
   DatabaseEntity<Segnalazione> getSegnalazioniConnection();
 
   DatabaseEntity<Operatore> getOperatoriConnection();
+
+  DatabaseEntity<Intervento> getInterventiConnection();
 }

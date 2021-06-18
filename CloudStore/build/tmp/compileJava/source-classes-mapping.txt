@@ -16,8 +16,8 @@ cloudstore/model/database/operations/results/Query17Result.java
  cloudstore.model.database.operations.results.Query17Result
 cloudstore/model/database/query/QueryObjectResult.java
  cloudstore.model.database.query.QueryObjectResult
-cloudstore/CloudStore.java
- cloudstore.CloudStore
+cloudstore/model/database/controllers/DatabaseOperation.java
+ cloudstore.model.database.controllers.DatabaseOperation
 cloudstore/model/database/entities/Preferenza.java
  cloudstore.model.database.entities.Preferenza
 cloudstore/model/database/entities/Visualizzazione.java
@@ -62,20 +62,20 @@ cloudstore/model/database/mapper/EntityMapper.java
  cloudstore.model.database.mapper.EntityMapper
 cloudstore/model/database/query/QueryBuilder.java
  cloudstore.model.database.query.QueryBuilder
+cloudstore/model/database/controllers/DatabaseEntity.java
+ cloudstore.model.database.controllers.DatabaseEntity
 cloudstore/model/Model.java
  cloudstore.model.Model
-cloudstore/model/ApplicationInstance.java
- cloudstore.model.ApplicationInstance
+cloudstore/views/Pages.java
+ cloudstore.views.Pages
 cloudstore/controllers/Controller.java
  cloudstore.controllers.Controller
 cloudstore/views/analisi/utente/AnalisiUtenteView.java
  cloudstore.views.analisi.utente.AnalisiUtenteView
 cloudstore/controllers/analisi/utente/AnalisiUtenteController.java
  cloudstore.controllers.analisi.utente.AnalisiUtenteController
-cloudstore/views/AbstractJavaFXView.java
- cloudstore.views.AbstractJavaFXView
-cloudstore/model/database/controllers/DatabaseOperation.java
- cloudstore.model.database.controllers.DatabaseOperation
+cloudstore/model/ApplicationInstance.java
+ cloudstore.model.ApplicationInstance
 cloudstore/views/home/HomeView.java
  cloudstore.views.home.HomeView
 cloudstore/controllers/EntitiesController.java
@@ -91,15 +91,15 @@ cloudstore/views/BasicView.java
  cloudstore.views.BasicView
 cloudstore/controllers/BasicController.java
  cloudstore.controllers.BasicController
-cloudstore/controllers/analisi/cloudstore/AnalisiCloudStoreController.java
- cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController
-cloudstore/model/database/controllers/DatabaseEntity.java
- cloudstore.model.database.controllers.DatabaseEntity
-cloudstore/views/analisi/cloudstore/AnalisiCloudStoreView.java
- cloudstore.views.analisi.cloudstore.AnalisiCloudStoreView
-cloudstore/views/Pages.java
- cloudstore.views.Pages
+cloudstore/CloudStore.java
+ cloudstore.CloudStore
 cloudstore/controllers/utente/UtenteController.java
  cloudstore.controllers.utente.UtenteController
+cloudstore/views/analisi/cloudstore/AnalisiCloudStoreView.java
+ cloudstore.views.analisi.cloudstore.AnalisiCloudStoreView
+cloudstore/views/AbstractJavaFXView.java
+ cloudstore.views.AbstractJavaFXView
+cloudstore/controllers/analisi/cloudstore/AnalisiCloudStoreController.java
+ cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController
 cloudstore/views/utente/UtenteView.java
  cloudstore.views.utente.UtenteView

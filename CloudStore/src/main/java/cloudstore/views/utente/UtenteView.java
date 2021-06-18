@@ -79,6 +79,11 @@ public class UtenteView extends AbstractJavaFXView {
   @FXML private TextField operatorePasswordTextField;
   @FXML private DatePicker operatoreDataNascitaDatePicker;
 
+  // Interventi
+  @FXML private ListView<Intervento> interventiListView;
+  @FXML private ChoiceBox<Segnalazione> interventiSegnalazioneChoiceBox;
+  @FXML private TextArea interventoMessaggioTextArea;
+
   private UtenteController getUtenteController() {
     return (UtenteController) this.getController();
   }
@@ -139,6 +144,7 @@ public class UtenteView extends AbstractJavaFXView {
   private void updateSegnalazioni() throws SQLException {
     this.segnalazioniListView.setItems(
         new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getSegnalazioni())));
+    this.interventiSegnalazioneChoiceBox.setItems(this.segnalazioniListView.getItems());
   }
 
   private void updateOperatori() throws SQLException {
@@ -147,31 +153,32 @@ public class UtenteView extends AbstractJavaFXView {
     this.segnalazioneOperatoreChoiceBox.setItems(this.operatoriListView.getItems());
   }
 
-  public void setup() throws SQLException {
-    this.updateUtenti();
-    this.updateDirectories();
-    this.updateFiles();
-    this.updateVersioni();
-    this.updateVisualizzazioni();
-    this.updateDownloads();
-    this.updatePreferenze();
-    this.updateCondivisi();
-    this.updateSegnalazioni();
-    this.updateOperatori();
+  private void updateInterventi() throws SQLException {
+    this.interventiListView.setItems(
+        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getInterventi())));
+  }
+
+  private void setup() {
+    try {
+      this.updateUtenti();
+      this.updateDirectories();
+      this.updateFiles();
+      this.updateVersioni();
+      this.updateVisualizzazioni();
+      this.updateDownloads();
+      this.updatePreferenze();
+      this.updateCondivisi();
+      this.updateSegnalazioni();
+      this.updateOperatori();
+      this.updateInterventi();
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    }
   }
 
   @Override
   public void init() {
-
-    new Thread(
-            () -> {
-              try {
-                this.setup();
-              } catch (SQLException throwables) {
-                throwables.printStackTrace();
-              }
-            })
-        .start();
+    new Thread(this::setup).start();
   }
 
   @FXML
@@ -255,7 +262,10 @@ public class UtenteView extends AbstractJavaFXView {
     final String password = this.utentePasswordTextField.getText();
     final Date date =
         Date.from(
-            this.utenteDataNascitaDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+            this.utenteDataNascitaDatePicker
+                .getValue()
+                .atStartOfDay(ZoneId.systemDefault())
+                .toInstant());
     this.getUtenteController().createUtente(email, nome, cognome, password, date);
     this.updateUtenti();
   }
@@ -265,8 +275,12 @@ public class UtenteView extends AbstractJavaFXView {
     final Integer codice = Integer.valueOf(this.operatoreCodiceTextField.getText());
     final String nome = this.operatoreNomeTextField.getText();
     final String password = this.operatorePasswordTextField.getText();
-    final Date date = Date.from(
-            this.operatoreDataNascitaDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+    final Date date =
+        Date.from(
+            this.operatoreDataNascitaDatePicker
+                .getValue()
+                .atStartOfDay(ZoneId.systemDefault())
+                .toInstant());
     this.getUtenteController().createOperatore(codice, nome, password, date);
     this.updateOperatori();
   }
@@ -274,16 +288,34 @@ public class UtenteView extends AbstractJavaFXView {
   @FXML
   public void accettaSegnalazione(final ActionEvent event) throws SQLException {
     final Operatore operatore = this.segnalazioneOperatoreChoiceBox.getValue();
-    final Segnalazione segnalazione = this.segnalazioniListView.getSelectionModel().getSelectedItem();
+    final Segnalazione segnalazione =
+        this.segnalazioniListView.getSelectionModel().getSelectedItem();
     this.getUtenteController().accettaSegnalazione(segnalazione.id, operatore.codice);
     this.updateSegnalazioni();
   }
 
   @FXML
   public void chiudiSegnalazione(final ActionEvent event) throws SQLException {
-    final Segnalazione segnalazione = this.segnalazioniListView.getSelectionModel().getSelectedItem();
+    final Segnalazione segnalazione =
+        this.segnalazioniListView.getSelectionModel().getSelectedItem();
     this.getUtenteController().chiudiSegnalazione(segnalazione.id);
     this.updateSegnalazioni();
+  }
+
+  @FXML
+  public void creaInterventoUtente(final ActionEvent event) throws SQLException {
+    final Segnalazione segnalazione = this.interventiSegnalazioneChoiceBox.getValue();
+    final String messaggio = this.interventoMessaggioTextArea.getText();
+        this.getUtenteController().createInterventoUtente(segnalazione.id, segnalazione.utente, messaggio);
+    this.updateInterventi();
+  }
+
+  @FXML
+  public void creaInterventoOperatore(final ActionEvent event) throws SQLException {
+    final Segnalazione segnalazione = this.interventiSegnalazioneChoiceBox.getValue();
+    final String messaggio = this.interventoMessaggioTextArea.getText();
+    this.getUtenteController().createInterventoOperatore(segnalazione.id, segnalazione.operatore, messaggio);
+    this.updateInterventi();
   }
 
   @FXML
@@ -297,6 +329,4 @@ public class UtenteView extends AbstractJavaFXView {
     PageLoader.getInstance()
         .switchPage(this.getStage(), Pages.ANALISI_UTENTE, this.getController().getModel());
   }
-
-
 }
