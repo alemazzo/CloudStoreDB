@@ -3,6 +3,8 @@ package cloudstore.views.utente;
 import cloudstore.controllers.utente.UtenteController;
 import cloudstore.model.database.entities.*;
 import cloudstore.views.AbstractJavaFXView;
+import cloudstore.views.PageLoader;
+import cloudstore.views.Pages;
 import com.sun.javafx.collections.ObservableListWrapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -217,5 +219,17 @@ public class UtenteView extends AbstractJavaFXView {
     final String descrizione = this.segnalazioneDescrizioneTextArea.getText();
     this.getUtenteController().createSegnalazione(utente.email, descrizione);
     this.updateSegnalazioni();
+  }
+
+  @FXML
+  public void goToAnalisiCloudStore(final ActionEvent event) {
+    PageLoader.getInstance()
+            .switchPage(this.getStage(), Pages.ANALISI_CLOUDSTORE, this.getController().getModel());
+  }
+
+  @FXML
+  public void goToAnalisiUtenti(final ActionEvent event) {
+    PageLoader.getInstance()
+            .switchPage(this.getStage(), Pages.ANALISI_UTENTE, this.getController().getModel());
   }
 }

@@ -1,4 +1,4 @@
-package cloudstore.model.database.operations;
+package cloudstore.model.database.operations.results;
 
 import cloudstore.model.database.query.QueryObjectResult;
 

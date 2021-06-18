@@ -3,6 +3,7 @@ package cloudstore.model.database.operations;
 import cloudstore.model.database.controllers.DatabaseQuery;
 import cloudstore.model.database.entities.Directory;
 import cloudstore.model.database.entities.File;
+import cloudstore.model.database.operations.results.*;
 import cloudstore.model.database.query.Query;
 import cloudstore.model.database.query.QueryObjectResult;
 

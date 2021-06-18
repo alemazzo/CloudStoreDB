@@ -7,6 +7,8 @@ import cloudstore.model.database.entities.Utente;
 import cloudstore.model.database.operations.UtentiAnalysisOperation;
 import cloudstore.model.database.query.QueryObjectResult;
 import cloudstore.views.AbstractJavaFXView;
+import cloudstore.views.PageLoader;
+import cloudstore.views.Pages;
 import com.sun.javafx.collections.ObservableListWrapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -153,5 +155,16 @@ public class AnalisiUtenteView extends AbstractJavaFXView {
             new ArrayList<>(
                 this.getAnalisiUtenteController()
                     .getOperationResult(UtentiAnalysisOperation.OPERATION_34, directory.id))));
+  }
+  @FXML
+  public void goToAnalisiCloudStore(final ActionEvent event) {
+    PageLoader.getInstance()
+            .switchPage(this.getStage(), Pages.ANALISI_CLOUDSTORE, this.getController().getModel());
+  }
+
+  @FXML
+  public void goToUtenti(final ActionEvent event) {
+    PageLoader.getInstance()
+            .switchPage(this.getStage(), Pages.UTENTI, this.getController().getModel());
   }
 }

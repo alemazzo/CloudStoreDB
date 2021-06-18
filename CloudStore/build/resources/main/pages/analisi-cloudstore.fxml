@@ -2,6 +2,9 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -35,5 +38,14 @@
             <TableView fx:id="operationTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
             </children>
         </GridPane>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Pages">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#goToUtenti" text="Utenti" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToAnalisiUtenti" text="Analisi Utenti" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
     </children>
 </AnchorPane>

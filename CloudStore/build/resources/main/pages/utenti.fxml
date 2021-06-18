@@ -6,6 +6,9 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
@@ -380,5 +383,15 @@
             </GridPane>
          </children>
       </StackPane>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Pages">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#goToAnalisiCloudStore" text="Analisi CloudStore" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToAnalisiUtenti" text="Analisi Utenti" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
     </children>
 </AnchorPane>

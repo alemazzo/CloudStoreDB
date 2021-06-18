@@ -56,8 +56,8 @@ cloudstore/model/ApplicationInstance.java
  cloudstore.model.ApplicationInstance
 cloudstore/model/database/controllers/DatabaseQuery.java
  cloudstore.model.database.controllers.DatabaseQuery
-cloudstore/views/utente/UtenteView.java
- cloudstore.views.utente.UtenteView
+cloudstore/controllers/analisi/cloudstore/AnalisiCloudStoreController.java
+ cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController
 cloudstore/views/home/HomeView.java
  cloudstore.views.home.HomeView
 cloudstore/controllers/EntitiesController.java
@@ -79,27 +79,27 @@ cloudstore/controllers/utente/UtenteController.java
  cloudstore.controllers.utente.UtenteController
 cloudstore/views/Pages.java
  cloudstore.views.Pages
-cloudstore/model/database/operations/Query27Result.java
- cloudstore.model.database.operations.Query27Result
-cloudstore/controllers/analisi/cloudstore/AnalisiCloudStoreController.java
- cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController
-cloudstore/model/database/operations/Query26Result.java
- cloudstore.model.database.operations.Query26Result
-cloudstore/model/database/operations/Query25Result.java
- cloudstore.model.database.operations.Query25Result
-cloudstore/views/analisi/cloudstore/AnalisiCloudStoreView.java
- cloudstore.views.analisi.cloudstore.AnalisiCloudStoreView
-cloudstore/model/database/operations/Query28Result.java
- cloudstore.model.database.operations.Query28Result
 cloudstore/model/database/operations/CloudStoreAnalysisOperation.java
  cloudstore.model.database.operations.CloudStoreAnalysisOperation
-cloudstore/model/database/operations/Query33Result.java
- cloudstore.model.database.operations.Query33Result
-cloudstore/views/analisi/utente/AnalisiUtenteView.java
- cloudstore.views.analisi.utente.AnalisiUtenteView
-cloudstore/controllers/analisi/utente/AnalisiUtenteController.java
- cloudstore.controllers.analisi.utente.AnalisiUtenteController
-cloudstore/model/database/operations/Query34Result.java
- cloudstore.model.database.operations.Query34Result
 cloudstore/model/database/operations/UtentiAnalysisOperation.java
  cloudstore.model.database.operations.UtentiAnalysisOperation
+cloudstore/controllers/analisi/utente/AnalisiUtenteController.java
+ cloudstore.controllers.analisi.utente.AnalisiUtenteController
+cloudstore/model/database/operations/results/Query28Result.java
+ cloudstore.model.database.operations.results.Query28Result
+cloudstore/model/database/operations/results/Query33Result.java
+ cloudstore.model.database.operations.results.Query33Result
+cloudstore/model/database/operations/results/Query26Result.java
+ cloudstore.model.database.operations.results.Query26Result
+cloudstore/model/database/operations/results/Query27Result.java
+ cloudstore.model.database.operations.results.Query27Result
+cloudstore/model/database/operations/results/Query25Result.java
+ cloudstore.model.database.operations.results.Query25Result
+cloudstore/model/database/operations/results/Query34Result.java
+ cloudstore.model.database.operations.results.Query34Result
+cloudstore/views/analisi/utente/AnalisiUtenteView.java
+ cloudstore.views.analisi.utente.AnalisiUtenteView
+cloudstore/views/utente/UtenteView.java
+ cloudstore.views.utente.UtenteView
+cloudstore/views/analisi/cloudstore/AnalisiCloudStoreView.java
+ cloudstore.views.analisi.cloudstore.AnalisiCloudStoreView
