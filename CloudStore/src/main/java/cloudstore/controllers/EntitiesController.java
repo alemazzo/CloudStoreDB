@@ -42,4 +42,8 @@ public class EntitiesController extends BasicController {
   public Set<Segnalazione> getSegnalazioni() throws SQLException {
     return this.getModel().getSegnalazioniConnection().getAll();
   }
+
+  public Set<Operatore> getOperatori() throws SQLException {
+    return this.getModel().getOperatoriConnection().getAll();
+  }
 }

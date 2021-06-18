@@ -16,6 +16,6 @@ public class Utente extends Entity {
 
   @Override
   public String getInsertQuery() {
-    return "INSERT INTO Utenti (Email, Nome, Cognome, Password, DataNascita, NumeroDirectory) VALUES (?, ?, ?, ?, ?, ?)";
+    return "INSERT INTO Utenti (Email, Nome, Cognome, Password, DataNascita) VALUES (?, ?, ?, ?, ?)";
   }
 }

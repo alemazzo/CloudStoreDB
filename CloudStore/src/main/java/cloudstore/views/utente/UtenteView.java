@@ -11,9 +11,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.sql.SQLException;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class UtenteView extends AbstractJavaFXView {
+
+  // Utenti
+  @FXML private ListView<Utente> utentiListView;
+  @FXML private TextField utenteEmailTextField;
+  @FXML private TextField utenteNomeTextField;
+  @FXML private TextField utenteCognomeTextField;
+  @FXML private TextField utentePasswordTextField;
+  @FXML private DatePicker utenteDataNascitaDatePicker;
 
   // Directory
   @FXML private ListView<Directory> directoriesListView;
@@ -60,18 +70,27 @@ public class UtenteView extends AbstractJavaFXView {
   @FXML private ListView<Segnalazione> segnalazioniListView;
   @FXML private ChoiceBox<Utente> segnalazioneUtenteChoiceBox;
   @FXML private TextArea segnalazioneDescrizioneTextArea;
+  @FXML private ChoiceBox<Operatore> segnalazioneOperatoreChoiceBox;
+
+  // Operatori
+  @FXML private ListView<Operatore> operatoriListView;
+  @FXML private TextField operatoreCodiceTextField;
+  @FXML private TextField operatoreNomeTextField;
+  @FXML private TextField operatorePasswordTextField;
+  @FXML private DatePicker operatoreDataNascitaDatePicker;
 
   private UtenteController getUtenteController() {
     return (UtenteController) this.getController();
   }
 
   private void updateUtenti() throws SQLException {
-    this.visualizzazioniUtentiChoiceBox.setItems(
+    this.utentiListView.setItems(
         new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getUtenti())));
-    this.downloadUtenteChoiceBox.setItems(this.visualizzazioniUtentiChoiceBox.getItems());
-    this.preferitiUtenteChoiceBox.setItems(this.visualizzazioniUtentiChoiceBox.getItems());
-    this.condivisioniUtenteChoiceBox.setItems(this.visualizzazioniUtentiChoiceBox.getItems());
-    this.segnalazioneUtenteChoiceBox.setItems(this.visualizzazioniUtentiChoiceBox.getItems());
+    this.visualizzazioniUtentiChoiceBox.setItems(this.utentiListView.getItems());
+    this.downloadUtenteChoiceBox.setItems(this.utentiListView.getItems());
+    this.preferitiUtenteChoiceBox.setItems(this.utentiListView.getItems());
+    this.condivisioniUtenteChoiceBox.setItems(this.utentiListView.getItems());
+    this.segnalazioneUtenteChoiceBox.setItems(this.utentiListView.getItems());
   }
 
   private void updateDirectories() throws SQLException {
@@ -122,6 +141,12 @@ public class UtenteView extends AbstractJavaFXView {
         new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getSegnalazioni())));
   }
 
+  private void updateOperatori() throws SQLException {
+    this.operatoriListView.setItems(
+        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getOperatori())));
+    this.segnalazioneOperatoreChoiceBox.setItems(this.operatoriListView.getItems());
+  }
+
   public void setup() throws SQLException {
     this.updateUtenti();
     this.updateDirectories();
@@ -132,6 +157,7 @@ public class UtenteView extends AbstractJavaFXView {
     this.updatePreferenze();
     this.updateCondivisi();
     this.updateSegnalazioni();
+    this.updateOperatori();
   }
 
   @Override
@@ -222,14 +248,55 @@ public class UtenteView extends AbstractJavaFXView {
   }
 
   @FXML
+  public void aggiungiUtente(final ActionEvent event) throws SQLException {
+    final String email = this.utenteEmailTextField.getText();
+    final String nome = this.utenteNomeTextField.getText();
+    final String cognome = this.utenteCognomeTextField.getText();
+    final String password = this.utentePasswordTextField.getText();
+    final Date date =
+        Date.from(
+            this.utenteDataNascitaDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+    this.getUtenteController().createUtente(email, nome, cognome, password, date);
+    this.updateUtenti();
+  }
+
+  @FXML
+  public void aggiungiOperatore(final ActionEvent event) throws SQLException {
+    final Integer codice = Integer.valueOf(this.operatoreCodiceTextField.getText());
+    final String nome = this.operatoreNomeTextField.getText();
+    final String password = this.operatorePasswordTextField.getText();
+    final Date date = Date.from(
+            this.operatoreDataNascitaDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+    this.getUtenteController().createOperatore(codice, nome, password, date);
+    this.updateOperatori();
+  }
+
+  @FXML
+  public void accettaSegnalazione(final ActionEvent event) throws SQLException {
+    final Operatore operatore = this.segnalazioneOperatoreChoiceBox.getValue();
+    final Segnalazione segnalazione = this.segnalazioniListView.getSelectionModel().getSelectedItem();
+    this.getUtenteController().accettaSegnalazione(segnalazione.id, operatore.codice);
+    this.updateSegnalazioni();
+  }
+
+  @FXML
+  public void chiudiSegnalazione(final ActionEvent event) throws SQLException {
+    final Segnalazione segnalazione = this.segnalazioniListView.getSelectionModel().getSelectedItem();
+    this.getUtenteController().chiudiSegnalazione(segnalazione.id);
+    this.updateSegnalazioni();
+  }
+
+  @FXML
   public void goToAnalisiCloudStore(final ActionEvent event) {
     PageLoader.getInstance()
-            .switchPage(this.getStage(), Pages.ANALISI_CLOUDSTORE, this.getController().getModel());
+        .switchPage(this.getStage(), Pages.ANALISI_CLOUDSTORE, this.getController().getModel());
   }
 
   @FXML
   public void goToAnalisiUtenti(final ActionEvent event) {
     PageLoader.getInstance()
-            .switchPage(this.getStage(), Pages.ANALISI_UTENTE, this.getController().getModel());
+        .switchPage(this.getStage(), Pages.ANALISI_UTENTE, this.getController().getModel());
   }
+
+
 }

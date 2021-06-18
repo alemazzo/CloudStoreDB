@@ -12,21 +12,7 @@ public class Segnalazione extends Entity{
   public Integer operatore;
   public Date dataAccettazione;
   public Date dataChiusura;
-
-  @Override
-  public String toString() {
-    return "Segnalazione{"
-        + "id='"
-        + id
-        + '\''
-        + ", utente='"
-        + utente
-        + '\''
-        + ", descrizione='"
-        + descrizione
-        + '\''
-        + '}';
-  }
+  
 
   @Override
   public String getInsertQuery() {

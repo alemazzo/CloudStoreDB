@@ -10,6 +10,15 @@ public abstract class QueryObjectResult {
     return this.getClass().getSimpleName()
         + "{"
         + Arrays.stream(this.getClass().getFields())
+            .filter(
+                x -> {
+                  try {
+                    return x.get(this) != null;
+                  } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                  }
+                  return false;
+                })
             .map(
                 x -> {
                   try {

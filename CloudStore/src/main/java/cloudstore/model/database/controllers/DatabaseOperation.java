@@ -22,6 +22,12 @@ public class DatabaseOperation {
     }
   }
 
+  public void executeUpdate() throws SQLException {
+    System.out.println("AAA = " + this.statement.toString());
+    this.statement.executeUpdate();
+    this.statement.close();
+  }
+
   public <T> T executeAndGetGeneratedKey(final Class<T> type)
       throws SQLException {
     System.out.println("Query = " + this.statement.toString());

@@ -21,6 +21,8 @@ public final class ApplicationInstance implements Model {
       new DatabaseEntity<>(Condivisione.class, "Condivisioni");
   private final DatabaseEntity<Segnalazione> segnalazioni =
       new DatabaseEntity<>(Segnalazione.class, "Segnalazioni");
+  private final DatabaseEntity<Operatore> operatori =
+      new DatabaseEntity<>(Operatore.class, "Operatori");
 
   @Override
   public DatabaseEntity<Utente> getUtentiConnection() {
@@ -29,41 +31,46 @@ public final class ApplicationInstance implements Model {
 
   @Override
   public DatabaseEntity<Directory> getDirectoriesConnection() {
-    return directories;
+    return this.directories;
   }
 
   @Override
   public DatabaseEntity<File> getFilesConnection() {
-    return files;
+    return this.files;
   }
 
   @Override
   public DatabaseEntity<Versione> getVersioniConnection() {
-    return versioni;
+    return this.versioni;
   }
 
   @Override
   public DatabaseEntity<Visualizzazione> getVisualizzazioniConnection() {
-    return visualizzazioni;
+    return this.visualizzazioni;
   }
 
   @Override
   public DatabaseEntity<Download> getDownloadsConnection() {
-    return downloads;
+    return this.downloads;
   }
 
   @Override
   public DatabaseEntity<Preferenza> getPreferenzeConnection() {
-    return preferenze;
+    return this.preferenze;
   }
 
   @Override
   public DatabaseEntity<Condivisione> getCondivisioniConnection() {
-    return condivisioni;
+    return this.condivisioni;
   }
 
   @Override
   public DatabaseEntity<Segnalazione> getSegnalazioniConnection() {
-    return segnalazioni;
+    return this.segnalazioni;
+  }
+
+  @Override
+  public DatabaseEntity<Operatore> getOperatoriConnection() {
+    return this.operatori;
   }
 }

@@ -22,4 +22,6 @@ public interface Model {
   DatabaseEntity<Condivisione> getCondivisioniConnection();
 
   DatabaseEntity<Segnalazione> getSegnalazioniConnection();
+
+  DatabaseEntity<Operatore> getOperatoriConnection();
 }
