@@ -20,6 +20,12 @@ public class HomeView extends AbstractJavaFXView {
   @FXML
   public void goToAnalisiCloudStore(final ActionEvent event) {
     PageLoader.getInstance()
-            .switchPage(this.getStage(), Pages.ANALISI, this.getController().getModel());
+            .switchPage(this.getStage(), Pages.ANALISI_CLOUDSTORE, this.getController().getModel());
+  }
+
+  @FXML
+  public void goToAnalisiUtenti(final ActionEvent event) {
+    PageLoader.getInstance()
+            .switchPage(this.getStage(), Pages.ANALISI_UTENTE, this.getController().getModel());
   }
 }

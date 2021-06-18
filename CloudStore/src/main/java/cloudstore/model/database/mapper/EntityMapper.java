@@ -19,7 +19,8 @@ public class EntityMapper<T extends QueryObjectResult> {
   public T fromResult(ResultSet result) throws SQLException {
     T elem = null;
     try {
-      elem = this.type.getDeclaredConstructor().newInstance();
+      elem = (T) Class.forName(type.getName()).getConstructor().newInstance();
+      //elem = this.type.getConstructor().newInstance();
     } catch (Exception e) {
       e.printStackTrace();
     }

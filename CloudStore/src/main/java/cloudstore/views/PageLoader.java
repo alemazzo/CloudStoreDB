@@ -67,7 +67,6 @@ public final class PageLoader {
     } else {
       stage.getScene().setRoot(root);
     }
-    stage.setResizable(false);
 
     this.loadStyle(stage);
 

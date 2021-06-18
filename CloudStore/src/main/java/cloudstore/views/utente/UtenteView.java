@@ -5,7 +5,6 @@ import cloudstore.model.database.entities.*;
 import cloudstore.views.AbstractJavaFXView;
 import com.sun.javafx.collections.ObservableListWrapper;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -121,22 +120,30 @@ public class UtenteView extends AbstractJavaFXView {
         new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getSegnalazioni())));
   }
 
+  public void setup() throws SQLException {
+    this.updateUtenti();
+    this.updateDirectories();
+    this.updateFiles();
+    this.updateVersioni();
+    this.updateVisualizzazioni();
+    this.updateDownloads();
+    this.updatePreferenze();
+    this.updateCondivisi();
+    this.updateSegnalazioni();
+  }
+
   @Override
   public void init() {
-    try {
-      this.updateUtenti();
-      this.updateDirectories();
-      this.updateFiles();
-      this.updateVersioni();
-      this.updateVisualizzazioni();
-      this.updateDownloads();
-      this.updatePreferenze();
-      this.updateCondivisi();
-      this.updateSegnalazioni();
-    } catch (SQLException throwables) {
-      throwables.printStackTrace();
-    }
 
+    new Thread(
+            () -> {
+              try {
+                this.setup();
+              } catch (SQLException throwables) {
+                throwables.printStackTrace();
+              }
+            })
+        .start();
   }
 
   @FXML

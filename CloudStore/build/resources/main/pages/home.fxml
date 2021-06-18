@@ -24,6 +24,7 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#goToDatabaseUtenti" prefHeight="55.0" prefWidth="141.0" text="Database Utenti" />
                   <Button mnemonicParsing="false" onAction="#goToAnalisiCloudStore" prefHeight="55.0" prefWidth="141.0" text="Analisi CloudStore" />
+                  <Button mnemonicParsing="false" onAction="#goToAnalisiUtenti" prefHeight="55.0" prefWidth="141.0" text="Analisi Utenti" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
