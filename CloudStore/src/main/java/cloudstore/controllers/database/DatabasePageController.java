@@ -52,9 +52,8 @@ public class DatabasePageController extends EntitiesController {
     this.getModel().getCondivisioniConnection().insert(fileId, email, lettura, scrittura).execute();
   }
 
-  public void createDirectory(final String nome, final int padreId, final String proprietario)
-      throws SQLException {
-    this.getModel().getDirectoriesConnection().insert(nome, padreId, proprietario).execute();
+  public void createDirectory(final String nome, final int padreId) throws SQLException {
+    this.getModel().getDirectoriesConnection().insert(nome, padreId).execute();
   }
 
   public void createSegnalazione(final String email, final String descrizione) throws SQLException {
@@ -68,9 +67,12 @@ public class DatabasePageController extends EntitiesController {
       final String password,
       final Date dataDiNascita)
       throws SQLException {
+
     this.getModel()
         .getUtentiConnection()
         .insert(email, nome, cognome, password, dataDiNascita)
+        .execute();
+    new DatabaseOperation("INSERT INTO Directories (Nome, Proprietario) VALUES (?, ?)", nome, email)
         .execute();
   }
 

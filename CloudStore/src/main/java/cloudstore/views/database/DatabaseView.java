@@ -186,7 +186,7 @@ public class DatabaseView extends AbstractJavaFXView {
   public void aggiungiDirectory(final ActionEvent event) throws SQLException {
     final Directory directory = this.padreChoiceBox.getValue();
     final String nome = this.directoryNomeTextField.getText();
-    this.getDatabasePageController().createDirectory(nome, directory.id, directory.proprietario);
+    this.getDatabasePageController().createDirectory(nome, directory.id);
     this.updateDirectories();
   }
 

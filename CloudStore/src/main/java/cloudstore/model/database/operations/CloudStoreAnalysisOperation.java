@@ -18,22 +18,22 @@ import java.util.stream.Collectors;
 public enum CloudStoreAnalysisOperation {
 
   /*
-  SELECT Operatore, COUNT(*) as NumeroChiusure
-  FROM Segnalazioni
+  SELECT o.*
+  FROM Operatori o inner join Segnalazioni s on o.Codice = s.Operatore
   WHERE not (DataChiusura is null)
   GROUP BY Operatore
-  ORDER BY NumeroChiusure DESC
+  ORDER BY COUNT(*) DESC
   LIMIT 1
    */
   OPERATION_16(
       16,
       "Visualizzare l’operatore che ha chiuso più interventi",
       Query.builder()
-          .select("o.*, COUNT(*) as Numero")
+          .select("o.*")
           .from("Operatori o inner join Segnalazioni s on o.Codice = s.Operatore")
-          .where("not s.DataChiusura is null")
+          .where("not (s.DataChiusura is null)")
           .groupBy("o.Codice")
-          .orderBy("Numero DESC")
+          .orderBy("COUNT(*) DESC")
           .limit("1")
           .build()
           .toString(),
@@ -60,9 +60,9 @@ public enum CloudStoreAnalysisOperation {
       Query17Result.class),
 
   /*
-  SELECT u.Email, u.Nome, u.Cognome, COUNT(*) as NumeroPreferiti
+  SELECT u.*, COUNT(*) as NumeroPreferiti
   FROM Utenti u inner join Preferenze p on u.Email = p.Utente
-  GROUP BY u.Email, u.Nome, u.Cognome
+  GROUP BY u.Email
    */
   OPERATION_18(
       18,
@@ -70,28 +70,27 @@ public enum CloudStoreAnalysisOperation {
       Query.builder()
           .select("u.Email, u.Nome, u.Cognome, COUNT(*) as NumeroPreferiti")
           .from("Utenti u inner join Preferenze p on u.Email = p.Utente")
-          .groupBy("u.Email, u.Nome, u.Cognome")
+          .groupBy("u.Email")
           .build()
           .toString(),
       Query18Result.class),
 
   /*
-  SELECT u.Email, u.NumeroDirectory as NumeroCartelle
-  FROM Utenti u inner join Directories d on u.Email  = d.Proprietario
-  GROUP BY u.Email, u.Nome, u.Cognome
+  SELECT u.Email, u.NumeroDirectory
+  FROM Utenti u
    */
   OPERATION_19(
       19,
       "Visualizzare il numero di cartelle per utente",
       Query.builder()
-          .select("u.Email, u.NumeroDirectory as NumeroCartelle")
+          .select("u.Email, u.NumeroDirectory")
           .from("Utenti u")
           .build()
           .toString(),
       Query19Result.class),
 
   /*
-  SELECT *
+  SELECT f.*
   FROM Files f inner join Condivisioni c on f.Id = c.File
   GROUP BY f.Id
   ORDER BY COUNT(*) DESC
@@ -153,10 +152,10 @@ public enum CloudStoreAnalysisOperation {
       Utente.class),
 
   /*
-  SELECT f.Id, f.Nome, f.Estensione
+  SELECT f.*
   FROM Files f, Versioni v, Downloads d
   WHERE f.Id = v.File and v.Id = d.Versione
-  GROUP BY f.Id, f.Nome, f.Estensione
+  GROUP BY f.Id
   ORDER BY COUNT(*) DESC
   LIMIT 1
    */

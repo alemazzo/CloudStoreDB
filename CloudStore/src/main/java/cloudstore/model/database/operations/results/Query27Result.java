@@ -4,5 +4,5 @@ import cloudstore.model.database.query.QueryResultObject;
 
 /** The result for the Query 27. */
 public class Query27Result extends QueryResultObject {
-  public Long numeroDirectories;
+  public Integer numeroDirectory;
 }

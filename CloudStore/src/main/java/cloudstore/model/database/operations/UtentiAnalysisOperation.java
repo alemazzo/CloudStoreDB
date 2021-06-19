@@ -15,10 +15,10 @@ import java.util.stream.Collectors;
 public enum UtentiAnalysisOperation {
 
   /*
-  SELECT DISTINCT (f.*)
+  SELECT DISTINCT f.*
   FROM Utenti u, Downloads d, Versioni v, Files f
   WHERE u.Email = d.Utente and d.Versione = v.Id and v.File = f.Id
-  and f.Proprietario = ?
+  and u.Email = ?
    */
   OPERATION_24(
           24,
@@ -27,16 +27,15 @@ public enum UtentiAnalysisOperation {
           .select("DISTINCT f.*")
           .from("Utenti u, Downloads d, Versioni v, Files f")
           .where(
-              "u.Email = d.Utente and d.Versione = v.Id and v.File = f.Id and f.Proprietario = ?")
+              "u.Email = d.Utente and d.Versione = v.Id and v.File = f.Id and u.Email = ?")
           .build()
           .toString(),
       File.class),
 
   /*
-  SELECT f.*, COUNT(*) as NumeroVersioni
+  SELECT COUNT(*) as NumeroVersioni
   FROM Files f inner join Versioni v on f.Id = v.File
-  GROUP BY f.Id
-  HAVING f.Id = ?
+  WHERE f.Id = ?
    */
   OPERATION_25(25,
           "Visualizzare per un file il numero di versioni",
@@ -49,8 +48,8 @@ public enum UtentiAnalysisOperation {
       Query25Result.class),
 
   /*
-  SELECT COUNT(*)
-  FROM Utenti u inner join Files f on u.Email = f.Proprietario
+  SELECT COUNT(*) as NumeroFile
+  FROM Utenti u inner join File f on u.Email = f.Proprietario
   WHERE u.Email = ?
    */
   OPERATION_26(26,
@@ -64,16 +63,16 @@ public enum UtentiAnalysisOperation {
       Query26Result.class),
 
   /*
-  SELECT COUNT(*) as NumeroDirectories
-  FROM Utenti u inner join Directories d on u.Email = d.Proprietario
+  SELECT NumeroDirectory
+  FROM Utenti
   WHERE u.Email = ?
    */
   OPERATION_27(27,
           "Visualizzare per un utente il numero di directory",
       Query.builder()
-          .select("COUNT(*) as NumeroDirectories")
-          .from("Utenti u inner join Directories d on u.Email = d.Proprietario")
-          .where("u.Email = ?")
+          .select("NumeroDirectory")
+          .from("Utenti")
+          .where("Email = ?")
           .build()
           .toString(),
       Query27Result.class),
@@ -124,32 +123,32 @@ public enum UtentiAnalysisOperation {
       File.class),
 
   /*
-  SELECT COUNT(*) as NumeroSottoCartelle
+  SELECT COUNT(*) as NumeroDirectory
   FROM Directories d inner join Directories d2 on d.Id = d2.Padre
   WHERE d.Id = ?
    */
   OPERATION_31(31,
           "Visualizzare il numero di cartelle in una cartella",
       Query.builder()
-          .select("COUNT(*) as NumeroDirectories")
+          .select("COUNT(*) as NumeroDirectory")
           .from("Directories d inner join Directories d2 on d.Id = d2.Padre")
           .where("d.Id = ?")
           .build()
           .toString(),
-      Query27Result.class),
+      Query31Result.class),
 
   /*
-  SELECT d.*
-  FROM Directories d
-  WHERE d.Padre = ?
+  SELECT *
+  FROM Directories
+  WHERE Padre = ?
    */
   OPERATION_32(32,
           "Visualizzare le cartelle in una directory",
-      Query.builder().select("*").from("Directories d").where("d.Padre = ?").build().toString(),
+      Query.builder().select("*").from("Directories").where("Padre = ?").build().toString(),
       Directory.class),
 
   /*
-  SELECT f.*, v.Dimensione
+  SELECT v.Dimensione
   FROM Files f inner join Versioni v on v.Id = f.UltimaVersione
   WHERE f.Id = ?
    */

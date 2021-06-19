@@ -18,6 +18,6 @@ public class Directory extends Entity {
 
   @Override
   public String getInsertQuery() {
-    return "INSERT INTO Directories (Nome, Padre, Proprietario) VALUES (?, ?, ?)";
+    return "INSERT INTO Directories (Nome, Padre) VALUES (?, ?)";
   }
 }
