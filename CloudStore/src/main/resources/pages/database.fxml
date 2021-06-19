@@ -24,7 +24,7 @@
                     <children>
                         <HBox alignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER">
                             <children>
-                                <Label text="CloudStore - Utenti">
+                                <Label text="CloudStore - Database">
                                     <font>
                                         <Font size="18.0"/>
                                     </font>
@@ -518,9 +518,6 @@
                                                                         text="Aggiungi"/>
                                                                 <Label layoutX="101.0" layoutY="53.0" text="File"/>
                                                                 <Label layoutX="269.0" layoutY="53.0" text="Utente"/>
-                                                                <CheckBox fx:id="condivisioniLetturaCheckBox"
-                                                                          layoutX="395.0" layoutY="70.0"
-                                                                          mnemonicParsing="false" text="Lettura"/>
                                                                 <CheckBox fx:id="condivisioniScritturaCheckBox"
                                                                           layoutX="395.0" layoutY="96.0"
                                                                           mnemonicParsing="false" text="Scrittura"/>

@@ -7,7 +7,6 @@ public class Condivisione extends Entity {
 
   public int file;
   public String utente;
-  public boolean lettura;
   public boolean scrittura;
   public Date dataCondivisione;
 
@@ -18,6 +17,6 @@ public class Condivisione extends Entity {
 
   @Override
   public String getInsertQuery() {
-    return "INSERT INTO Condivisioni (File, Utente, Lettura, Scrittura) VALUES (?, ?, ?, ?)";
+    return "INSERT INTO Condivisioni (File, Utente, Scrittura) VALUES (?, ?, ?)";
   }
 }

@@ -55,8 +55,8 @@ cloudstore/model/database/Connector.java
  cloudstore.model.database.Connector
 cloudstore/model/database/operations/results/Query28Result.java
  cloudstore.model.database.operations.results.Query28Result
-cloudstore/model/database/entities/Condivisione.java
- cloudstore.model.database.entities.Condivisione
+cloudstore/model/database/operations/results/Query31Result.java
+ cloudstore.model.database.operations.results.Query31Result
 cloudstore/views/View.java
  cloudstore.views.View
 cloudstore/model/database/operations/results/Query18Result.java
@@ -77,30 +77,30 @@ cloudstore/views/BasicView.java
  cloudstore.views.BasicView
 cloudstore/model/database/controllers/DatabaseEntityConnection.java
  cloudstore.model.database.controllers.DatabaseEntityConnection
-cloudstore/views/Pages.java
- cloudstore.views.Pages
-cloudstore/model/ApplicationInstance.java
- cloudstore.model.ApplicationInstance
+cloudstore/model/database/operations/UtentiAnalysisOperation.java
+ cloudstore.model.database.operations.UtentiAnalysisOperation
+cloudstore/model/database/operations/CloudStoreAnalysisOperation.java
+ cloudstore.model.database.operations.CloudStoreAnalysisOperation
 cloudstore/views/analisi/cloudstore/AnalisiCloudStoreView.java
  cloudstore.views.analisi.cloudstore.AnalisiCloudStoreView
-cloudstore/views/database/DatabaseView.java
- cloudstore.views.database.DatabaseView
+cloudstore/views/analisi/utente/AnalisiUtenteView.java
+ cloudstore.views.analisi.utente.AnalisiUtenteView
+ cloudstore.views.analisi.utente.AnalisiUtenteView$1
 cloudstore/model/database/operations/results/Query19Result.java
  cloudstore.model.database.operations.results.Query19Result
 cloudstore/controllers/analisi/cloudstore/AnalisiCloudStorePageController.java
  cloudstore.controllers.analisi.cloudstore.AnalisiCloudStorePageController
-cloudstore/controllers/database/DatabasePageController.java
- cloudstore.controllers.database.DatabasePageController
-cloudstore/model/database/entities/Directory.java
- cloudstore.model.database.entities.Directory
-cloudstore/model/database/operations/CloudStoreAnalysisOperation.java
- cloudstore.model.database.operations.CloudStoreAnalysisOperation
-cloudstore/model/database/operations/results/Query31Result.java
- cloudstore.model.database.operations.results.Query31Result
-cloudstore/views/analisi/utente/AnalisiUtenteView.java
- cloudstore.views.analisi.utente.AnalisiUtenteView
- cloudstore.views.analisi.utente.AnalisiUtenteView$1
 cloudstore/controllers/analisi/utente/AnalisiUtentePageController.java
  cloudstore.controllers.analisi.utente.AnalisiUtentePageController
-cloudstore/model/database/operations/UtentiAnalysisOperation.java
- cloudstore.model.database.operations.UtentiAnalysisOperation
+cloudstore/model/database/entities/Directory.java
+ cloudstore.model.database.entities.Directory
+cloudstore/views/Pages.java
+ cloudstore.views.Pages
+cloudstore/controllers/database/DatabasePageController.java
+ cloudstore.controllers.database.DatabasePageController
+cloudstore/views/database/DatabaseView.java
+ cloudstore.views.database.DatabaseView
+cloudstore/model/database/entities/Condivisione.java
+ cloudstore.model.database.entities.Condivisione
+cloudstore/model/ApplicationInstance.java
+ cloudstore.model.ApplicationInstance

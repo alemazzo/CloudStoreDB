@@ -64,7 +64,6 @@ public class DatabaseView extends AbstractJavaFXView {
   @FXML private ListView<Condivisione> condivisiListView;
   @FXML private ChoiceBox<File> condivisioniFileChoiceBox;
   @FXML private ChoiceBox<Utente> condivisioniUtenteChoiceBox;
-  @FXML private CheckBox condivisioniLetturaCheckBox;
   @FXML private CheckBox condivisioniScritturaCheckBox;
 
   // Segnalazioni
@@ -241,9 +240,8 @@ public class DatabaseView extends AbstractJavaFXView {
   public void aggiungiCondivisione(final ActionEvent event) throws SQLException {
     final Utente utente = this.condivisioniUtenteChoiceBox.getValue();
     final File file = this.condivisioniFileChoiceBox.getValue();
-    final boolean lettura = this.condivisioniLetturaCheckBox.isSelected();
     final boolean scrittura = this.condivisioniScritturaCheckBox.isSelected();
-    this.getDatabasePageController().createCondivisione(file.id, utente.email, lettura, scrittura);
+    this.getDatabasePageController().createCondivisione(file.id, utente.email, scrittura);
     this.updateCondivisi();
   }
 

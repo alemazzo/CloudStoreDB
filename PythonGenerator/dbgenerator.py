@@ -427,7 +427,7 @@ def generate_condivisioni():
             UTENTI_IDS.append(_id)
 
     query = """
-    INSERT INTO Condivisioni(File, Utente, Lettura, Scrittura) VALUES (%s, %s, %s, %s)
+    INSERT INTO Condivisioni(File, Utente, Scrittura) VALUES (%s, %s, %s)
     """
     SUCCESS = 0
 
@@ -435,13 +435,12 @@ def generate_condivisioni():
     for i in range(NUMERO_CONDIVISIONI):
         file = random_element(FILE_IDS)[0]
         utente = random_element(UTENTI_IDS)[0]
-        lettura = True
         scrittura = randint(0, 1) == 1
 
         try:
             with database.cursor() as cursor:
                 cursor.execute(
-                    query, (file, utente, lettura, scrittura))
+                    query, (file, utente, scrittura))
             SUCCESS += 1
         except Exception as e:
             pass

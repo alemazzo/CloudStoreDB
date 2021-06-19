@@ -47,9 +47,9 @@ public class DatabasePageController extends EntitiesController {
   }
 
   public void createCondivisione(
-      final Integer fileId, final String email, final boolean lettura, final boolean scrittura)
+      final Integer fileId, final String email, final boolean scrittura)
       throws SQLException {
-    this.getModel().getCondivisioniConnection().insert(fileId, email, lettura, scrittura).execute();
+    this.getModel().getCondivisioniConnection().insert(fileId, email, scrittura).execute();
   }
 
   public void createDirectory(final String nome, final int padreId) throws SQLException {
