@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T11:56:59.846Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="cJsb5hrTBLkUZJ6ef4rx" version="14.7.10" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-06-19T11:59:39.748Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="X637w0dffoPSVIf1qkgq" version="14.7.10" type="github" pages="3">
   <diagram id="3eTEvTQi8GXISaUiZZXp" name="Page-1">
     <mxGraphModel dx="-4552" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -142,6 +142,49 @@
         </mxCell>
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-19" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;...&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getView(): View&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ setView(): View&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="Hvf1_oJVaX_ys16J_pb1-1">
           <mxGeometry x="7200" y="460" width="118.13" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="hF49kELRjrYGvfQs5QC7" name="Page-3">
+    <mxGraphModel dx="-6485" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-0" />
+        <mxCell id="9EdiHKDwRR4ItY165CBz-1" parent="9EdiHKDwRR4ItY165CBz-0" />
+        <mxCell id="9EdiHKDwRR4ItY165CBz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=block;startFill=0;endSize=7;startSize=12;dashed=1;shadow=1;" edge="1" parent="9EdiHKDwRR4ItY165CBz-1" source="9EdiHKDwRR4ItY165CBz-4" target="9EdiHKDwRR4ItY165CBz-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-3" value="interact" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;endSize=12;shadow=1;" edge="1" parent="9EdiHKDwRR4ItY165CBz-1" source="9EdiHKDwRR4ItY165CBz-4" target="9EdiHKDwRR4ItY165CBz-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-4" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Controller&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getView(): View&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ setView(view: View)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getModel(): Model&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ setModel(model: Model)&lt;br&gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="9EdiHKDwRR4ItY165CBz-1">
+          <mxGeometry x="8013.7" y="436.88" width="193.07" height="107.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="9EdiHKDwRR4ItY165CBz-1">
+          <mxGeometry x="8045.149999999999" y="350" width="130.19" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-14" value="&lt;br&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;BasicController&lt;/b&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="9EdiHKDwRR4ItY165CBz-1">
+          <mxGeometry x="8040.2300000000005" y="590" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;endSize=12;" edge="1" parent="9EdiHKDwRR4ItY165CBz-1" source="9EdiHKDwRR4ItY165CBz-17" target="9EdiHKDwRR4ItY165CBz-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-17" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;DatabasePageController&lt;/b&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="9EdiHKDwRR4ItY165CBz-1">
+          <mxGeometry x="7900" y="690" width="152.81" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;endSize=12;" edge="1" parent="9EdiHKDwRR4ItY165CBz-1" source="9EdiHKDwRR4ItY165CBz-20" target="9EdiHKDwRR4ItY165CBz-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-20" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;AnalisiCloudStorePageController&lt;/b&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="9EdiHKDwRR4ItY165CBz-1">
+          <mxGeometry x="8170" y="690" width="205.57" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=block;endFill=1;endSize=12;" edge="1" parent="9EdiHKDwRR4ItY165CBz-1" source="9EdiHKDwRR4ItY165CBz-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="8110" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9EdiHKDwRR4ItY165CBz-30" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;...&lt;/b&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="9EdiHKDwRR4ItY165CBz-1">
+          <mxGeometry x="8070.24" y="690" width="80" height="25" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
