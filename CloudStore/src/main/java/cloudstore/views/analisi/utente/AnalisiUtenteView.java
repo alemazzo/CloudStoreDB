@@ -1,6 +1,6 @@
 package cloudstore.views.analisi.utente;
 
-import cloudstore.controllers.analisi.utente.AnalisiUtenteController;
+import cloudstore.controllers.analisi.utente.AnalisiUtentePageController;
 import cloudstore.model.database.entities.Directory;
 import cloudstore.model.database.entities.File;
 import cloudstore.model.database.entities.Utente;
@@ -111,8 +111,8 @@ public class AnalisiUtenteView extends AbstractJavaFXView {
     }
   }
 
-  private AnalisiUtenteController getAnalisiUtenteController() {
-    return (AnalisiUtenteController) this.getController();
+  private AnalisiUtentePageController getAnalisiUtenteController() {
+    return (AnalisiUtentePageController) this.getController();
   }
 
   @FXML

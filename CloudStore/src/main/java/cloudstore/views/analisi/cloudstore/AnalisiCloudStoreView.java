@@ -1,6 +1,6 @@
 package cloudstore.views.analisi.cloudstore;
 
-import cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController;
+import cloudstore.controllers.analisi.cloudstore.AnalisiCloudStorePageController;
 import cloudstore.model.database.operations.CloudStoreAnalysisOperation;
 import cloudstore.model.database.query.QueryResultObject;
 import cloudstore.views.AbstractJavaFXView;
@@ -65,8 +65,8 @@ public class AnalisiCloudStoreView extends AbstractJavaFXView {
                 });
   }
 
-  public AnalisiCloudStoreController getAnalisiController() {
-    return (AnalisiCloudStoreController) this.getController();
+  public AnalisiCloudStorePageController getAnalisiController() {
+    return (AnalisiCloudStorePageController) this.getController();
   }
 
   @FXML

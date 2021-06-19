@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Set;
 
 /** The controller for the Analisi CloudStore page. */
-public class AnalisiCloudStoreController extends BasicController {
+public class AnalisiCloudStorePageController extends BasicController {
 
   public Set<QueryResultObject> getOperationResult(final CloudStoreAnalysisOperation operation)
       throws SQLException {

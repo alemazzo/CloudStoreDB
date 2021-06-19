@@ -76,7 +76,7 @@ public enum CloudStoreAnalysisOperation {
       Query18Result.class),
 
   /*
-  SELECT u.Email, u.Nome, u.Cognome, COUNT(*) as NumeroCartelle
+  SELECT u.Email, u.NumeroDirectory as NumeroCartelle
   FROM Utenti u inner join Directories d on u.Email  = d.Proprietario
   GROUP BY u.Email, u.Nome, u.Cognome
    */
@@ -84,9 +84,8 @@ public enum CloudStoreAnalysisOperation {
       19,
       "Visualizzare il numero di cartelle per utente",
       Query.builder()
-          .select("u.Email, u.Nome, u.Cognome, COUNT(*) as NumeroCartelle")
-          .from("Utenti u inner join Directories d on u.Email = d.Proprietario")
-          .groupBy("u.Email, u.Nome, u.Cognome")
+          .select("u.Email, u.NumeroDirectory as NumeroCartelle")
+          .from("Utenti u")
           .build()
           .toString(),
       Query19Result.class),

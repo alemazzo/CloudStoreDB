@@ -1,6 +1,7 @@
 
 from mysql.connector import connect, Error, MySQLConnection
 from random import randint
+from time import sleep
 
 hostname = '127.0.0.1'
 username = 'root'
@@ -10,11 +11,16 @@ database = 'CloudStore'
 """
 COSTANTS
 """
+ELIMINA_DATABASE = False
+
 NUMERO_UTENTI = 10  # 10_000
-NUMERO_OPERATORI = 20
-NUMERO_DIRECTORY_RANDOM = 20  # 200_000
-NUMERO_FILE_RANDOM = 30
+NUMERO_OPERATORI = 50
+NUMERO_DIRECTORY_RANDOM = 50  # 200_000
+NUMERO_FILE_RANDOM = 100
 NUMERO_PREFERENZE = 50
+NUMERO_CONDIVISIONI = 50
+NUMERO_VISUALIZZAZIONI = 100
+NUMERO_SEGNALAZIONI = 10
 
 SUCCESS = 0
 
@@ -67,7 +73,7 @@ def random_words():
 
 
 def random_date():
-    year = randint(1900, 2021)
+    year = randint(1900, 2000)
     month = randint(1, 12)
     day = randint(1, 28)
     return f'{year}/{month}/{day}'
@@ -84,14 +90,46 @@ load_dataset()
 #############################################################
 
 """
-Step 1 : Connect to database
+Step 1 : Connect to database and delete all records
 """
 
 database = connect(host=hostname, user=username, passwd=password, db=database)
 
+
+def eliminaDatabase():
+
+    print()
+    print("-----------------------")
+    print("cancellazione DB")
+
+    query = """
+    SET FOREIGN_KEY_CHECKS = 0; 
+    TRUNCATE TABLE Utenti;
+    TRUNCATE TABLE Directories;
+    TRUNCATE TABLE Files;
+    TRUNCATE TABLE Preferenze;
+    TRUNCATE TABLE Versioni;
+    TRUNCATE TABLE Downloads;
+    TRUNCATE TABLE Visualizzazioni;
+    TRUNCATE TABLE Segnalazioni;
+    TRUNCATE TABLE Operatori;
+    TRUNCATE TABLE Interventi;
+    TRUNCATE TABLE Condivisioni;
+    SET FOREIGN_KEY_CHECKS = 1;
+    """
+    try:
+        database._execute_query(query)
+    except Exception as e:
+        print(e)
+
+# NON SO PERCHé NON FUNZIONA
+# if ELIMINA_DATABASE:
+#    eliminaDatabase()
+
 #############################################################
 #############################################################
 #############################################################
+
 
 """
 Step 2 : Generate Users
@@ -101,15 +139,14 @@ USERS_EMAILS = []
 
 
 def generate_users():
-    print()
     print("-----------------------")
     print("Inizio creazione UTENTI")
 
     query = """
-    INSERT INTO Utenti(Email, Nome, Cognome, DataRegistrazione, Password, DataNascita, NumeroDirectory) VALUES (%s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO Utenti(Email, Nome, Cognome, Password, DataNascita) VALUES (%s, %s, %s, %s, %s)
     """
     query_cartella = """
-    INSERT INTO Directories(Nome, DataCreazione, Proprietario) VALUES (%s, %s, %s)
+    INSERT INTO Directories(Nome, Proprietario) VALUES (%s, %s)
     """
     SUCCESS = 0
 
@@ -120,16 +157,14 @@ def generate_users():
         cognome = random_surname()
         email = f'{nome}@gmail.com'
         password = random_words()
-        data_registrazione = random_date()
         data_nascita = random_date()
-        numero_directory = 1
 
         try:
             with database.cursor() as cursor:
-                cursor.execute(query, (email, nome, cognome, data_registrazione,
-                                       password, data_nascita, numero_directory))
+                cursor.execute(query, (email, nome, cognome,
+                                       password, data_nascita))
                 cursor.execute(
-                    query_cartella, (nome, data_registrazione, email))
+                    query_cartella, (nome, email))
             SUCCESS += 1
             USERS_EMAILS.append(email)
         except Exception as e:
@@ -160,7 +195,6 @@ OPERATORI_CODICI = []
 
 
 def generate_operatori():
-    print()
     print("-----------------------")
     print("Inizio creazione OPERATORI")
 
@@ -206,21 +240,19 @@ generate_operatori()
 Step 4 : Generate Directory
 """
 
-DIRECTORY_IDS = []
-
 
 def generate_directory():
-    print()
     print("-----------------------")
     print("Inizio creazione DIRECTORY")
     query = """
-        INSERT INTO Directories(Nome, DataCreazione, Padre, Proprietario) VALUES (%s, %s, %s, %s)
+        INSERT INTO Directories(Nome, Padre) VALUES (%s, %s)
     """
     SUCCESS = 0
+    DIRECTORY_IDS = []
 
     with database.cursor() as cursor:
         cursor.execute(
-            "SELECT Id, Proprietario FROM Directories WHERE Padre is NULL")
+            "SELECT Id, Proprietario FROM Directories")
         result = cursor.fetchall()
         for _id, proprietario in result:
             DIRECTORY_IDS.append((_id, proprietario))
@@ -228,14 +260,11 @@ def generate_directory():
     prev = 0
     for i in range(NUMERO_DIRECTORY_RANDOM):
         nome = random_words()
-        data_creazione = random_date()
-        directory = random_element(DIRECTORY_IDS)
-        padre = directory[0]
-        proprietario = directory[1]
+        padre = random_element(DIRECTORY_IDS)[0]
         try:
             with database.cursor() as cursor:
                 cursor.execute(
-                    query, (nome, data_creazione, padre, proprietario))
+                    query, (nome, padre))
             SUCCESS += 1
         except Exception as e:
             pass
@@ -262,7 +291,6 @@ Step 5 : Generate File
 
 
 def generate_files():
-    print()
     print("-----------------------")
     print("Inizio creazione FILES")
 
@@ -276,21 +304,29 @@ def generate_files():
             DIRECTORY_IDS.append((_id, proprietario))
 
     query = """
-    INSERT INTO Files(Directory, Nome, Estensione, Proprietario) VALUES (%s, %s, %s, %s)
+    INSERT INTO Files(Directory, Nome, Estensione) VALUES (%s, %s, %s)
+    """
+    queryVersione = """
+    INSERT INTO Versioni (File, Dimensione, Link) VALUES (%s, %s, %s)
     """
     SUCCESS = 0
 
     prev = 0
     for i in range(NUMERO_FILE_RANDOM):
 
+        directory = random_element(DIRECTORY_IDS)[0]
         nome = random_words()
         estensione = ['exe', 'png', 'csv', 'jpg', 'txt'][randint(0, 4)]
-        directory, proprietario = random_element(DIRECTORY_IDS)
+        link = f'https://{random_words()}.{random_words()}'
+        dimensione = random_number()
 
         try:
             with database.cursor() as cursor:
                 cursor.execute(
-                    query, (directory, nome, estensione, proprietario))
+                    query, (directory, nome, estensione))
+                cursor.execute(
+                    queryVersione, (cursor.lastrowid, dimensione, link))
+
             SUCCESS += 1
         except Exception as e:
             pass
@@ -318,7 +354,6 @@ Step 6 : Generate Preferenze
 
 
 def generate_preferenze():
-    print()
     print("-----------------------")
     print("Inizio creazione PREFERENZE")
 
@@ -359,6 +394,182 @@ def generate_preferenze():
 
 
 generate_preferenze()
+
+
+#############################################################
+#############################################################
+#############################################################
+
+"""
+Step 7 : Generate Condivisioni
+"""
+
+
+def generate_condivisioni():
+    print("-----------------------")
+    print("Inizio creazione CONDIVISIONI")
+
+    FILE_IDS = []
+    UTENTI_IDS = []
+    with database.cursor() as cursor:
+
+        # Retrieve the files
+        cursor.execute(
+            "SELECT Id, Proprietario FROM Files")
+        result = cursor.fetchall()
+        for _id, proprietario in result:
+            FILE_IDS.append((_id, proprietario))
+
+        # Retrieve the Utenti
+        cursor.execute("SELECT Email FROM Utenti")
+        result = cursor.fetchall()
+        for _id in result:
+            UTENTI_IDS.append(_id)
+
+    query = """
+    INSERT INTO Condivisioni(File, Utente, Lettura, Scrittura) VALUES (%s, %s, %s, %s)
+    """
+    SUCCESS = 0
+
+    prev = 0
+    for i in range(NUMERO_CONDIVISIONI):
+        file = random_element(FILE_IDS)[0]
+        utente = random_element(UTENTI_IDS)[0]
+        lettura = True
+        scrittura = randint(0, 1) == 1
+
+        try:
+            with database.cursor() as cursor:
+                cursor.execute(
+                    query, (file, utente, lettura, scrittura))
+            SUCCESS += 1
+        except Exception as e:
+            pass
+
+        percentage = int((i + 1) * 100 / NUMERO_CONDIVISIONI)
+        if percentage != prev:
+            print(f'\rProgress: {percentage} %', end='')
+            prev = percentage
+    database.commit()
+    print(f'\n{SUCCESS} condivisioni create')
+    print("-----------------------")
+    print()
+
+
+generate_condivisioni()
+
+#############################################################
+#############################################################
+#############################################################
+
+"""
+Step 8 : Generate Condivisioni
+"""
+
+
+def generate_visualizzazioni():
+    print("-----------------------")
+    print("Inizio creazione VISUALIZZAZIONI")
+
+    VERSIONI_ID = []
+    UTENTI_IDS = []
+    with database.cursor() as cursor:
+
+        # Retrieve the files
+        cursor.execute(
+            "SELECT Id FROM Versioni")
+        result = cursor.fetchall()
+        for _id in result:
+            VERSIONI_ID.append(_id)
+
+        # Retrieve the Utenti
+        cursor.execute("SELECT Email FROM Utenti")
+        result = cursor.fetchall()
+        for _id in result:
+            UTENTI_IDS.append(_id)
+
+    query = """
+    INSERT INTO Visualizzazioni(Versione, Utente) VALUES (%s, %s)
+    """
+    SUCCESS = 0
+
+    prev = 0
+    for i in range(NUMERO_VISUALIZZAZIONI):
+        versione = random_element(VERSIONI_ID)[0]
+        utente = random_element(UTENTI_IDS)[0]
+
+        try:
+            with database.cursor() as cursor:
+                cursor.execute(
+                    query, (versione, utente))
+            SUCCESS += 1
+        except Exception as e:
+            pass
+
+        percentage = int((i + 1) * 100 / NUMERO_VISUALIZZAZIONI)
+        if percentage != prev:
+            print(f'\rProgress: {percentage} %', end='')
+            prev = percentage
+    database.commit()
+    print(f'\n{SUCCESS} visualizzazioni create')
+    print("-----------------------")
+    print()
+
+
+generate_visualizzazioni()
+
+
+#############################################################
+#############################################################
+#############################################################
+
+"""
+Step 9 : Generate Segnalazioni
+"""
+
+
+def generate_segnalazioni():
+    print("-----------------------")
+    print("Inizio creazione SEGNALAZIONI")
+
+    UTENTI_IDS = []
+    with database.cursor() as cursor:
+
+        # Retrieve the Utenti
+        cursor.execute("SELECT Email FROM Utenti")
+        result = cursor.fetchall()
+        for _id in result:
+            UTENTI_IDS.append(_id)
+
+    query = """
+    INSERT INTO Segnalazioni(Utente, Descrizione) VALUES (%s, %s)
+    """
+    SUCCESS = 0
+
+    prev = 0
+    for i in range(NUMERO_SEGNALAZIONI):
+        utente = random_element(UTENTI_IDS)[0]
+        descrizione = random_words()
+
+        try:
+            with database.cursor() as cursor:
+                cursor.execute(
+                    query, (utente, descrizione))
+            SUCCESS += 1
+        except Exception as e:
+            pass
+
+        percentage = int((i + 1) * 100 / NUMERO_SEGNALAZIONI)
+        if percentage != prev:
+            print(f'\rProgress: {percentage} %', end='')
+            prev = percentage
+    database.commit()
+    print(f'\n{SUCCESS} segnalazioni create')
+    print("-----------------------")
+    print()
+
+
+generate_segnalazioni()
 
 """
 Final Step: Close the database

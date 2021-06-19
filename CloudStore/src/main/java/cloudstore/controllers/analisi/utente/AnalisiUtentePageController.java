@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Set;
 
 /** The controller for the Analisi Utente page. */
-public class AnalisiUtenteController extends EntitiesController {
+public class AnalisiUtentePageController extends EntitiesController {
 
   public Set<QueryResultObject> getOperationResult(
       final UtentiAnalysisOperation operation, final Object... args) throws SQLException {
