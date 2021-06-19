@@ -29,17 +29,6 @@ public class DatabaseOperation {
   }
 
   /**
-   * Execute an update operation.
-   *
-   * @throws SQLException exception
-   */
-  public void executeUpdate() throws SQLException {
-    System.out.println(this.statement.toString());
-    this.statement.executeUpdate();
-    this.statement.close();
-  }
-
-  /**
    * Execute the update and retrieve the key for the entry.
    *
    * @param type the type of the key

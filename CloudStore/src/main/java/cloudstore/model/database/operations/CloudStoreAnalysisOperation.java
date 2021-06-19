@@ -36,7 +36,7 @@ public enum CloudStoreAnalysisOperation {
           .orderBy("COUNT(*) DESC")
           .limit("1")
           .build()
-          .toString(),
+          .toSql(),
       Operatore.class),
 
   /*
@@ -56,7 +56,7 @@ public enum CloudStoreAnalysisOperation {
           .orderBy("COUNT(*) DESC")
           .limit("1")
           .build()
-          .toString(),
+          .toSql(),
       Query17Result.class),
 
   /*
@@ -72,7 +72,7 @@ public enum CloudStoreAnalysisOperation {
           .from("Utenti u inner join Preferenze p on u.Email = p.Utente")
           .groupBy("u.Email")
           .build()
-          .toString(),
+          .toSql(),
       Query18Result.class),
 
   /*
@@ -86,7 +86,7 @@ public enum CloudStoreAnalysisOperation {
           .select("u.Email, u.NumeroDirectory")
           .from("Utenti u")
           .build()
-          .toString(),
+          .toSql(),
       Query19Result.class),
 
   /*
@@ -106,7 +106,7 @@ public enum CloudStoreAnalysisOperation {
           .orderBy("COUNT(*) DESC")
           .limit("1")
           .build()
-          .toString(),
+          .toSql(),
       File.class),
 
   /*
@@ -128,7 +128,7 @@ public enum CloudStoreAnalysisOperation {
           .orderBy("COUNT(*) DESC")
           .limit("1")
           .build()
-          .toString(),
+          .toSql(),
       File.class),
 
   /*
@@ -148,7 +148,7 @@ public enum CloudStoreAnalysisOperation {
           .orderBy("COUNT(*) DESC")
           .limit("1")
           .build()
-          .toString(),
+          .toSql(),
       Utente.class),
 
   /*
@@ -170,7 +170,7 @@ public enum CloudStoreAnalysisOperation {
           .orderBy("COUNT(*) DESC")
           .limit("1")
           .build()
-          .toString(),
+          .toSql(),
       File.class);
 
   public final Integer codice;

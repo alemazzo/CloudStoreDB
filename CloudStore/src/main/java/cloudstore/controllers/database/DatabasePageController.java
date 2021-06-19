@@ -88,7 +88,7 @@ public class DatabasePageController extends EntitiesController {
             "UPDATE Segnalazioni SET Operatore = ?, DataAccettazione = current_timestamp() WHERE Id = ?",
             codiceOperatore,
             segnalazioneId)
-        .executeUpdate();
+        .execute();
   }
 
   public void chiudiSegnalazione(final Integer segnalazioneId) throws SQLException {

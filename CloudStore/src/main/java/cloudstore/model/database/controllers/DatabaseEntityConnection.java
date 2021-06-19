@@ -2,7 +2,7 @@ package cloudstore.model.database.controllers;
 
 import cloudstore.model.database.Connector;
 import cloudstore.model.database.entities.Entity;
-import cloudstore.model.database.mapper.EntityMapper;
+import cloudstore.model.database.mapper.ObjectMapper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,7 +18,7 @@ import java.util.Set;
  */
 public class DatabaseEntityConnection<T extends Entity> {
 
-  private final EntityMapper<T> mapper;
+  private final ObjectMapper<T> mapper;
   private T object;
 
   public DatabaseEntityConnection(final Class<T> type) {
@@ -27,7 +27,7 @@ public class DatabaseEntityConnection<T extends Entity> {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    this.mapper = new EntityMapper<T>(type);
+    this.mapper = new ObjectMapper<T>(type);
   }
 
   /**

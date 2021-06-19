@@ -29,7 +29,7 @@ public enum UtentiAnalysisOperation {
           .where(
               "u.Email = d.Utente and d.Versione = v.Id and v.File = f.Id and u.Email = ?")
           .build()
-          .toString(),
+          .toSql(),
       File.class),
 
   /*
@@ -44,7 +44,7 @@ public enum UtentiAnalysisOperation {
           .from("Files f inner join Versioni v on f.Id = v.File")
           .where("f.Id = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query25Result.class),
 
   /*
@@ -59,7 +59,7 @@ public enum UtentiAnalysisOperation {
           .from("Utenti u inner join Files f on u.Email = f.Proprietario")
           .where("u.Email = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query26Result.class),
 
   /*
@@ -74,7 +74,7 @@ public enum UtentiAnalysisOperation {
           .from("Utenti")
           .where("Email = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query27Result.class),
 
   /*
@@ -89,7 +89,7 @@ public enum UtentiAnalysisOperation {
           .from("Utenti u inner join Preferenze p on u.Email = p.Utente")
           .where("u.Email = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query28Result.class),
 
   /*
@@ -104,7 +104,7 @@ public enum UtentiAnalysisOperation {
           .from("Directories d inner join Files f on d.Id = f.Directory")
           .where("d.Id = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query26Result.class),
 
   /*
@@ -119,7 +119,7 @@ public enum UtentiAnalysisOperation {
           .from("Directories d inner join Files f on d.Id = f.Directory")
           .where("d.Id = ?")
           .build()
-          .toString(),
+          .toSql(),
       File.class),
 
   /*
@@ -134,7 +134,7 @@ public enum UtentiAnalysisOperation {
           .from("Directories d inner join Directories d2 on d.Id = d2.Padre")
           .where("d.Id = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query31Result.class),
 
   /*
@@ -144,7 +144,7 @@ public enum UtentiAnalysisOperation {
    */
   OPERATION_32(32,
           "Visualizzare le cartelle in una directory",
-      Query.builder().select("*").from("Directories").where("Padre = ?").build().toString(),
+      Query.builder().select("*").from("Directories").where("Padre = ?").build().toSql(),
       Directory.class),
 
   /*
@@ -159,7 +159,7 @@ public enum UtentiAnalysisOperation {
           .from("Files f inner join Versioni v on v.Id = f.UltimaVersione")
           .where("f.Id = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query33Result.class),
 
   /*
@@ -174,7 +174,7 @@ public enum UtentiAnalysisOperation {
           .from("Directories d, Files f, Versioni v")
           .where("d.Id = f.Directory and f.UltimaVersione = v.Id and d.Id = ?")
           .build()
-          .toString(),
+          .toSql(),
       Query34Result.class);
 
   public final Integer codice;

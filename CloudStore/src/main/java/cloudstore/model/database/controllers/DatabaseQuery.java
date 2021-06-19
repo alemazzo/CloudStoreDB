@@ -1,7 +1,7 @@
 package cloudstore.model.database.controllers;
 
 import cloudstore.model.database.Connector;
-import cloudstore.model.database.mapper.EntityMapper;
+import cloudstore.model.database.mapper.ObjectMapper;
 import cloudstore.model.database.query.QueryResultObject;
 
 import java.sql.PreparedStatement;
@@ -16,12 +16,12 @@ import java.util.Set;
  */
 public class DatabaseQuery<T extends QueryResultObject> {
 
-  private final EntityMapper<T> mapper;
+  private final ObjectMapper<T> mapper;
   private final PreparedStatement statement;
 
   public DatabaseQuery(final Class<T> type, final String query, final Object... args)
       throws SQLException {
-    this.mapper = new EntityMapper<>(type);
+    this.mapper = new ObjectMapper<>(type);
     this.statement = new Connector().connect().prepareStatement(query);
     int index = 1;
     for (Object arg : args) {

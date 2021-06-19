@@ -32,8 +32,7 @@ public class Query {
     return new QueryBuilder();
   }
 
-  @Override
-  public String toString() {
+  public String toSql() {
     return "SELECT "
         + select
         + " FROM "

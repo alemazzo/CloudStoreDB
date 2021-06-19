@@ -15,11 +15,11 @@ import java.util.Set;
  *
  * @param <T> The type of object
  */
-public class EntityMapper<T extends QueryResultObject> {
+public class ObjectMapper<T extends QueryResultObject> {
 
   private final Class<T> type;
 
-  public EntityMapper(final Class<T> type) {
+  public ObjectMapper(final Class<T> type) {
     this.type = type;
   }
 
