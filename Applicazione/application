@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T15:33:04.806Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="P-wNedmRcylsf3OPhju2" version="14.7.10" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2021-06-19T18:12:17.035Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="AyTmmeNhWf5L0aU_fer3" version="14.7.10" type="github" pages="9">
   <diagram id="3eTEvTQi8GXISaUiZZXp" name="Page-1">
-    <mxGraphModel dx="-4552" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="-4305" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -68,7 +68,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="hF49kELRjrYGvfQs5QC7" name="Page-3">
-    <mxGraphModel dx="-6252" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="-6005" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="9EdiHKDwRR4ItY165CBz-0" />
         <mxCell id="9EdiHKDwRR4ItY165CBz-1" parent="9EdiHKDwRR4ItY165CBz-0" />
@@ -111,7 +111,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="C3zFsXSEZ2uFpqgFICQa" name="Page-4">
-    <mxGraphModel dx="1997" dy="2059" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1997" dy="2170" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="XVSpYvUh1RwvpHNMJqAZ-0" />
         <mxCell id="XVSpYvUh1RwvpHNMJqAZ-1" parent="XVSpYvUh1RwvpHNMJqAZ-0" />
@@ -212,7 +212,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="l4CQ0LSmZlLmiqG7b_X8" name="Operazioni">
-    <mxGraphModel dx="795" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="795" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="DvOXWjiGQTMV0tjHUHpF-0" />
         <mxCell id="DvOXWjiGQTMV0tjHUHpF-1" parent="DvOXWjiGQTMV0tjHUHpF-0" />
@@ -308,7 +308,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="QaIwHATuVNJa10PrlhWL" name="Entity-Retrieve">
-    <mxGraphModel dx="1422" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1645" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="VUPF9zXDcY9ZQIE8KLq6-0" />
         <mxCell id="VUPF9zXDcY9ZQIE8KLq6-1" parent="VUPF9zXDcY9ZQIE8KLq6-0" />
@@ -337,7 +337,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="XFFSJEoUBpPncTBpFROO" name="MVC">
-    <mxGraphModel dx="-5402" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="-5402" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-0" />
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-1" parent="Hvf1_oJVaX_ys16J_pb1-0" />
@@ -411,6 +411,26 @@
         </mxCell>
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-19" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;...&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getView(): View&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ setView(): View&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" vertex="1">
           <mxGeometry x="7200" y="460" width="118.13" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="GMu3NzmW7fOoVQvpWLuK" name="Model">
+    <mxGraphModel dx="-5836" dy="-583" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="_0zHH54SC_FSccaTNOkW-0" />
+        <mxCell id="_0zHH54SC_FSccaTNOkW-1" parent="_0zHH54SC_FSccaTNOkW-0" />
+        <mxCell id="_0zHH54SC_FSccaTNOkW-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;&amp;nbsp;+ getUtentiConnection(): DatabaseEntityConnection&amp;lt;Utente&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getDirectoriesConnection(): DatabaseEntityConnection&amp;lt;Directory&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getFilesConnection(): DatabaseEntityConnection&amp;lt;File&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getVersioniConnection(): DatabaseEntityConnection&amp;lt;Versione&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getVisualizzazioniConnection(): DatabaseEntityConnection&amp;lt;Visualizzazione&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getDownloadConnection(): DatabaseEntityConnection&amp;lt;Download&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getPreferenzeConnection(): DatabaseEntityConnection&amp;lt;Preferenza&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getCondivisioniConnection(): DatabaseEntityConnection&amp;lt;Condivisione&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getSegnalazioniConnection(): DatabaseEntityConnection&amp;lt;Segnalazione&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getOperatoriConnection(): DatabaseEntityConnection&amp;lt;Operatore&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getInterventiConnection(): DatabaseEntityConnection&amp;lt;Intervento&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="_0zHH54SC_FSccaTNOkW-1">
+          <mxGeometry x="6820" y="1300" width="450" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="_0zHH54SC_FSccaTNOkW-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ApplicationInstance&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="_0zHH54SC_FSccaTNOkW-1">
+          <mxGeometry x="6970.000000000001" y="1570" width="150" height="52.5" as="geometry" />
+        </mxCell>
+        <mxCell id="_0zHH54SC_FSccaTNOkW-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=none;startFill=0;startSize=12;endArrow=block;endFill=0;endSize=12;strokeWidth=1;dashed=1;shadow=1;" edge="1" parent="_0zHH54SC_FSccaTNOkW-1" source="_0zHH54SC_FSccaTNOkW-3" target="_0zHH54SC_FSccaTNOkW-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="7379.810000000001" y="1720.31" as="sourcePoint" />
+            <mxPoint x="7234.810000000001" y="1647.495" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
