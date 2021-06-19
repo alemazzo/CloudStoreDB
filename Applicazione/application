@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T15:18:22.310Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="C475net-jbbi6etibB-m" version="14.7.10" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-06-19T15:23:37.526Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="bL6cPpYIMzqp04vNBDqs" version="14.7.10" type="github" pages="5">
   <diagram id="3eTEvTQi8GXISaUiZZXp" name="Page-1">
     <mxGraphModel dx="-4552" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -190,7 +190,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="C3zFsXSEZ2uFpqgFICQa" name="Page-4">
-    <mxGraphModel dx="1165" dy="1659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1398" dy="1771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="XVSpYvUh1RwvpHNMJqAZ-0" />
         <mxCell id="XVSpYvUh1RwvpHNMJqAZ-1" parent="XVSpYvUh1RwvpHNMJqAZ-0" />
@@ -236,6 +236,9 @@
         <mxCell id="ddOEX-sILnbewYDzHTXP-21" value="retrieve" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="XVSpYvUh1RwvpHNMJqAZ-1" source="ddOEX-sILnbewYDzHTXP-17" target="ddOEX-sILnbewYDzHTXP-20">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="ddOEX-sILnbewYDzHTXP-31" value="use for mapping" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=block;endFill=1;" edge="1" parent="XVSpYvUh1RwvpHNMJqAZ-1" source="ddOEX-sILnbewYDzHTXP-17" target="ddOEX-sILnbewYDzHTXP-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="ddOEX-sILnbewYDzHTXP-17" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;T extends Entity&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;DatabaseEntityConnection&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getAll(): Set&amp;lt;T&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ insert(args: Object[]): DatabaseOperation&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
           <mxGeometry x="535" y="310" width="240" height="90" as="geometry" />
         </mxCell>
@@ -252,16 +255,25 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ddOEX-sILnbewYDzHTXP-22" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;T extends QueryObjectResult&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;DatabaseQuery&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ DatabaseQuery(type: Class&amp;lt;T&amp;gt;, query: String, args: Object[])&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getResultsSet(): Set&amp;lt;T&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getSingleValue(): T&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
-          <mxGeometry x="660" y="440" width="350" height="100" as="geometry" />
+          <mxGeometry x="300" y="650" width="350" height="100" as="geometry" />
         </mxCell>
         <mxCell id="ddOEX-sILnbewYDzHTXP-23" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;&amp;lt;Abstract&amp;gt;&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;QueryObjectResult&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
-          <mxGeometry x="455" y="455" width="130" height="70" as="geometry" />
+          <mxGeometry x="95" y="665" width="130" height="70" as="geometry" />
         </mxCell>
         <mxCell id="ddOEX-sILnbewYDzHTXP-27" value="type of" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="XVSpYvUh1RwvpHNMJqAZ-1" source="ddOEX-sILnbewYDzHTXP-26" target="ddOEX-sILnbewYDzHTXP-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ddOEX-sILnbewYDzHTXP-26" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;T extends QueryObjectResult&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ObjectMapper&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ fromSingleResult(element: ResultSet): T&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ fromResultsSet(set: ResultSet): Set&amp;lt;T&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
-          <mxGeometry x="400" y="610" width="240" height="90" as="geometry" />
+          <mxGeometry x="40" y="820" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ddOEX-sILnbewYDzHTXP-30" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;T extends QueryObjectResult&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ObjectMapper&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ fromSingleResult(element: ResultSet): T&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ fromResultsSet(set: ResultSet): Set&amp;lt;T&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
+          <mxGeometry x="535" y="450" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ddOEX-sILnbewYDzHTXP-32" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;&amp;lt;Enum&amp;gt;&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;CloudStoreAnalysisOperation&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ OPERATION_16: CloudStoreAnalysisOperation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ OPERATION_17: CloudStoreAnalysisOperation&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;....&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ codice: Integer&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ operazione: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ execute(): Set&amp;lt;QueryObjectResult&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
+          <mxGeometry x="850" y="585" width="300" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="ddOEX-sILnbewYDzHTXP-33" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;&amp;lt;Enum&amp;gt;&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;UtentiAnalysisOperation&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ OPERATION_24: UtentiAnalysisOperation&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ OPERATION_25: UtentiAnalysisOperation&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;....&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ codice: Integer&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ operazione: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ execute(args: Object[]): Set&amp;lt;QueryObjectResult&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
+          <mxGeometry x="1170" y="585" width="300" height="155" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
