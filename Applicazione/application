@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T15:15:57.451Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="ewgymHyBfYaOOFKrFd9p" version="14.7.10" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-06-19T15:18:22.310Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="C475net-jbbi6etibB-m" version="14.7.10" type="github" pages="5">
   <diagram id="3eTEvTQi8GXISaUiZZXp" name="Page-1">
     <mxGraphModel dx="-4552" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -248,11 +248,20 @@
         <mxCell id="ddOEX-sILnbewYDzHTXP-25" value="retrieve" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="XVSpYvUh1RwvpHNMJqAZ-1" source="ddOEX-sILnbewYDzHTXP-22" target="ddOEX-sILnbewYDzHTXP-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="ddOEX-sILnbewYDzHTXP-28" value="use for mapping" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="XVSpYvUh1RwvpHNMJqAZ-1" source="ddOEX-sILnbewYDzHTXP-22" target="ddOEX-sILnbewYDzHTXP-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="ddOEX-sILnbewYDzHTXP-22" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;T extends QueryObjectResult&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;DatabaseQuery&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ DatabaseQuery(type: Class&amp;lt;T&amp;gt;, query: String, args: Object[])&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getResultsSet(): Set&amp;lt;T&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getSingleValue(): T&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
           <mxGeometry x="660" y="440" width="350" height="100" as="geometry" />
         </mxCell>
         <mxCell id="ddOEX-sILnbewYDzHTXP-23" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;&amp;lt;Abstract&amp;gt;&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;QueryObjectResult&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ toString(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
           <mxGeometry x="455" y="455" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ddOEX-sILnbewYDzHTXP-27" value="type of" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="XVSpYvUh1RwvpHNMJqAZ-1" source="ddOEX-sILnbewYDzHTXP-26" target="ddOEX-sILnbewYDzHTXP-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ddOEX-sILnbewYDzHTXP-26" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;i style=&quot;font-size: 12px&quot;&gt;&amp;lt;T extends QueryObjectResult&amp;gt;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ObjectMapper&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ fromSingleResult(element: ResultSet): T&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ fromResultsSet(set: ResultSet): Set&amp;lt;T&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="XVSpYvUh1RwvpHNMJqAZ-1">
+          <mxGeometry x="400" y="610" width="240" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
