@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-19T18:12:17.035Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="AyTmmeNhWf5L0aU_fer3" version="14.7.10" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2021-06-19T19:29:33.507Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36" etag="Sk6Gr2SXC0_4z3BeiDPF" version="14.7.10" type="github" pages="9">
   <diagram id="3eTEvTQi8GXISaUiZZXp" name="Page-1">
     <mxGraphModel dx="-4305" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -337,7 +337,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="XFFSJEoUBpPncTBpFROO" name="MVC">
-    <mxGraphModel dx="-5402" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="-5378" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-0" />
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-1" parent="Hvf1_oJVaX_ys16J_pb1-0" />
@@ -383,9 +383,9 @@
             <mxPoint x="7245" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Hvf1_oJVaX_ys16J_pb1-11" value="interact" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;endSize=12;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" source="Hvf1_oJVaX_ys16J_pb1-12" target="Hvf1_oJVaX_ys16J_pb1-16" edge="1">
+        <mxCell id="Hvf1_oJVaX_ys16J_pb1-11" value="interact" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;endSize=12;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" source="Hvf1_oJVaX_ys16J_pb1-12" target="XtDB6So1x6_0Om8jgG5O-0" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="7293.130000000001" y="357.5" as="targetPoint" />
+            <mxPoint x="7300" y="347.1899999999998" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-12" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Controller&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getView(): View&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ setView(view: View)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getModel(): Model&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ setModel(model: Model)&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" vertex="1">
@@ -400,9 +400,6 @@
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-15" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;...&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" vertex="1">
           <mxGeometry x="7188.75" y="60" width="112.5" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="Hvf1_oJVaX_ys16J_pb1-16" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" vertex="1">
-          <mxGeometry x="7300" y="330.4699999999999" width="104.68" height="33.44" as="geometry" />
-        </mxCell>
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-17" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;DatabasePageController&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" vertex="1">
           <mxGeometry x="6880" y="460" width="148.13" height="35" as="geometry" />
         </mxCell>
@@ -411,6 +408,9 @@
         </mxCell>
         <mxCell id="Hvf1_oJVaX_ys16J_pb1-19" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;...&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ getView(): View&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ setView(): View&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" parent="Hvf1_oJVaX_ys16J_pb1-1" vertex="1">
           <mxGeometry x="7200" y="460" width="118.13" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="XtDB6So1x6_0Om8jgG5O-0" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;&amp;nbsp;+ getUtentiConnection(): DatabaseEntityConnection&amp;lt;Utente&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getDirectoriesConnection(): DatabaseEntityConnection&amp;lt;Directory&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ getFilesConnection(): DatabaseEntityConnection&amp;lt;File&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;...&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=1;" vertex="1" parent="Hvf1_oJVaX_ys16J_pb1-1">
+          <mxGeometry x="7301.25" y="294.38" width="450" height="105" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
