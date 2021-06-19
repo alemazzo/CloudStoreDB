@@ -2,8 +2,8 @@ cloudstore/Launcher.java
  cloudstore.Launcher
 cloudstore/model/database/entities/Preferenza.java
  cloudstore.model.database.entities.Preferenza
-cloudstore/model/database/operations/UtentiAnalysisOperation.java
- cloudstore.model.database.operations.UtentiAnalysisOperation
+cloudstore/controllers/database/DatabasePageController.java
+ cloudstore.controllers.database.DatabasePageController
 cloudstore/model/database/operations/results/Query33Result.java
  cloudstore.model.database.operations.results.Query33Result
 cloudstore/model/database/entities/Directory.java
@@ -66,10 +66,10 @@ cloudstore/views/Pages.java
  cloudstore.views.Pages
 cloudstore/controllers/Controller.java
  cloudstore.controllers.Controller
-cloudstore/views/analisi/utente/AnalisiUtenteView.java
- cloudstore.views.analisi.utente.AnalisiUtenteView
-cloudstore/controllers/analisi/utente/AnalisiUtenteController.java
- cloudstore.controllers.analisi.utente.AnalisiUtenteController
+cloudstore/model/ApplicationInstance.java
+ cloudstore.model.ApplicationInstance
+cloudstore/controllers/analisi/cloudstore/AnalisiCloudStoreController.java
+ cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController
 cloudstore/model/database/controllers/DatabaseOperation.java
  cloudstore.model.database.controllers.DatabaseOperation
 cloudstore/views/home/HomeView.java
@@ -95,9 +95,10 @@ cloudstore/views/analisi/cloudstore/AnalisiCloudStoreView.java
  cloudstore.views.analisi.cloudstore.AnalisiCloudStoreView
 cloudstore/views/AbstractJavaFXView.java
  cloudstore.views.AbstractJavaFXView
-cloudstore/controllers/database/DatabasePageController.java
- cloudstore.controllers.database.DatabasePageController
-cloudstore/controllers/analisi/cloudstore/AnalisiCloudStoreController.java
- cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController
-cloudstore/model/ApplicationInstance.java
- cloudstore.model.ApplicationInstance
+cloudstore/model/database/operations/UtentiAnalysisOperation.java
+ cloudstore.model.database.operations.UtentiAnalysisOperation
+cloudstore/controllers/analisi/utente/AnalisiUtenteController.java
+ cloudstore.controllers.analisi.utente.AnalisiUtenteController
+cloudstore/views/analisi/utente/AnalisiUtenteView.java
+ cloudstore.views.analisi.utente.AnalisiUtenteView
+ cloudstore.views.analisi.utente.AnalisiUtenteView$1

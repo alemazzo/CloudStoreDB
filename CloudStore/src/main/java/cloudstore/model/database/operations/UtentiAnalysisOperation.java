@@ -21,6 +21,8 @@ public enum UtentiAnalysisOperation {
   and f.Proprietario = ?
    */
   OPERATION_24(
+          24,
+      "Visualizzare tutti i file scaricati di un utente",
       Query.builder()
           .select("DISTINCT f.*")
           .from("Utenti u, Downloads d, Versioni v, Files f")
@@ -36,7 +38,8 @@ public enum UtentiAnalysisOperation {
   GROUP BY f.Id
   HAVING f.Id = ?
    */
-  OPERATION_25(
+  OPERATION_25(25,
+          "Visualizzare per un file il numero di versioni",
       Query.builder()
           .select("COUNT(*) as NumeroVersioni")
           .from("Files f inner join Versioni v on f.Id = v.File")
@@ -50,7 +53,8 @@ public enum UtentiAnalysisOperation {
   FROM Utenti u inner join Files f on u.Email = f.Proprietario
   WHERE u.Email = ?
    */
-  OPERATION_26(
+  OPERATION_26(26,
+          "Visualizzare per un utente il numero di file",
       Query.builder()
           .select("COUNT(*) as numeroFiles")
           .from("Utenti u inner join Files f on u.Email = f.Proprietario")
@@ -64,7 +68,8 @@ public enum UtentiAnalysisOperation {
   FROM Utenti u inner join Directories d on u.Email = d.Proprietario
   WHERE u.Email = ?
    */
-  OPERATION_27(
+  OPERATION_27(27,
+          "Visualizzare per un utente il numero di directory",
       Query.builder()
           .select("COUNT(*) as NumeroDirectories")
           .from("Utenti u inner join Directories d on u.Email = d.Proprietario")
@@ -78,7 +83,8 @@ public enum UtentiAnalysisOperation {
   FROM Utenti u inner join Preferenze p on u.Email = p.Utente
   WHERE u.Email = ?
    */
-  OPERATION_28(
+  OPERATION_28(28,
+          "Visualizzare per un utente il numero di file preferiti",
       Query.builder()
           .select("COUNT(*) as NumeroPreferenze")
           .from("Utenti u inner join Preferenze p on u.Email = p.Utente")
@@ -92,7 +98,8 @@ public enum UtentiAnalysisOperation {
   FROM Directories d inner join Files f on d.Id = f.Directory
   WHERE d.Id = ?
    */
-  OPERATION_29(
+  OPERATION_29(29,
+          "Visualizzare il numero di file in una cartella",
       Query.builder()
           .select("COUNT(*) as NumeroFiles")
           .from("Directories d inner join Files f on d.Id = f.Directory")
@@ -106,7 +113,8 @@ public enum UtentiAnalysisOperation {
   from Directories d inner join Files f on d.Id = f.Directory
   WHERE d.Id = ?
    */
-  OPERATION_30(
+  OPERATION_30(30,
+          "Visualizzare i file in una cartella",
       Query.builder()
           .select("f.*")
           .from("Directories d inner join Files f on d.Id = f.Directory")
@@ -120,7 +128,8 @@ public enum UtentiAnalysisOperation {
   FROM Directories d inner join Directories d2 on d.Id = d2.Padre
   WHERE d.Id = ?
    */
-  OPERATION_31(
+  OPERATION_31(31,
+          "Visualizzare il numero di cartelle in una cartella",
       Query.builder()
           .select("COUNT(*) as NumeroDirectories")
           .from("Directories d inner join Directories d2 on d.Id = d2.Padre")
@@ -134,7 +143,8 @@ public enum UtentiAnalysisOperation {
   FROM Directories d
   WHERE d.Padre = ?
    */
-  OPERATION_32(
+  OPERATION_32(32,
+          "Visualizzare le cartelle in una directory",
       Query.builder().select("*").from("Directories d").where("d.Padre = ?").build().toString(),
       Directory.class),
 
@@ -143,7 +153,8 @@ public enum UtentiAnalysisOperation {
   FROM Files f inner join Versioni v on v.Id = f.UltimaVersione
   WHERE f.Id = ?
    */
-  OPERATION_33(
+  OPERATION_33(33,
+          "Visualizzare la dimensione di un file",
       Query.builder()
           .select("v.Dimensione")
           .from("Files f inner join Versioni v on v.Id = f.UltimaVersione")
@@ -157,7 +168,8 @@ public enum UtentiAnalysisOperation {
   FROM Directories d, Files f, Versioni v
   WHERE d.Id = f.Directory and f.UltimaVersione = v.Id and d.Id = ?
    */
-  OPERATION_34(
+  OPERATION_34(34,
+          "Visualizzare la dimensione di una cartella",
       Query.builder()
           .select("SUM(v.Dimensione) as Dimensione")
           .from("Directories d, Files f, Versioni v")
@@ -166,11 +178,18 @@ public enum UtentiAnalysisOperation {
           .toString(),
       Query34Result.class);
 
+  public final Integer codice;
+  public final String operazione;
   private final String sql;
   private final Class<? extends QueryResultObject> resultType;
 
   private UtentiAnalysisOperation(
-      final String sql, final Class<? extends QueryResultObject> resultType) {
+      final Integer code,
+      final String operation,
+      final String sql,
+      final Class<? extends QueryResultObject> resultType) {
+    this.codice = code;
+    this.operazione = operation;
     this.sql = sql;
     this.resultType = resultType;
   }
