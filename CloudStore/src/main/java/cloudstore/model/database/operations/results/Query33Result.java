@@ -1,10 +1,8 @@
 package cloudstore.model.database.operations.results;
 
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 
-import java.math.BigDecimal;
-
-public class Query33Result extends QueryObjectResult {
-    public Integer dimensione;
+/** The result for the Query 33. */
+public class Query33Result extends QueryResultObject {
+  public Integer dimensione;
 }
-

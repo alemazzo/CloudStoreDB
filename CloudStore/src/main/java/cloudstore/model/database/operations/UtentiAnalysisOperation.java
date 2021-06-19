@@ -5,12 +5,13 @@ import cloudstore.model.database.entities.Directory;
 import cloudstore.model.database.entities.File;
 import cloudstore.model.database.operations.results.*;
 import cloudstore.model.database.query.Query;
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 
 import java.sql.SQLException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/** The operations for the Analysis of the Utenti. */
 public enum UtentiAnalysisOperation {
 
   /*
@@ -165,19 +166,26 @@ public enum UtentiAnalysisOperation {
           .toString(),
       Query34Result.class);
 
-  private String sql;
-  private Class<? extends QueryObjectResult> resultType;
+  private final String sql;
+  private final Class<? extends QueryResultObject> resultType;
 
   private UtentiAnalysisOperation(
-      final String sql, final Class<? extends QueryObjectResult> resultType) {
+      final String sql, final Class<? extends QueryResultObject> resultType) {
     this.sql = sql;
     this.resultType = resultType;
   }
 
-  public Set<QueryObjectResult> execute(final Object... args) throws SQLException {
+  /**
+   * Execute the operation.
+   *
+   * @param args the arguments of the query.
+   * @return the result of the query
+   * @throws SQLException exception
+   */
+  public Set<QueryResultObject> execute(final Object... args) throws SQLException {
     final var dbquery = new DatabaseQuery<>(this.resultType, this.sql, args);
-    return dbquery.getResults().stream()
-        .map(x -> (QueryObjectResult) x)
+    return dbquery.getResultsSet().stream()
+        .map(x -> (QueryResultObject) x)
         .collect(Collectors.toSet());
   }
 }

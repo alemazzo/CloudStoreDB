@@ -1,7 +1,8 @@
 package cloudstore.model.database.operations.results;
 
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 
-public class Query25Result extends QueryObjectResult {
-    public Long numeroVersioni;
+/** The result for the Query 25. */
+public class Query25Result extends QueryResultObject {
+  public Long numeroVersioni;
 }

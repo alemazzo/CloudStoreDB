@@ -1,45 +1,65 @@
 package cloudstore.model.database.mapper;
 
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 
+import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class EntityMapper<T extends QueryObjectResult> {
+/**
+ * The Entity Mapper that handle the conversione from a query result to a Java object using
+ * reflection and building the object through his public field.
+ *
+ * @param <T> The type of object
+ */
+public class EntityMapper<T extends QueryResultObject> {
 
   private final Class<T> type;
 
-  public EntityMapper(Class<T> type) {
+  public EntityMapper(final Class<T> type) {
     this.type = type;
   }
 
-  public T fromResult(ResultSet result) throws SQLException {
+  /**
+   * Retrieve an object instance from a single Result.
+   *
+   * @param result the result
+   * @return the created object
+   * @throws SQLException exception
+   */
+  public T fromSingleResult(final ResultSet result) throws SQLException {
     T elem = null;
     try {
-      elem = (T) Class.forName(type.getName()).getConstructor().newInstance();
-      //elem = this.type.getConstructor().newInstance();
+      elem = this.type.getConstructor().newInstance();
     } catch (Exception e) {
       e.printStackTrace();
     }
     final T finalElem = elem;
-    Arrays.stream(elem.getClass().getFields())
-        .forEach(
-            x -> {
-              try {
-                x.set(finalElem, result.getObject(x.getName()));
-              } catch (Exception e) {
-                e.printStackTrace();
-              }
-            });
+    Arrays.stream(elem.getClass().getFields()).forEach(x -> buildField(result, finalElem, x));
     return elem;
   }
 
-  public Set<T> fromResultSet(ResultSet results) throws SQLException {
+  private void buildField(final ResultSet result, final T elem, final Field x) {
+    try {
+      x.set(elem, result.getObject(x.getName()));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Retrive a set of object instances from a ResultsSet.
+   *
+   * @param results the results set
+   * @return the Set of Object
+   * @throws SQLException exception
+   */
+  public Set<T> fromResultSet(final ResultSet results) throws SQLException {
     final Set<T> res = new HashSet<>();
-    while (results.next()) res.add(this.fromResult(results));
+    while (results.next()) res.add(this.fromSingleResult(results));
     return res;
   }
 }

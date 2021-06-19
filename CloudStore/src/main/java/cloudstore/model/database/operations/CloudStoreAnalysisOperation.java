@@ -8,12 +8,13 @@ import cloudstore.model.database.operations.results.Query17Result;
 import cloudstore.model.database.operations.results.Query18Result;
 import cloudstore.model.database.operations.results.Query19Result;
 import cloudstore.model.database.query.Query;
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 
 import java.sql.SQLException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/** The operations for the Analysis of the CloudStore platform. */
 public enum CloudStoreAnalysisOperation {
 
   /*
@@ -56,7 +57,7 @@ public enum CloudStoreAnalysisOperation {
           .limit("1")
           .build()
           .toString(),
-          Query17Result.class),
+      Query17Result.class),
 
   /*
   SELECT u.Email, u.Nome, u.Cognome, COUNT(*) as NumeroPreferiti
@@ -174,26 +175,32 @@ public enum CloudStoreAnalysisOperation {
           .toString(),
       File.class);
 
-  public Integer codice;
-  public String operazione;
-  private String query;
-  private Class<? extends QueryObjectResult> resultType;
+  public final Integer codice;
+  public final String operazione;
+  private final String query;
+  private final Class<? extends QueryResultObject> resultType;
 
   private CloudStoreAnalysisOperation(
       final Integer codice,
       final String operazione,
       final String query,
-      final Class<? extends QueryObjectResult> resultType) {
+      final Class<? extends QueryResultObject> resultType) {
     this.codice = codice;
     this.operazione = operazione;
     this.query = query;
     this.resultType = resultType;
   }
 
-  public Set<QueryObjectResult> execute() throws SQLException {
+  /**
+   * Execute the query.
+   *
+   * @return the query result
+   * @throws SQLException exception
+   */
+  public Set<QueryResultObject> execute() throws SQLException {
     final var dbquery = new DatabaseQuery<>(this.resultType, this.query);
-    return dbquery.getResults().stream()
-        .map(x -> (QueryObjectResult) x)
+    return dbquery.getResultsSet().stream()
+        .map(x -> (QueryResultObject) x)
         .collect(Collectors.toSet());
   }
 }

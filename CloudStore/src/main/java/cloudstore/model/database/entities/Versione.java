@@ -1,10 +1,9 @@
 package cloudstore.model.database.entities;
 
-import cloudstore.model.database.query.QueryObjectResult;
-
 import java.util.Date;
 
-public class Versione extends Entity{
+/** The Versione Entity. */
+public class Versione extends Entity {
 
   public Integer id;
   public Integer file;
@@ -12,6 +11,11 @@ public class Versione extends Entity{
   public Date dataCreazione;
   public Integer dimensione;
   public String link;
+
+  @Override
+  public String getTableName() {
+    return "Versioni";
+  }
 
   @Override
   public String getInsertQuery() {

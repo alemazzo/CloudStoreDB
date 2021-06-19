@@ -1,83 +1,88 @@
 package cloudstore.model;
 
-import cloudstore.model.database.controllers.DatabaseEntity;
+import cloudstore.model.database.controllers.DatabaseEntityConnection;
 import cloudstore.model.database.entities.*;
 
 /** Implementation of the Model interface. */
 public final class ApplicationInstance implements Model {
-  private final DatabaseEntity<Utente> utenti = new DatabaseEntity<>(Utente.class, "Utenti");
-  private final DatabaseEntity<Directory> directories =
-      new DatabaseEntity<>(Directory.class, "Directories");
-  private final DatabaseEntity<File> files = new DatabaseEntity<>(File.class, "Files");
-  private final DatabaseEntity<Versione> versioni =
-      new DatabaseEntity<>(Versione.class, "Versioni");
-  private final DatabaseEntity<Visualizzazione> visualizzazioni =
-      new DatabaseEntity<>(Visualizzazione.class, "Visualizzazioni");
-  private final DatabaseEntity<Download> downloads =
-      new DatabaseEntity<>(Download.class, "Downloads");
-  private final DatabaseEntity<Preferenza> preferenze =
-      new DatabaseEntity<>(Preferenza.class, "Preferenze");
-  private final DatabaseEntity<Condivisione> condivisioni =
-      new DatabaseEntity<>(Condivisione.class, "Condivisioni");
-  private final DatabaseEntity<Segnalazione> segnalazioni =
-      new DatabaseEntity<>(Segnalazione.class, "Segnalazioni");
-  private final DatabaseEntity<Operatore> operatori =
-      new DatabaseEntity<>(Operatore.class, "Operatori");
-  private final DatabaseEntity<Intervento> interventi =
-      new DatabaseEntity<>(Intervento.class, "Interventi");
+
+  private final DatabaseEntityConnection<Utente> utenti = new DatabaseEntityConnection<>(Utente.class);
+
+  private final DatabaseEntityConnection<Directory> directories = new DatabaseEntityConnection<>(Directory.class);
+
+  private final DatabaseEntityConnection<File> files = new DatabaseEntityConnection<>(File.class);
+
+  private final DatabaseEntityConnection<Versione> versioni = new DatabaseEntityConnection<>(Versione.class);
+
+  private final DatabaseEntityConnection<Visualizzazione> visualizzazioni =
+      new DatabaseEntityConnection<>(Visualizzazione.class);
+
+  private final DatabaseEntityConnection<Download> downloads = new DatabaseEntityConnection<>(Download.class);
+
+  private final DatabaseEntityConnection<Preferenza> preferenze = new DatabaseEntityConnection<>(Preferenza.class);
+
+  private final DatabaseEntityConnection<Condivisione> condivisioni =
+      new DatabaseEntityConnection<>(Condivisione.class);
+
+  private final DatabaseEntityConnection<Segnalazione> segnalazioni =
+      new DatabaseEntityConnection<>(Segnalazione.class);
+
+  private final DatabaseEntityConnection<Operatore> operatori = new DatabaseEntityConnection<>(Operatore.class);
+
+  private final DatabaseEntityConnection<Intervento> interventi = new DatabaseEntityConnection<>(Intervento.class);
 
   @Override
-  public DatabaseEntity<Utente> getUtentiConnection() {
+  public DatabaseEntityConnection<Utente> getUtentiConnection() {
     return this.utenti;
   }
 
   @Override
-  public DatabaseEntity<Directory> getDirectoriesConnection() {
+  public DatabaseEntityConnection<Directory> getDirectoriesConnection() {
     return this.directories;
   }
 
   @Override
-  public DatabaseEntity<File> getFilesConnection() {
+  public DatabaseEntityConnection<File> getFilesConnection() {
     return this.files;
   }
 
   @Override
-  public DatabaseEntity<Versione> getVersioniConnection() {
+  public DatabaseEntityConnection<Versione> getVersioniConnection() {
     return this.versioni;
   }
 
   @Override
-  public DatabaseEntity<Visualizzazione> getVisualizzazioniConnection() {
+  public DatabaseEntityConnection<Visualizzazione> getVisualizzazioniConnection() {
     return this.visualizzazioni;
   }
 
   @Override
-  public DatabaseEntity<Download> getDownloadsConnection() {
+  public DatabaseEntityConnection<Download> getDownloadsConnection() {
     return this.downloads;
   }
 
   @Override
-  public DatabaseEntity<Preferenza> getPreferenzeConnection() {
+  public DatabaseEntityConnection<Preferenza> getPreferenzeConnection() {
     return this.preferenze;
   }
 
   @Override
-  public DatabaseEntity<Condivisione> getCondivisioniConnection() {
+  public DatabaseEntityConnection<Condivisione> getCondivisioniConnection() {
     return this.condivisioni;
   }
 
   @Override
-  public DatabaseEntity<Segnalazione> getSegnalazioniConnection() {
+  public DatabaseEntityConnection<Segnalazione> getSegnalazioniConnection() {
     return this.segnalazioni;
   }
 
   @Override
-  public DatabaseEntity<Operatore> getOperatoriConnection() {
+  public DatabaseEntityConnection<Operatore> getOperatoriConnection() {
     return this.operatori;
   }
 
   @Override
-  public DatabaseEntity<Intervento> getInterventiConnection() {
+  public DatabaseEntityConnection<Intervento> getInterventiConnection() {
     return this.interventi;
   }
 }

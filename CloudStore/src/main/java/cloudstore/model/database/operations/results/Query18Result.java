@@ -1,8 +1,9 @@
 package cloudstore.model.database.operations.results;
 
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 
-public class Query18Result extends QueryObjectResult {
+/** The result for the Query 18. */
+public class Query18Result extends QueryResultObject {
   public String email;
   public String nome;
   public String cognome;

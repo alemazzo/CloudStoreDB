@@ -5,6 +5,7 @@ import cloudstore.model.database.entities.*;
 import java.sql.SQLException;
 import java.util.Set;
 
+/** The controller of the entities of the database. */
 public class EntitiesController extends BasicController {
 
   public Set<Utente> getUtenti() throws SQLException {

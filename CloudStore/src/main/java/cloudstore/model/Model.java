@@ -1,29 +1,29 @@
 package cloudstore.model;
 
-import cloudstore.model.database.controllers.DatabaseEntity;
+import cloudstore.model.database.controllers.DatabaseEntityConnection;
 import cloudstore.model.database.entities.*;
 
 public interface Model {
 
-  DatabaseEntity<Utente> getUtentiConnection();
+  DatabaseEntityConnection<Utente> getUtentiConnection();
 
-  DatabaseEntity<Directory> getDirectoriesConnection();
+  DatabaseEntityConnection<Directory> getDirectoriesConnection();
 
-  DatabaseEntity<File> getFilesConnection();
+  DatabaseEntityConnection<File> getFilesConnection();
 
-  DatabaseEntity<Versione> getVersioniConnection();
+  DatabaseEntityConnection<Versione> getVersioniConnection();
 
-  DatabaseEntity<Visualizzazione> getVisualizzazioniConnection();
+  DatabaseEntityConnection<Visualizzazione> getVisualizzazioniConnection();
 
-  DatabaseEntity<Download> getDownloadsConnection();
+  DatabaseEntityConnection<Download> getDownloadsConnection();
 
-  DatabaseEntity<Preferenza> getPreferenzeConnection();
+  DatabaseEntityConnection<Preferenza> getPreferenzeConnection();
 
-  DatabaseEntity<Condivisione> getCondivisioniConnection();
+  DatabaseEntityConnection<Condivisione> getCondivisioniConnection();
 
-  DatabaseEntity<Segnalazione> getSegnalazioniConnection();
+  DatabaseEntityConnection<Segnalazione> getSegnalazioniConnection();
 
-  DatabaseEntity<Operatore> getOperatoriConnection();
+  DatabaseEntityConnection<Operatore> getOperatoriConnection();
 
-  DatabaseEntity<Intervento> getInterventiConnection();
+  DatabaseEntityConnection<Intervento> getInterventiConnection();
 }

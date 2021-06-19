@@ -1,9 +1,8 @@
 package cloudstore.model.database.entities;
 
-import cloudstore.model.database.query.QueryObjectResult;
-
 import java.util.Date;
 
+/** The Utente Entity. */
 public class Utente extends Entity {
 
   public String email;
@@ -13,6 +12,11 @@ public class Utente extends Entity {
   public String password;
   public Date dataNascita;
   public int numeroDirectory;
+
+  @Override
+  public String getTableName() {
+    return "Utenti";
+  }
 
   @Override
   public String getInsertQuery() {

@@ -1,6 +1,6 @@
-package cloudstore.views.utente;
+package cloudstore.views.database;
 
-import cloudstore.controllers.utente.UtenteController;
+import cloudstore.controllers.database.DatabasePageController;
 import cloudstore.model.database.entities.*;
 import cloudstore.views.AbstractJavaFXView;
 import cloudstore.views.PageLoader;
@@ -15,7 +15,8 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class UtenteView extends AbstractJavaFXView {
+/** The database data managment page. */
+public class DatabaseView extends AbstractJavaFXView {
 
   // Utenti
   @FXML private ListView<Utente> utentiListView;
@@ -84,13 +85,13 @@ public class UtenteView extends AbstractJavaFXView {
   @FXML private ChoiceBox<Segnalazione> interventiSegnalazioneChoiceBox;
   @FXML private TextArea interventoMessaggioTextArea;
 
-  private UtenteController getUtenteController() {
-    return (UtenteController) this.getController();
+  private DatabasePageController getDatabasePageController() {
+    return (DatabasePageController) this.getController();
   }
 
   private void updateUtenti() throws SQLException {
     this.utentiListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getUtenti())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getUtenti())));
     this.visualizzazioniUtentiChoiceBox.setItems(this.utentiListView.getItems());
     this.downloadUtenteChoiceBox.setItems(this.utentiListView.getItems());
     this.preferitiUtenteChoiceBox.setItems(this.utentiListView.getItems());
@@ -100,14 +101,14 @@ public class UtenteView extends AbstractJavaFXView {
 
   private void updateDirectories() throws SQLException {
     this.directoriesListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getDirectories())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getDirectories())));
     this.padreChoiceBox.setItems(this.directoriesListView.getItems());
     this.padreFileChoiceBox.setItems(this.directoriesListView.getItems());
   }
 
   private void updateFiles() throws SQLException {
     this.filesListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getFiles())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getFiles())));
     this.fileVersioneChoiceBox.setItems(this.filesListView.getItems());
     this.preferitiFileChoiceBox.setItems(this.filesListView.getItems());
     this.condivisioniFileChoiceBox.setItems(this.filesListView.getItems());
@@ -115,7 +116,7 @@ public class UtenteView extends AbstractJavaFXView {
 
   private void updateVersioni() throws SQLException {
     this.versioniListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getVersioni())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getVersioni())));
     this.visualizzazioniVersioneChoiceBox.setItems(this.versioniListView.getItems());
     this.downloadVersioneChoiceBox.setItems(this.versioniListView.getItems());
   }
@@ -123,39 +124,39 @@ public class UtenteView extends AbstractJavaFXView {
   private void updateVisualizzazioni() throws SQLException {
     this.visualizzazioniListView.setItems(
         new ObservableListWrapper<>(
-            new ArrayList<>(this.getUtenteController().getVisualizzazioni())));
+            new ArrayList<>(this.getDatabasePageController().getVisualizzazioni())));
   }
 
   private void updateDownloads() throws SQLException {
     this.downloadsListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getDownloads())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getDownloads())));
   }
 
   private void updatePreferenze() throws SQLException {
     this.preferenzeListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getPreferenze())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getPreferenze())));
   }
 
   private void updateCondivisi() throws SQLException {
     this.condivisiListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getCondivisioni())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getCondivisioni())));
   }
 
   private void updateSegnalazioni() throws SQLException {
     this.segnalazioniListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getSegnalazioni())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getSegnalazioni())));
     this.interventiSegnalazioneChoiceBox.setItems(this.segnalazioniListView.getItems());
   }
 
   private void updateOperatori() throws SQLException {
     this.operatoriListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getOperatori())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getOperatori())));
     this.segnalazioneOperatoreChoiceBox.setItems(this.operatoriListView.getItems());
   }
 
   private void updateInterventi() throws SQLException {
     this.interventiListView.setItems(
-        new ObservableListWrapper<>(new ArrayList<>(this.getUtenteController().getInterventi())));
+        new ObservableListWrapper<>(new ArrayList<>(this.getDatabasePageController().getInterventi())));
   }
 
   private void setup() {
@@ -185,7 +186,7 @@ public class UtenteView extends AbstractJavaFXView {
   public void aggiungiDirectory(final ActionEvent event) throws SQLException {
     final Directory directory = this.padreChoiceBox.getValue();
     final String nome = this.directoryNomeTextField.getText();
-    this.getUtenteController().createDirectory(nome, directory.id, directory.proprietario);
+    this.getDatabasePageController().createDirectory(nome, directory.id, directory.proprietario);
     this.updateDirectories();
   }
 
@@ -196,7 +197,7 @@ public class UtenteView extends AbstractJavaFXView {
     final String estensione = this.estensioneFileTextField.getText();
     final String link = this.linkFileTextField.getText();
     final Integer dimensione = Integer.valueOf(this.dimensioneTextField.getText());
-    this.getUtenteController()
+    this.getDatabasePageController()
         .createFile(directory.id, nome, estensione, directory.proprietario, link, dimensione);
     this.updateFiles();
     this.updateVersioni();
@@ -207,7 +208,7 @@ public class UtenteView extends AbstractJavaFXView {
     final File file = this.fileVersioneChoiceBox.getValue();
     final String link = this.versioneLinkTextField.getText();
     final Integer dimensione = Integer.valueOf(this.versioneDimensioneTextField.getText());
-    this.getUtenteController().createVersione(file.id, link, dimensione);
+    this.getDatabasePageController().createVersione(file.id, link, dimensione);
     this.updateFiles();
     this.updateVersioni();
   }
@@ -216,7 +217,7 @@ public class UtenteView extends AbstractJavaFXView {
   public void aggiungiVisualizzazione(final ActionEvent event) throws SQLException {
     final Versione versione = this.visualizzazioniVersioneChoiceBox.getValue();
     final Utente utente = this.visualizzazioniUtentiChoiceBox.getValue();
-    this.getUtenteController().createVisualizzazione(versione.id, utente.email);
+    this.getDatabasePageController().createVisualizzazione(versione.id, utente.email);
     this.updateVisualizzazioni();
   }
 
@@ -224,7 +225,7 @@ public class UtenteView extends AbstractJavaFXView {
   public void aggiungiDownload(final ActionEvent event) throws SQLException {
     final Versione versione = this.downloadVersioneChoiceBox.getValue();
     final Utente utente = this.downloadUtenteChoiceBox.getValue();
-    this.getUtenteController().createDownload(versione.id, utente.email);
+    this.getDatabasePageController().createDownload(versione.id, utente.email);
     this.updateDownloads();
   }
 
@@ -232,7 +233,7 @@ public class UtenteView extends AbstractJavaFXView {
   public void aggiungiPreferenza(final ActionEvent event) throws SQLException {
     final Utente utente = this.preferitiUtenteChoiceBox.getValue();
     final File file = this.preferitiFileChoiceBox.getValue();
-    this.getUtenteController().createPreferenza(file.id, utente.email);
+    this.getDatabasePageController().createPreferenza(file.id, utente.email);
     this.updatePreferenze();
   }
 
@@ -242,7 +243,7 @@ public class UtenteView extends AbstractJavaFXView {
     final File file = this.condivisioniFileChoiceBox.getValue();
     final boolean lettura = this.condivisioniLetturaCheckBox.isSelected();
     final boolean scrittura = this.condivisioniScritturaCheckBox.isSelected();
-    this.getUtenteController().createCondivisione(file.id, utente.email, lettura, scrittura);
+    this.getDatabasePageController().createCondivisione(file.id, utente.email, lettura, scrittura);
     this.updateCondivisi();
   }
 
@@ -250,7 +251,7 @@ public class UtenteView extends AbstractJavaFXView {
   public void aggiungiSegnalazione(final ActionEvent event) throws SQLException {
     final Utente utente = this.segnalazioneUtenteChoiceBox.getValue();
     final String descrizione = this.segnalazioneDescrizioneTextArea.getText();
-    this.getUtenteController().createSegnalazione(utente.email, descrizione);
+    this.getDatabasePageController().createSegnalazione(utente.email, descrizione);
     this.updateSegnalazioni();
   }
 
@@ -266,7 +267,7 @@ public class UtenteView extends AbstractJavaFXView {
                 .getValue()
                 .atStartOfDay(ZoneId.systemDefault())
                 .toInstant());
-    this.getUtenteController().createUtente(email, nome, cognome, password, date);
+    this.getDatabasePageController().createUtente(email, nome, cognome, password, date);
     this.updateUtenti();
   }
 
@@ -281,7 +282,7 @@ public class UtenteView extends AbstractJavaFXView {
                 .getValue()
                 .atStartOfDay(ZoneId.systemDefault())
                 .toInstant());
-    this.getUtenteController().createOperatore(codice, nome, password, date);
+    this.getDatabasePageController().createOperatore(codice, nome, password, date);
     this.updateOperatori();
   }
 
@@ -290,7 +291,7 @@ public class UtenteView extends AbstractJavaFXView {
     final Operatore operatore = this.segnalazioneOperatoreChoiceBox.getValue();
     final Segnalazione segnalazione =
         this.segnalazioniListView.getSelectionModel().getSelectedItem();
-    this.getUtenteController().accettaSegnalazione(segnalazione.id, operatore.codice);
+    this.getDatabasePageController().accettaSegnalazione(segnalazione.id, operatore.codice);
     this.updateSegnalazioni();
   }
 
@@ -298,7 +299,7 @@ public class UtenteView extends AbstractJavaFXView {
   public void chiudiSegnalazione(final ActionEvent event) throws SQLException {
     final Segnalazione segnalazione =
         this.segnalazioniListView.getSelectionModel().getSelectedItem();
-    this.getUtenteController().chiudiSegnalazione(segnalazione.id);
+    this.getDatabasePageController().chiudiSegnalazione(segnalazione.id);
     this.updateSegnalazioni();
   }
 
@@ -306,7 +307,8 @@ public class UtenteView extends AbstractJavaFXView {
   public void creaInterventoUtente(final ActionEvent event) throws SQLException {
     final Segnalazione segnalazione = this.interventiSegnalazioneChoiceBox.getValue();
     final String messaggio = this.interventoMessaggioTextArea.getText();
-        this.getUtenteController().createInterventoUtente(segnalazione.id, segnalazione.utente, messaggio);
+    this.getDatabasePageController()
+        .createInterventoUtente(segnalazione.id, segnalazione.utente, messaggio);
     this.updateInterventi();
   }
 
@@ -314,7 +316,8 @@ public class UtenteView extends AbstractJavaFXView {
   public void creaInterventoOperatore(final ActionEvent event) throws SQLException {
     final Segnalazione segnalazione = this.interventiSegnalazioneChoiceBox.getValue();
     final String messaggio = this.interventoMessaggioTextArea.getText();
-    this.getUtenteController().createInterventoOperatore(segnalazione.id, segnalazione.operatore, messaggio);
+    this.getDatabasePageController()
+        .createInterventoOperatore(segnalazione.id, segnalazione.operatore, messaggio);
     this.updateInterventi();
   }
 

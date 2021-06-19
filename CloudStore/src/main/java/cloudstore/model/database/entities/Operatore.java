@@ -1,15 +1,19 @@
 package cloudstore.model.database.entities;
 
-import cloudstore.model.database.query.QueryObjectResult;
-
 import java.util.Date;
 
+/** The Operatore Entity. */
 public class Operatore extends Entity {
 
   public Integer codice;
   public String nome;
   public String password;
   public Date dataNascita;
+
+  @Override
+  public String getTableName() {
+    return "Operatori";
+  }
 
   @Override
   public String getInsertQuery() {

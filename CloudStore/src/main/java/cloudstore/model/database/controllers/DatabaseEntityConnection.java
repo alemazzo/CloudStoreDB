@@ -10,34 +10,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
-public class DatabaseEntity<T extends Entity> {
+/**
+ * The connection of an entity. Use an internal mapper and make possibile some operation on the
+ * single entities.
+ *
+ * @param <T> the Entity
+ */
+public class DatabaseEntityConnection<T extends Entity> {
 
-  private T object;
-  private final Connector connector = new Connector();
   private final EntityMapper<T> mapper;
-  private final String tableName;
+  private T object;
 
-  public DatabaseEntity(final Class<T> type, final String tableName) {
+  public DatabaseEntityConnection(final Class<T> type) {
     try {
       this.object = type.getDeclaredConstructor().newInstance();
     } catch (Exception e) {
       e.printStackTrace();
     }
     this.mapper = new EntityMapper<T>(type);
-    this.tableName = tableName;
   }
 
-  public Connector getConnector() {
-    return this.connector;
-  }
-
-  public EntityMapper<T> getEntityMapper() {
-    return this.mapper;
-  }
-
+  /**
+   * Get all instance of the entity from the database.
+   *
+   * @return a set with all the instances.
+   * @throws SQLException exception
+   */
   public Set<T> getAll() throws SQLException {
-    final Connection connection = this.getConnector().connect();
-    final String query = "select * from " + this.tableName;
+    final Connection connection = new Connector().connect();
+    final String query = "select * from " + this.object.getTableName();
     final PreparedStatement statement = connection.prepareStatement(query);
     System.out.println(statement);
     final ResultSet results = statement.executeQuery();

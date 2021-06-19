@@ -1,5 +1,6 @@
 package cloudstore.model.database.query;
 
+/** The builder for a Query object. */
 public class QueryBuilder {
 
   private String selectString = "";
@@ -45,6 +46,11 @@ public class QueryBuilder {
     return this;
   }
 
+  /**
+   * Retrieve the Query object.
+   *
+   * @return the Query object
+   */
   public Query build() {
     return new Query(
         selectString,

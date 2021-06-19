@@ -1,5 +1,6 @@
 package cloudstore.model.database.query;
 
+/** A query object that translate to SqlQuery. */
 public class Query {
 
   private final String select;
@@ -37,10 +38,10 @@ public class Query {
         + select
         + " FROM "
         + from
-        + ((where != "") ? " WHERE " + where : "")
-        + ((groupBy != "") ? " GROUP BY " + groupBy : "")
-        + ((having != "") ? " HAVING " + having : "")
-        + ((orderBy != "") ? " ORDER BY " + orderBy : "")
-        + ((limit != "") ? " LIMIT " + limit : "");
+        + ((!where.equals("")) ? " WHERE " + where : "")
+        + ((!groupBy.equals("")) ? " GROUP BY " + groupBy : "")
+        + ((!having.equals("")) ? " HAVING " + having : "")
+        + ((!orderBy.equals("")) ? " ORDER BY " + orderBy : "")
+        + ((!limit.equals("")) ? " LIMIT " + limit : "");
   }
 }

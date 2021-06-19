@@ -1,4 +1,4 @@
-package cloudstore.controllers.utente;
+package cloudstore.controllers.database;
 
 import cloudstore.controllers.EntitiesController;
 import cloudstore.model.database.controllers.DatabaseOperation;
@@ -7,7 +7,8 @@ import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class UtenteController extends EntitiesController {
+/** The controller for the Database page. */
+public class DatabasePageController extends EntitiesController {
 
   public void createFile(
       final Integer directoryId,
@@ -41,7 +42,7 @@ public class UtenteController extends EntitiesController {
     this.getModel().getDownloadsConnection().insert(versioneId, email).execute();
   }
 
-  public void createPreferenza(Integer fileId, String email) throws SQLException {
+  public void createPreferenza(final Integer fileId, final String email) throws SQLException {
     this.getModel().getPreferenzeConnection().insert(fileId, email).execute();
   }
 
@@ -95,21 +96,24 @@ public class UtenteController extends EntitiesController {
   }
 
   public void createInterventoUtente(
-      final Integer segnalazioneId, final String email, final String messaggio) throws SQLException {
-      new DatabaseOperation(
+      final Integer segnalazioneId, final String email, final String messaggio)
+      throws SQLException {
+    new DatabaseOperation(
             "INSERT INTO Interventi (Segnalazione, Utente, Messaggio) VALUES (?, ?, ?)",
             segnalazioneId,
             email,
             messaggio)
         .execute();
   }
+
   public void createInterventoOperatore(
-          final Integer segnalazioneId, final Integer operatoreId, final String messaggio) throws SQLException {
+      final Integer segnalazioneId, final Integer operatoreId, final String messaggio)
+      throws SQLException {
     new DatabaseOperation(
             "INSERT INTO Interventi (Segnalazione, Operatore, Messaggio) VALUES (?, ?, ?)",
             segnalazioneId,
             operatoreId,
             messaggio)
-            .execute();
+        .execute();
   }
 }

@@ -1,9 +1,8 @@
 package cloudstore.model.database.entities;
 
-import cloudstore.model.database.query.QueryObjectResult;
-
 import java.util.Date;
 
+/** The Condivisione Entity. */
 public class Condivisione extends Entity {
 
   public int file;
@@ -11,6 +10,11 @@ public class Condivisione extends Entity {
   public boolean lettura;
   public boolean scrittura;
   public Date dataCondivisione;
+
+  @Override
+  public String getTableName() {
+    return "Condivisioni";
+  }
 
   @Override
   public String getInsertQuery() {

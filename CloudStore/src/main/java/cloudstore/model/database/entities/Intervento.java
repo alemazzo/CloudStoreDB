@@ -1,9 +1,8 @@
 package cloudstore.model.database.entities;
 
-import cloudstore.model.database.query.QueryObjectResult;
-
 import java.util.Date;
 
+/** The Intervento Entity. */
 public class Intervento extends Entity {
 
   public Integer segnalazione;
@@ -14,13 +13,8 @@ public class Intervento extends Entity {
   public Date dataIntervento;
 
   @Override
-  public String toString() {
-    return "Intervento{" +
-            "segnalazione='" + segnalazione + '\'' +
-            ", numero=" + numero +
-            ", messaggio='" + messaggio + '\'' +
-            ", dataIntervento='" + dataIntervento + '\'' +
-            '}';
+  public String getTableName() {
+    return "Interventi";
   }
 
   @Override

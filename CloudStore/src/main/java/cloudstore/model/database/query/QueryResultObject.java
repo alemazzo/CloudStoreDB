@@ -3,26 +3,27 @@ package cloudstore.model.database.query;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public abstract class QueryObjectResult {
+/** An object that is a result of a query. */
+public abstract class QueryResultObject {
 
+  /**
+   * A personalized toString that print each public field of the object.
+   *
+   * @return the toString
+   */
   @Override
   public String toString() {
     return this.getClass().getSimpleName()
         + "{"
         + Arrays.stream(this.getClass().getFields())
-            .filter(
-                x -> {
-                  try {
-                    return x.get(this) != null;
-                  } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                  }
-                  return false;
-                })
             .map(
                 x -> {
                   try {
-                    return "" + x.getName() + " = '" + x.get(this).toString() + "'";
+                    return ""
+                        + x.getName()
+                        + " = '"
+                        + (x.get(this) == null ? "null" : x.get(this).toString())
+                        + "'";
                   } catch (IllegalAccessException e) {
                     e.printStackTrace();
                   }

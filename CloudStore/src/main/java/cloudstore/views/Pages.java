@@ -1,10 +1,10 @@
 package cloudstore.views;
 
-import cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController;
 import cloudstore.controllers.BasicController;
 import cloudstore.controllers.Controller;
+import cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController;
 import cloudstore.controllers.analisi.utente.AnalisiUtenteController;
-import cloudstore.controllers.utente.UtenteController;
+import cloudstore.controllers.database.DatabasePageController;
 
 import java.util.function.Supplier;
 
@@ -15,7 +15,7 @@ public enum Pages {
   HOME("home", BasicController::new),
   ANALISI_CLOUDSTORE("analisi-cloudstore", AnalisiCloudStoreController::new),
   ANALISI_UTENTE("analisi-utente", AnalisiUtenteController::new),
-  UTENTI("utenti", UtenteController::new);
+  DATABASE("database", DatabasePageController::new);
 
   private final String name;
   private final Supplier<Controller> controllerGenerator;

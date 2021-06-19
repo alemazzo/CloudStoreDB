@@ -1,10 +1,9 @@
 package cloudstore.model.database.entities;
 
-import cloudstore.model.database.query.QueryObjectResult;
-
 import java.util.Date;
 
-public class Segnalazione extends Entity{
+/** The Segnalazione Entity. */
+public class Segnalazione extends Entity {
 
   public Integer id;
   public String utente;
@@ -12,7 +11,11 @@ public class Segnalazione extends Entity{
   public Integer operatore;
   public Date dataAccettazione;
   public Date dataChiusura;
-  
+
+  @Override
+  public String getTableName() {
+    return "Segnalazioni";
+  }
 
   @Override
   public String getInsertQuery() {

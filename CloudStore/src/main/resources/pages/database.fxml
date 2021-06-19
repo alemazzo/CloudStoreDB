@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0"
+            prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/15.0.1"
+            fx:controller="cloudstore.views.database.DatabaseView">
+    <children>
+        <StackPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                   AnchorPane.topAnchor="10.0">
+            <children>
+                <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER"
+                                        vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <HBox alignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                            <children>
+                                <Label text="CloudStore - Utenti">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                                 GridPane.columnSpan="2" GridPane.rowIndex="1">
+                            <tabs>
+                                <Tab text="Utenti">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" percentHeight="50.0"
+                                                                        prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="I tuoi utenti"/>
+                                                                <ListView fx:id="utentiListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="232.0" layoutY="21.0"
+                                                                       text="Aggiungi Utente"/>
+                                                                <Button layoutX="429.0" layoutY="192.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiUtente" text="Aggiungi"/>
+                                                                <Label layoutX="83.0" layoutY="83.0" text="Email"/>
+                                                                <TextField fx:id="utenteEmailTextField" layoutX="16.0"
+                                                                           layoutY="110.0"/>
+                                                                <TextField fx:id="utenteNomeTextField" layoutX="198.0"
+                                                                           layoutY="110.0"/>
+                                                                <Label layoutX="265.0" layoutY="83.0" text="Nome"/>
+                                                                <TextField fx:id="utenteCognomeTextField"
+                                                                           layoutX="381.0" layoutY="110.0"/>
+                                                                <Label layoutX="433.0" layoutY="81.0" prefHeight="21.0"
+                                                                       prefWidth="68.0" text="Cognome"/>
+                                                                <TextField fx:id="utentePasswordTextField"
+                                                                           layoutX="16.0" layoutY="192.0"/>
+                                                                <Label layoutX="68.0" layoutY="163.0" prefHeight="21.0"
+                                                                       prefWidth="68.0" text="Password"/>
+                                                                <DatePicker fx:id="utenteDataNascitaDatePicker"
+                                                                            layoutX="198.0" layoutY="192.0"/>
+                                                                <Label layoutX="251.0" layoutY="169.0" prefHeight="21.0"
+                                                                       prefWidth="86.0" text="Data Nascita"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Directories">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="167.0" layoutY="14.0"
+                                                                       text="Aggiungi una directory"/>
+                                                                <ChoiceBox fx:id="padreChoiceBox" layoutX="39.0"
+                                                                           layoutY="63.0" prefHeight="26.0"
+                                                                           prefWidth="99.0"/>
+                                                                <TextField fx:id="directoryNomeTextField"
+                                                                           layoutX="156.0" layoutY="63.0"/>
+                                                                <Button layoutX="350.0" layoutY="63.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiDirectory" text="Aggiungi"/>
+                                                                <Label layoutX="70.0" layoutY="39.0" text="Padre"/>
+                                                                <Label layoutX="222.0" layoutY="39.0" text="Nome"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="Le tue directories"/>
+                                                                <ListView fx:id="directoriesListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Files">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="186.0" layoutY="28.0"
+                                                                       text="Aggiungi File"/>
+                                                                <ChoiceBox fx:id="padreFileChoiceBox" layoutX="28.0"
+                                                                           layoutY="75.0" prefHeight="26.0"
+                                                                           prefWidth="76.0"/>
+                                                                <TextField fx:id="nomeFileTextField" layoutX="121.0"
+                                                                           layoutY="75.0" prefHeight="26.0"
+                                                                           prefWidth="214.0"/>
+                                                                <TextField fx:id="estensioneFileTextField"
+                                                                           layoutX="355.0" layoutY="75.0"
+                                                                           prefHeight="26.0" prefWidth="86.0"/>
+                                                                <Label layoutX="47.0" layoutY="51.0" text="Padre"/>
+                                                                <Label layoutX="209.0" layoutY="51.0" text="Nome"/>
+                                                                <Label layoutX="362.0" layoutY="51.0"
+                                                                       text="Estensione"/>
+                                                                <TextField fx:id="linkFileTextField" layoutX="28.0"
+                                                                           layoutY="143.0" prefHeight="26.0"
+                                                                           prefWidth="299.0"/>
+                                                                <Label layoutX="164.0" layoutY="122.0" text="Link"/>
+                                                                <Label layoutX="359.0" layoutY="122.0"
+                                                                       text="Dimensione"/>
+                                                                <Button layoutX="190.0" layoutY="190.0"
+                                                                        mnemonicParsing="false" onAction="#aggiungiFile"
+                                                                        text="Aggiungi"/>
+                                                                <TextField fx:id="dimensioneTextField" layoutX="356.0"
+                                                                           layoutY="143.0" prefHeight="26.0"
+                                                                           prefWidth="83.0"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="I tuoi files"/>
+                                                                <ListView fx:id="filesListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Versioni">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="Le tue versioni"/>
+                                                                <ListView fx:id="versioniListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <ChoiceBox fx:id="fileVersioneChoiceBox" layoutX="14.0"
+                                                                           layoutY="95.0" prefWidth="150.0"/>
+                                                                <Label layoutX="78.0" layoutY="72.0" text="File"/>
+                                                                <TextField fx:id="versioneLinkTextField" layoutX="176.0"
+                                                                           layoutY="95.0" prefHeight="26.0"
+                                                                           prefWidth="242.0"/>
+                                                                <TextField fx:id="versioneDimensioneTextField"
+                                                                           layoutX="428.0" layoutY="95.0"
+                                                                           prefHeight="26.0" prefWidth="111.0"/>
+                                                                <Label layoutX="284.0" layoutY="72.0" text="Link"/>
+                                                                <Label layoutX="445.0" layoutY="72.0"
+                                                                       text="Dimensione"/>
+                                                                <Label layoutX="238.0" layoutY="29.0"
+                                                                       text="Aggiungi Versione"/>
+                                                                <Button layoutX="559.0" layoutY="95.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiVersione" text="Aggiungi"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Visualizzazioni">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="Le tue visualizzazioni"/>
+                                                                <ListView fx:id="visualizzazioniListView"
+                                                                          prefHeight="552.0" prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="138.0" layoutY="14.0"
+                                                                       text="Aggiungi Visualizzazione"/>
+                                                                <ChoiceBox fx:id="visualizzazioniVersioneChoiceBox"
+                                                                           layoutX="51.0" layoutY="71.0"
+                                                                           prefWidth="150.0"/>
+                                                                <ChoiceBox fx:id="visualizzazioniUtentiChoiceBox"
+                                                                           layoutX="234.0" layoutY="71.0"
+                                                                           prefWidth="150.0"/>
+                                                                <Button layoutX="181.0" layoutY="119.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiVisualizzazione"
+                                                                        text="Aggiungi"/>
+                                                                <Label layoutX="98.0" layoutY="47.0" text="Versione"/>
+                                                                <Label layoutX="287.0" layoutY="47.0" text="Utente"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Downloads">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="I tuoi downloads"/>
+                                                                <ListView fx:id="downloadsListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="141.0" layoutY="20.0"
+                                                                       text="Aggiungi Download"/>
+                                                                <ChoiceBox fx:id="downloadUtenteChoiceBox"
+                                                                           layoutX="216.0" layoutY="79.0"
+                                                                           prefWidth="150.0"/>
+                                                                <ChoiceBox fx:id="downloadVersioneChoiceBox"
+                                                                           layoutX="37.0" layoutY="79.0"
+                                                                           prefWidth="150.0"/>
+                                                                <Button layoutX="167.0" layoutY="140.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiDownload" text="Aggiungi"/>
+                                                                <Label layoutX="84.0" layoutY="53.0" text="Versione"/>
+                                                                <Label layoutX="269.0" layoutY="53.0" text="Utente"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Preferiti">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="I tuoi preferiti"/>
+                                                                <ListView fx:id="preferenzeListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="141.0" layoutY="20.0"
+                                                                       text="Aggiungi Preferenza"/>
+                                                                <ChoiceBox fx:id="preferitiUtenteChoiceBox"
+                                                                           layoutX="216.0" layoutY="79.0"
+                                                                           prefWidth="150.0"/>
+                                                                <ChoiceBox fx:id="preferitiFileChoiceBox" layoutX="37.0"
+                                                                           layoutY="79.0" prefWidth="150.0"/>
+                                                                <Button layoutX="167.0" layoutY="140.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiPreferenza" text="Aggiungi"/>
+                                                                <Label layoutX="101.0" layoutY="53.0" text="File"/>
+                                                                <Label layoutX="269.0" layoutY="53.0" text="Utente"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Condividi">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="Le tue condivisioni"/>
+                                                                <ListView fx:id="condivisiListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="133.0" layoutY="20.0"
+                                                                       text="Aggiungi Condivisione"/>
+                                                                <ChoiceBox fx:id="condivisioniUtenteChoiceBox"
+                                                                           layoutX="216.0" layoutY="79.0"
+                                                                           prefWidth="150.0"/>
+                                                                <ChoiceBox fx:id="condivisioniFileChoiceBox"
+                                                                           layoutX="37.0" layoutY="79.0"
+                                                                           prefWidth="150.0"/>
+                                                                <Button layoutX="167.0" layoutY="140.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiCondivisione"
+                                                                        text="Aggiungi"/>
+                                                                <Label layoutX="101.0" layoutY="53.0" text="File"/>
+                                                                <Label layoutX="269.0" layoutY="53.0" text="Utente"/>
+                                                                <CheckBox fx:id="condivisioniLetturaCheckBox"
+                                                                          layoutX="395.0" layoutY="70.0"
+                                                                          mnemonicParsing="false" text="Lettura"/>
+                                                                <CheckBox fx:id="condivisioniScritturaCheckBox"
+                                                                          layoutX="395.0" layoutY="96.0"
+                                                                          mnemonicParsing="false" text="Scrittura"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Segnalazioni">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" percentHeight="50.0"
+                                                                        prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="Le tue segnalazioni"/>
+                                                                <ListView fx:id="segnalazioniListView"
+                                                                          prefHeight="552.0" prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="246.0" layoutY="20.0"
+                                                                       text="Aggiungi Segnalazione"/>
+                                                                <ChoiceBox fx:id="segnalazioneUtenteChoiceBox"
+                                                                           layoutX="30.0" layoutY="109.0"
+                                                                           prefWidth="150.0"/>
+                                                                <Button layoutX="283.0" layoutY="187.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiSegnalazione"
+                                                                        text="Aggiungi"/>
+                                                                <Label layoutX="83.0" layoutY="83.0" text="Utente"/>
+                                                                <TextArea fx:id="segnalazioneDescrizioneTextArea"
+                                                                          layoutX="265.0" layoutY="78.0"
+                                                                          prefHeight="89.0" prefWidth="361.0"/>
+                                                                <Label layoutX="424.0" layoutY="56.0"
+                                                                       text="Descrizione"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                            <children>
+                                                                <ChoiceBox fx:id="segnalazioneOperatoreChoiceBox"
+                                                                           layoutX="32.0" layoutY="61.0"
+                                                                           prefWidth="150.0"/>
+                                                                <Label layoutX="74.0" layoutY="35.0" text="Operatore"/>
+                                                                <Button layoutX="212.0" layoutY="61.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#accettaSegnalazione" text="Accetta"/>
+                                                                <Button layoutX="315.0" layoutY="61.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#chiudiSegnalazione" text="Chiudi"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Operatore">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" percentHeight="50.0"
+                                                                        prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="I tuoi operatori"/>
+                                                                <ListView fx:id="operatoriListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="232.0" layoutY="21.0"
+                                                                       text="Aggiungi Operatore"/>
+                                                                <Button layoutX="331.0" layoutY="191.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#aggiungiOperatore" text="Aggiungi"/>
+                                                                <Label layoutX="83.0" layoutY="83.0" text="Codice"/>
+                                                                <TextField fx:id="operatoreCodiceTextField"
+                                                                           layoutX="16.0" layoutY="110.0"/>
+                                                                <TextField fx:id="operatoreNomeTextField"
+                                                                           layoutX="198.0" layoutY="110.0"/>
+                                                                <Label layoutX="265.0" layoutY="83.0" text="Nome"/>
+                                                                <TextField fx:id="operatorePasswordTextField"
+                                                                           layoutX="381.0" layoutY="110.0"/>
+                                                                <Label layoutX="433.0" layoutY="81.0" prefHeight="21.0"
+                                                                       prefWidth="68.0" text="Password"/>
+                                                                <DatePicker fx:id="operatoreDataNascitaDatePicker"
+                                                                            layoutX="99.0" layoutY="191.0"/>
+                                                                <Label layoutX="152.0" layoutY="168.0" prefHeight="21.0"
+                                                                       prefWidth="86.0" text="Data Nascita"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Interventi">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           percentWidth="30.0" prefWidth="100.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="100.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" percentHeight="70.0"
+                                                                        prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.halignment="CENTER" GridPane.rowSpan="3"
+                                                              GridPane.valignment="CENTER">
+                                                            <children>
+                                                                <Label text="I tuoi interventi"/>
+                                                                <ListView fx:id="interventiListView" prefHeight="552.0"
+                                                                          prefWidth="416.0"/>
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"
+                                                                        top="10.0"/>
+                                                            </padding>
+                                                        </VBox>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1">
+                                                            <children>
+                                                                <Label layoutX="253.0" layoutY="14.0"
+                                                                       text="Aggiungi Intervento"/>
+                                                                <Button layoutX="355.0" layoutY="261.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#creaInterventoOperatore"
+                                                                        text="Aggiungi intervento operatore"/>
+                                                                <TextArea fx:id="interventoMessaggioTextArea"
+                                                                          layoutX="114.0" layoutY="147.0"
+                                                                          prefHeight="89.0" prefWidth="406.0"/>
+                                                                <Label layoutX="279.0" layoutY="125.0"
+                                                                       text="Descrizione"/>
+                                                                <Button layoutX="53.0" layoutY="261.0"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#creaInterventoUtente"
+                                                                        text="Aggiungi intervento utente"/>
+                                                                <ChoiceBox fx:id="interventiSegnalazioneChoiceBox"
+                                                                           layoutX="114.0" layoutY="85.0"
+                                                                           prefHeight="26.0" prefWidth="403.0"/>
+                                                                <Label layoutX="272.0" layoutY="64.0"
+                                                                       text="Segnalazione"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                                                                    GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </GridPane>
+            </children>
+        </StackPane>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Pages">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToAnalisiCloudStore" text="Analisi CloudStore"/>
+                        <MenuItem mnemonicParsing="false" onAction="#goToAnalisiUtenti" text="Analisi Utenti"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>

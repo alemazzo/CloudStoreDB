@@ -2,7 +2,7 @@ package cloudstore.views.analisi.cloudstore;
 
 import cloudstore.controllers.analisi.cloudstore.AnalisiCloudStoreController;
 import cloudstore.model.database.operations.CloudStoreAnalysisOperation;
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 import cloudstore.views.AbstractJavaFXView;
 import cloudstore.views.PageLoader;
 import cloudstore.views.Pages;
@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 
 public class AnalisiCloudStoreView extends AbstractJavaFXView {
 
-  @FXML private ListView<QueryObjectResult> queryResultListView;
+  @FXML private ListView<QueryResultObject> queryResultListView;
   @FXML private TableView<CloudStoreAnalysisOperation> operationTable;
 
   @Override
@@ -54,7 +54,7 @@ public class AnalisiCloudStoreView extends AbstractJavaFXView {
                   final CloudStoreAnalysisOperation operation =
                       selected.getList().stream().findFirst().get();
                   try {
-                    final Set<QueryObjectResult> results =
+                    final Set<QueryResultObject> results =
                         this.getAnalisiController().getOperationResult(operation);
                     System.out.println(results);
                     this.queryResultListView.setItems(
@@ -72,12 +72,12 @@ public class AnalisiCloudStoreView extends AbstractJavaFXView {
   @FXML
   public void goToAnalisiUtenti(final ActionEvent event) {
     PageLoader.getInstance()
-            .switchPage(this.getStage(), Pages.ANALISI_UTENTE, this.getController().getModel());
+        .switchPage(this.getStage(), Pages.ANALISI_UTENTE, this.getController().getModel());
   }
 
   @FXML
-  public void goToUtenti(final ActionEvent event) {
+  public void goToDatabase(final ActionEvent event) {
     PageLoader.getInstance()
-            .switchPage(this.getStage(), Pages.UTENTI, this.getController().getModel());
+        .switchPage(this.getStage(), Pages.DATABASE, this.getController().getModel());
   }
 }

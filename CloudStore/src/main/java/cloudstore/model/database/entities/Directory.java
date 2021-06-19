@@ -1,9 +1,8 @@
 package cloudstore.model.database.entities;
 
-import cloudstore.model.database.query.QueryObjectResult;
-
 import java.util.Date;
 
+/** The Directory Entity. */
 public class Directory extends Entity {
 
   public int id;
@@ -13,23 +12,12 @@ public class Directory extends Entity {
   public String proprietario;
 
   @Override
-  public String getInsertQuery() {
-    return "INSERT INTO Directories (Nome, Padre, Proprietario) VALUES (?, ?, ?)";
+  public String getTableName() {
+    return "Directories";
   }
 
   @Override
-  public String toString() {
-    return "Directory{"
-        + "id="
-        + id
-        + ", nome='"
-        + nome
-        + '\''
-        + ", dataCreazione="
-        + dataCreazione
-        + ", proprietario='"
-        + proprietario
-        + '\''
-        + '}';
+  public String getInsertQuery() {
+    return "INSERT INTO Directories (Nome, Padre, Proprietario) VALUES (?, ?, ?)";
   }
 }

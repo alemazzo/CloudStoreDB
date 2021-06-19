@@ -5,7 +5,7 @@ import cloudstore.model.database.entities.Directory;
 import cloudstore.model.database.entities.File;
 import cloudstore.model.database.entities.Utente;
 import cloudstore.model.database.operations.UtentiAnalysisOperation;
-import cloudstore.model.database.query.QueryObjectResult;
+import cloudstore.model.database.query.QueryResultObject;
 import cloudstore.views.AbstractJavaFXView;
 import cloudstore.views.PageLoader;
 import cloudstore.views.Pages;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class AnalisiUtenteView extends AbstractJavaFXView {
 
-  @FXML private ListView<QueryObjectResult> resultsListView;
+  @FXML private ListView<QueryResultObject> resultsListView;
   @FXML private ChoiceBox<Utente> utentiChoiceBox;
   @FXML private ChoiceBox<File> filesChoiceBox;
   @FXML private ChoiceBox<Directory> directoriesChoiceBox;
@@ -156,15 +156,16 @@ public class AnalisiUtenteView extends AbstractJavaFXView {
                 this.getAnalisiUtenteController()
                     .getOperationResult(UtentiAnalysisOperation.OPERATION_34, directory.id))));
   }
+
   @FXML
   public void goToAnalisiCloudStore(final ActionEvent event) {
     PageLoader.getInstance()
-            .switchPage(this.getStage(), Pages.ANALISI_CLOUDSTORE, this.getController().getModel());
+        .switchPage(this.getStage(), Pages.ANALISI_CLOUDSTORE, this.getController().getModel());
   }
 
   @FXML
-  public void goToUtenti(final ActionEvent event) {
+  public void goToDatabase(final ActionEvent event) {
     PageLoader.getInstance()
-            .switchPage(this.getStage(), Pages.UTENTI, this.getController().getModel());
+        .switchPage(this.getStage(), Pages.DATABASE, this.getController().getModel());
   }
 }
