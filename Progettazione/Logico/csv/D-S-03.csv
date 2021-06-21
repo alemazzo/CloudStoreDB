@@ -1,0 +1,6 @@
+Concetto;Costrutto;Accesso;Tipo
+File;E;1;S
+Contenimento;R ;1;S
+Versione;E;1;S
+Versionamento;R ;1;S
+Totale;(4S)* 10000 = 80000 al giorno;;

@@ -1,6 +1,0 @@
-Concetto;Costrutto;Accesso;Tipo
-Utente;E;1;L
-Possiede Directory;R;20;L
-Directory;E;20;L
-Contiene;R;100;L
-Totale;(141L)* 1000 = 141000 al giorno;;

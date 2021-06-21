@@ -1,0 +1,7 @@
+Concetto;Costrutto;Accesso;Tipo
+Directory;E;1;S
+Residenza;R ;1;S
+Possesso;R;1;S
+Utente;E;1;L
+Utente;E;1;S
+Totale;(4S + 1L)* 5000 = 45000 al giorno;;
