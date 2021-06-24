@@ -19,6 +19,6 @@ public class Intervento extends Entity {
 
   @Override
   public String getInsertQuery() {
-    return "INSERT INTO Interventi (Segnalazione, Numero, Utente, Operatore, Messaggio) VALUES (?, ?, ?, ?, ?)";
+    return "INSERT INTO Interventi (Segnalazione, Utente, Operatore, Messaggio) VALUES (?, ?, ?, ?)";
   }
 }

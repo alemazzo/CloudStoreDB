@@ -32,8 +32,8 @@ cloudstore/model/database/operations/results/Query18Result.java
  cloudstore.model.database.operations.results.Query18Result
 cloudstore/model/database/entities/Condivisione.java
  cloudstore.model.database.entities.Condivisione
-cloudstore/model/database/entities/Intervento.java
- cloudstore.model.database.entities.Intervento
+cloudstore/model/database/controllers/DatabaseQuery.java
+ cloudstore.model.database.controllers.DatabaseQuery
 cloudstore/model/database/query/QueryResultObject.java
  cloudstore.model.database.query.QueryResultObject
 cloudstore/model/database/operations/results/Query28Result.java
@@ -77,8 +77,8 @@ cloudstore/views/analisi/cloudstore/AnalisiCloudStoreView.java
  cloudstore.views.analisi.cloudstore.AnalisiCloudStoreView
 cloudstore/controllers/database/DatabasePageController.java
  cloudstore.controllers.database.DatabasePageController
-cloudstore/model/ApplicationInstance.java
- cloudstore.model.ApplicationInstance
+cloudstore/views/AbstractJavaFXView.java
+ cloudstore.views.AbstractJavaFXView
 cloudstore/model/Model.java
  cloudstore.model.Model
 cloudstore/views/Pages.java
@@ -100,7 +100,7 @@ cloudstore/model/database/operations/UtentiAnalysisOperation.java
  cloudstore.model.database.operations.UtentiAnalysisOperation
 cloudstore/model/database/mapper/ObjectMapper.java
  cloudstore.model.database.mapper.ObjectMapper
-cloudstore/views/AbstractJavaFXView.java
- cloudstore.views.AbstractJavaFXView
-cloudstore/model/database/controllers/DatabaseQuery.java
- cloudstore.model.database.controllers.DatabaseQuery
+cloudstore/model/database/entities/Intervento.java
+ cloudstore.model.database.entities.Intervento
+cloudstore/model/ApplicationInstance.java
+ cloudstore.model.ApplicationInstance
